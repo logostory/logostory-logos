@@ -6,7 +6,7 @@
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
-		<title>Worthy | Free Powerful Theme by HtmlCoder</title>
+		<title>Logos | Start up community coffee shop</title>
 		<meta name="description" content="Worthy a Bootstrap-based, Responsive HTML5 Template">
 		<meta name="author" content="htmlcoder.me">
 
@@ -59,8 +59,8 @@
 
 							<!-- name-and-slogan -->
 							<div class="site-name-and-slogan smooth-scroll">
-								<div class="site-name"><a href="#banner">Worthy</a></div>
-								<div class="site-slogan">Free Bootstrap Theme by <a target="_blank" href="http://htmlcoder.me">HtmlCoder</a></div>
+								<div class="site-name"><a href="#banner">Logos</a></div>
+								<div class="site-slogan">Startup community coffee shop</div>
 							</div>
 
 						</div>
@@ -97,10 +97,10 @@
 											<ul class="nav navbar-nav navbar-right">
 												<li class="active"><a href="#banner">Home</a></li>
 												<li><a href="#about">About</a></li>
-												<li><a href="#services">Services</a></li>
-												<li><a href="#portfolio">Portfolio</a></li>
-												<li><a href="#clients">Clients</a></li>
-												<li><a href="#contact">Contact</a></li>
+												<li><a href="#services">Activity</a></li>
+												<li><a href="#portfolio">Drinking</a></li>
+												<li><a href="#clients">Branchs</a></li>
+												<li><a href="#contact">Booking</a></li>
 											</ul>
 										</div>
 
@@ -128,7 +128,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 object-non-visible" data-animation-effect="fadeIn">
-							<h1 class="text-center">We are <span>Worthy</span></h1>
+							<h1 class="text-center">Coffee and <span>Study</span></h1>
 							<p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos debitis provident nulla illum minus enim praesentium repellendus ullam cupiditate reiciendis optio voluptatem, recusandae nobis quis aperiam, sapiente libero ut at.</p>
 						</div>
 					</div>
@@ -143,8 +143,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 id="about" class="title text-center">About <span>Worthy</span></h1>
-						<p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta officia, aspernatur.</p>
+						<h1 id="about" class="title text-center">About <span>Logos</span></h1>
+						<p class="lead text-center">Logos is coffee shop for start up community. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta officia, aspernatur.</p>
 						<div class="space"></div>
 						<div class="row">
 							<div class="col-md-6">
@@ -228,7 +228,7 @@
 		<!-- ================ -->
 		<div class="section translucent-bg bg-image-1 blue">
 			<div class="container object-non-visible" data-animation-effect="fadeIn">
-				<h1 id="services"  class="text-center title">Worthy Services</h1>
+				<h1 id="services"  class="text-center title">Logos Activity</h1>
 				<div class="space"></div>
 				<div class="row">
 					<div class="col-sm-6">
@@ -330,7 +330,7 @@
 		<!-- ================ -->
 		<div class="section">
 			<div class="container">
-				<h1 class="text-center title" id="portfolio">Portfolio</h1>
+				<h1 class="text-center title" id="portfolio">Drinking</h1>
 				<div class="separator"></div>
 				<p class="lead text-center">Lorem ipsum dolor sit amet laudantium molestias similique.<br> Quisquam incidunt ut laboriosam.</p>
 				<br>			
@@ -843,7 +843,7 @@
 		<!-- ================ -->
 		<div class="section translucent-bg bg-image-2 pb-clear">
 			<div class="container object-non-visible" data-animation-effect="fadeIn">
-				<h1 id="clients" class="title text-center">Clients</h1>
+				<h1 id="clients" class="title text-center">Branchs</h1>
 				<div class="space"></div>
 				<div class="row">
 					<div class="col-md-4">
@@ -999,7 +999,7 @@
 			<!-- ================ -->
 			<div class="footer section">
 				<div class="container">
-					<h1 class="title text-center" id="contact">Contact Us</h1>
+					<h1 class="title text-center" id="contact">Booking</h1>
 					<div class="space"></div>
 					<div class="row">
 						<div class="col-sm-6">
