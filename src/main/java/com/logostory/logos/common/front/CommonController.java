@@ -11,5 +11,11 @@ public class CommonController {
 		
 		return "index";
 	}
+	
+	@RequestMapping("/backoffice")
+	public String backoffice() throws Exception {
+		
+		return "backoffice/index";
+	} 
 
 }
