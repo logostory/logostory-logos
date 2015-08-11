@@ -4,7 +4,7 @@ logos coffee shop web site
 * JDK 1.8
 * Spring Boot
 * Spring MVC
-* Eclipse Maris
+* Eclipse Mars
 
 ### Publising development site
 http://logos.devframe.org
