@@ -8,3 +8,8 @@ logos coffee shop web site
 
 ### Publising development site
 http://logos.devframe.org
+
+
+#### Related Wiki
+
+* development scope [page](https://github.com/logostory/logostory-logos/wiki/Scope-of-development)
