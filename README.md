@@ -1,11 +1,10 @@
 # logos web site project
 logos coffee shop web site
-## Develope environment
+### Develope environment
 * JDK 1.8
 * Spring Boot
 * Spring MVC
 * Eclipse Maris
-* 
 
-## Publising development site
+### Publising development site
 http://logos.devframe.org
