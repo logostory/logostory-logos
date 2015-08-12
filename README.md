@@ -1,10 +1,10 @@
 # logos web site project
 logos coffee shop web site
 ### Develope environment
-* JDK 1.8
-* Spring Boot
-* Spring MVC
-* Eclipse Mars
+* [JDK 1.8] (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* [Spring Boot] (http://projects.spring.io/spring-boot/)
+* [Spring MVC] (http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html)
+* [Eclipse Mars] (https://eclipse.org/downloads/)
 
 ### Publising development site
 http://logos.devframe.org
