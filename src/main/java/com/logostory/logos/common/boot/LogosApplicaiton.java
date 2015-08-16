@@ -1,3 +1,4 @@
+
 package com.logostory.logos.common.boot;
 
 import org.springframework.boot.SpringApplication;
