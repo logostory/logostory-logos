@@ -9,7 +9,7 @@ logos coffee shop web site
 
 
 ### Publising development site
-http://logos.devframe.org
+* http://logos.devframe.org
 
 
 #### Related Wiki
