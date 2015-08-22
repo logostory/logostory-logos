@@ -56,6 +56,12 @@
 			<if test="pmLinkurl != null and pmLinkurl != ''">
 				pmLinkurl = #{pmLinkurl}, 
 			</if>
+			<if test="pmLinkurl != null and pmLinkurl != ''">
+				pmLinkurl = #{pmLinkurl}, 
+			</if>
+			<if test="pmIsActive != null and pmIsActive != ''">
+				pmIsActive = #{pmIsActive}, 
+			</if>
 		</set>	
 		where pmId = #{pmId}
 	</update>

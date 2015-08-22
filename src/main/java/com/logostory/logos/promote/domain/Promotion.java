@@ -12,6 +12,7 @@ public class Promotion implements Serializable{
 	private String pmContents 	= "";
 	private String pmImageUrl 	= "";
 	private String pmLinkurl 	= "";
+	private String pmIsActive		= "";
 	
 	public String getPmId() {
 		return pmId;
@@ -48,5 +49,11 @@ public class Promotion implements Serializable{
 	}
 	public void setPmLinkurl(String pmLinkurl) {
 		this.pmLinkurl = pmLinkurl;
+	}
+	public String getPmIsActive() {
+		return pmIsActive;
+	}
+	public void setPmIsActive(String pmIsActive) {
+		this.pmIsActive = pmIsActive;
 	}
 }

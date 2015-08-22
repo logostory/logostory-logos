@@ -59,7 +59,7 @@
 							topoffset = 70;
 							console.log("inside max-width")
 						}else{
-							topoffset = 151;
+							topoffset = 150;
 							console.log("out max-width")
 						}
 						
