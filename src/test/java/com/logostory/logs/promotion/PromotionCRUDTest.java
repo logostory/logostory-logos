@@ -2,9 +2,13 @@ package com.logostory.logs.promotion;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -18,6 +22,8 @@ import com.logostory.logos.promote.service.PromotionService;
 @SpringApplicationConfiguration(classes = LogosApplicaiton.class)
 @WebAppConfiguration
 public class PromotionCRUDTest {
+	
+	private static final Logger logger = LoggerFactory.getLogger(PromotionCRUDTest.class);
 	
 	@Autowired
 	PromotionService promotionService;
@@ -39,6 +45,7 @@ public class PromotionCRUDTest {
 		
 		if(promotionService.getPromotionList(promotion).size() == 1){
 			String promotionId = promotionService.getPromotionList(promotion).get(0).getPmId();
+			logger.debug("promotion Id: " + promotionId);
 			assertTrue(promotionService.deletePromotion(promotionId));
 		}
 	}
@@ -53,17 +60,25 @@ public class PromotionCRUDTest {
 	
 	@Test
 	public void updatePromotionTest() throws Exception {
-		if(promotionService.getPromotionList(promotion).size() != 0){
-			if(promotionService.setPromotion(promotion)){
-				promotion.setPmContents("updatetest");
-				if(promotionService.updatePromotion(promotion)){
-					if(promotionService.getPromotionList(promotion).size() > 0){
-						assertTrue(true);
-					}else{
-						assertTrue(false);
-					}
-				}
+		
+		List<Promotion> list = promotionService.getPromotionList(promotion);
+		
+		if(list.size() == 0){
+			promotionService.setPromotion(promotion);
+			promotion = promotionService.getPromotionList(promotion).get(0);
+		}else{
+			promotion = list.get(0);
+		}
+		
+		promotion.setPmContents("updatetest");
+		if(promotionService.updatePromotion(promotion)){
+			if(promotionService.getPromotionList(promotion).size() > 0){
+				assertTrue(true);
+			}else{
+				assertTrue(false);
 			}
+		}else{
+			assertTrue(false);
 		}
 	}
 }

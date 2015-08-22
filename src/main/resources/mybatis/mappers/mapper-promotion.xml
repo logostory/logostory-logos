@@ -42,19 +42,19 @@
 		update logos_promotion
 		<set>
 			<if test="pmTitle != null and pmTitle != ''">
-				, pmTitle = #{pmTitle}
+				pmTitle = #{pmTitle}, 
 			</if>
 			<if test="pmContents != null and pmContents !=  ''">
-				, pmContents = #{pmContents}
+				pmContents = #{pmContents}, 
 			</if>
 			<if test="pmTitle != null and pmTitle != ''">
-				, pmTitle = #{pmTitle}
+				pmTitle = #{pmTitle}, 
 			</if>
 			<if test="pmImageUrl != null and pmImageUrl != ''">
-				, pmImageUrl = #{pmImageUrl}
+				pmImageUrl = #{pmImageUrl}, 
 			</if>
 			<if test="pmLinkurl != null and pmLinkurl != ''">
-				, pmLinkurl = #{pmLinkurl}
+				pmLinkurl = #{pmLinkurl}, 
 			</if>
 		</set>	
 		where pmId = #{pmId}
