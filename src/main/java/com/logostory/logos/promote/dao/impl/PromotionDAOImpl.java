@@ -15,7 +15,7 @@ import com.logostory.logos.promote.domain.Promotion;
 public class PromotionDAOImpl implements PromotionDAO {
 
 	private static final Logger logger = LoggerFactory.getLogger(PromotionDAOImpl.class);
-	private static final String MAPPER_NAMESPACE_PROMOTION = "logos.promotion";
+	private static final String MAPPER_NAMESPACE_PROMOTION = "logos.promotion.";
 
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;

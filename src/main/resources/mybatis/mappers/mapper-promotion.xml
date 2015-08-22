@@ -6,8 +6,8 @@
 	<insert id="setPromotion" 
 			parameterType="com.logostory.logos.promote.domain.Promotion">
 			
-		insert into logos_promotion (pmTitle, pmContents, pmImageUrl, pmLinkurl) 
-		values (#{pmTitle}, #{pmContents}, #{pmImageUrl}, #{pmLinkurl})	
+		insert into logos_promotion (pmType, pmTitle, pmContents, pmImageUrl, pmLinkurl) 
+		values (#{pmType}, #{pmTitle}, #{pmContents}, #{pmImageUrl}, #{pmLinkurl})	
 	</insert>
 	
 	<select id="getPromotion" parameterType="string"
@@ -21,16 +21,16 @@
 			
 		select * from logos_promotion
 		<where>
-			<if test="pmTitle != null and pmTitle!= ''">
+			<if test="pmTitle != null and pmTitle != ''">
 				and pmTitle like concat('%', #{pmTitle}, '%')
 			</if>
-			<if test="pmContents != null and pmContents ''">
+			<if test="pmContents != null and pmContents != ''">
 				and pmContents like concat('%', #{pmContents}, '%')
 			</if>
-			<if test="pmImageUrl != null and pmImageUrl ''">
+			<if test="pmImageUrl != null and pmImageUrl != ''">
 				and pmImageUrl like concat('%', #{pmImageUrl}, '%')
 			</if>
-			<if test="pmLinkurl != null and pmLinkurl ''">
+			<if test="pmLinkurl != null and pmLinkurl != ''">
 				and pmLinkurl like concat('%', #{pmLinkurl}, '%')
 			</if>
 		</where>
@@ -41,19 +41,19 @@
 	
 		update logos_promotion
 		<set>
-			<if test="pmTitle != null and pmTitle!= ''">
+			<if test="pmTitle != null and pmTitle != ''">
 				, pmTitle = #{pmTitle}
 			</if>
-			<if test="pmContents != null and pmContents ''">
+			<if test="pmContents != null and pmContents !=  ''">
 				, pmContents = #{pmContents}
 			</if>
-			<if test="pmTitle != null and pmTitle!= ''">
+			<if test="pmTitle != null and pmTitle != ''">
 				, pmTitle = #{pmTitle}
 			</if>
-			<if test="pmImageUrl != null and pmImageUrl ''">
+			<if test="pmImageUrl != null and pmImageUrl != ''">
 				, pmImageUrl = #{pmImageUrl}
 			</if>
-			<if test="pmLinkurl != null and pmLinkurl ''">
+			<if test="pmLinkurl != null and pmLinkurl != ''">
 				, pmLinkurl = #{pmLinkurl}
 			</if>
 		</set>	

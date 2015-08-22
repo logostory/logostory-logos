@@ -6,12 +6,12 @@ public class Promotion implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	private String pmId;
-	private String pmType;
-	private String pmTitle;
-	private String pmContents;
-	private String pmImageUrl;
-	private String pmLinkurl;
+	private String pmId 		= "";
+	private String pmType		= "";
+	private String pmTitle 		= "";
+	private String pmContents 	= "";
+	private String pmImageUrl 	= "";
+	private String pmLinkurl 	= "";
 	
 	public String getPmId() {
 		return pmId;
