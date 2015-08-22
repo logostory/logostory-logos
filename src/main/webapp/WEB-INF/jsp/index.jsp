@@ -34,6 +34,9 @@
 
 		<!-- Custom css --> 
 		<link href="resources/css/custom.css" rel="stylesheet">
+		
+		<!-- Custom css --> 
+		<link href="resources/css/logos.css" rel="stylesheet">
 	</head>
 
 	<body class="no-trans">
@@ -67,7 +70,7 @@
 						<!-- header-left end -->
 
 					</div>
-					<div class="col-md-8">
+					<div id="topmenu" class="col-md-8">
 
 						<!-- header-right start -->
 						<!-- ================ -->

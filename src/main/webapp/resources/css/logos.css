@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+
+@media (max-width:767px) {
+	.navbar-collapse {margin-top: 20px;}
+	
+	#topmenu {position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;}
+    
+    .navbar-toggle {margin-right: 0px;}
+}

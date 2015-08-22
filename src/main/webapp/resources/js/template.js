@@ -52,8 +52,19 @@
 					var target = $(this.hash);
 					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 					if (target.length) {
+						
+						//check top offset
+						var topoffset;
+						if(Modernizr.mq('(max-width: 767px)')){
+							topoffset = 70;
+							console.log("inside max-width")
+						}else{
+							topoffset = 151;
+							console.log("out max-width")
+						}
+						
 						$('html,body').animate({
-							scrollTop: target.offset().top-151
+							scrollTop: target.offset().top-topoffset
 						}, 1000);
 						return false;
 					}
