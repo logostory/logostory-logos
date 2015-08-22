@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="logos.promotion">
+
+	<!-- insert promotion -->
+	<insert id="setPromotion" 
+			parameterType="com.logostory.logos.promote.domain.Promotion">
+			
+		insert into logos_promotion (pmTitle, pmContents, pmImageUrl, pmLinkurl) 
+		values (#{pmTitle}, #{pmContents}, #{pmImageUrl}, #{pmLinkurl})	
+	</insert>
+	
+	<select id="getPromotion" parameterType="string"
+			resultType="com.logostory.logos.promote.domain.Promotion">
+		select * from logos_promotion where pmId = #{string}
+	</select>
+	
+	<select id="getPromotionList" 
+			parameterType="com.logostory.logos.promote.domain.Promotion"
+			resultType="com.logostory.logos.promote.domain.Promotion">
+			
+		select * from logos_promotion
+		<where>
+			<if test="pmTitle != null and pmTitle!= ''">
+				and pmTitle like concat('%', #{pmTitle}, '%')
+			</if>
+			<if test="pmContents != null and pmContents ''">
+				and pmContents like concat('%', #{pmContents}, '%')
+			</if>
+			<if test="pmImageUrl != null and pmImageUrl ''">
+				and pmImageUrl like concat('%', #{pmImageUrl}, '%')
+			</if>
+			<if test="pmLinkurl != null and pmLinkurl ''">
+				and pmLinkurl like concat('%', #{pmLinkurl}, '%')
+			</if>
+		</where>
+	</select>
+	
+	<update id="updatePromotion" 
+			parameterType="com.logostory.logos.promote.domain.Promotion">
+	
+		update logos_promotion
+		<set>
+			<if test="pmTitle != null and pmTitle!= ''">
+				, pmTitle = #{pmTitle}
+			</if>
+			<if test="pmContents != null and pmContents ''">
+				, pmContents = #{pmContents}
+			</if>
+			<if test="pmTitle != null and pmTitle!= ''">
+				, pmTitle = #{pmTitle}
+			</if>
+			<if test="pmImageUrl != null and pmImageUrl ''">
+				, pmImageUrl = #{pmImageUrl}
+			</if>
+			<if test="pmLinkurl != null and pmLinkurl ''">
+				, pmLinkurl = #{pmLinkurl}
+			</if>
+		</set>	
+		where pmId = #{pmId}
+	</update>
+	
+	<delete id="deletePromotion" parameterType="string">
+		delete from logos_promotion where pmId = #{string}
+	</delete>
+
+ 
+</mapper>
