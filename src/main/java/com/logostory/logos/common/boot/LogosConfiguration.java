@@ -6,7 +6,8 @@ import org.springframework.context.annotation.ImportResource;
 
 @Configuration
 @ComponentScan("com.logostory.logos")
-@ImportResource("classpath*:spring/context-*.xml")
+@ImportResource("classpath*:spring/context-*.xml")  //스캔해서 ,mybatis설정파일 설정?
 public class LogosConfiguration {
 
 }
+

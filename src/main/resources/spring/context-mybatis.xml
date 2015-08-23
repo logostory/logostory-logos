@@ -8,17 +8,19 @@
        		http://www.springframework.org/schema/jdbc 
        		http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
+	<!-- db정보와 sql문을 묶어서 만든 factory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-	  <property name="dataSource" ref="dataSource" />
-	  <property name="mapperLocations" value="classpath*:mybatis/mappers/**/*.xml" />
+	  <property name="dataSource" ref="dataSource" /> <!-- 디비정보 -->
+	  <property name="mapperLocations" value="classpath*:mybatis/mappers/**/*.xml" /> <!-- sql문  -->
 	</bean>
 	
+	<!-- factory를 주입 -->
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
-		<constructor-arg ref="sqlSessionFactory" />
+		<constructor-arg ref="sqlSessionFactory" /> <!-- 생성자형태 주입 -->
 	</bean>
 	
 	<jdbc:initialize-database data-source="dataSource">
-	  <jdbc:script location="classpath:mybatis/install/create_table.sql"/>
+	  <jdbc:script location="classpath:mybatis/install/create_table.sql"/> <!-- db생성도 같이????? -->
 	  <jdbc:script location="classpath:mybatis/install/install_data.sql"/>
 	</jdbc:initialize-database>
 
