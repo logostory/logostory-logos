@@ -13,6 +13,6 @@ create table if not exists logos_promotion(
 	pmContents		varchar(255) comment 'promotion content',
 	pmImageUrl		varchar(255) comment 'promotion image Url',
 	pmLinkurl		varchar(255) comment 'promotion link url',
-	pmIsActive		char(2)		 default 'N' comment 'is active promotion'
+	pmIsActive		char(2)		 default 'N' comment 'is active promotion',
 	primary key (pmId)
 );
