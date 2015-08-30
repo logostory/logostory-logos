@@ -21,6 +21,9 @@
 			
 		select * from logos_promotion
 		<where>
+			<if test="pmId != null and pmId != ''">
+				and pmId = #{pmId}
+			</if>
 			<if test="pmTitle != null and pmTitle != ''">
 				and pmTitle like concat('%', #{pmTitle}, '%')
 			</if>
