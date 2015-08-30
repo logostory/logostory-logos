@@ -43,6 +43,7 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 
 */
 
+//톰캣 임베디드 버전을 가져다 씀
 @SpringBootApplication
 public class LogosApplicaiton extends SpringBootServletInitializer {
 
