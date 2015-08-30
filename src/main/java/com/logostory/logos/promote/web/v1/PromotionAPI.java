@@ -35,7 +35,7 @@ public class PromotionAPI {
 	}
 
 	@RequestMapping(value = "/promotions", method = RequestMethod.GET)
-	public List<Promotion> getPromotionList(@RequestBody Promotion promotion) throws Exception {
+	public List<Promotion> getPromotionList(Promotion promotion) throws Exception {
 		return promotionService.getPromotionList(promotion);
 	}
 
