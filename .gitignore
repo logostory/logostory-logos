@@ -3,4 +3,5 @@
 .settings
 .git
 .project
+/logs/
 /bin/
