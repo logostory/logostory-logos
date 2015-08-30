@@ -1,0 +1,275 @@
+@CHARSET "utf-8";
+
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #A4A4A4;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding: 7px 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: black;
+  font-weight:bold;
+  background-color: #ddd;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+/* overrite */
+.dropdown-header{
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.form-control {
+	height: 2.2em;
+    line-height: 1.4285714285714;
+    padding: 4px 5px;
+    border: 1px solid #ccc;
+    border-radius: 3.01px;
+    box-sizing: border-box;
+    font-size: inherit;
+    margin: 0;
+    max-width: 250px;
+    vertical-align: baseline;
+    width: 100%;
+    background: #fff;
+    color: #333;
+    font-family: inherit;
+    display: inline-block;
+}
+
+.form-control.long-field {
+	max-width: 500px;
+}
+.form-control.short-field {
+	max-width: 75px;
+}
+.form-control.auto-field {
+	width: auto;
+}
+.form-control.full-field {
+	max-width: 100%;
+}
+
+.control-label {
+	float: left;
+    margin-left: -145px;
+    padding: 5px 0 0!important;
+    position: relative;
+    text-align: right;
+    width: 130px;
+    word-wrap: break-word;
+    font-weight: normal;
+}
+
+.form-group {
+	box-sizing: border-box;
+    clear: both;
+    padding: 4px 0 4px 145px;
+    position: relative;
+    margin: 1px 0!important;
+    width: 100%;
+}
+
+.checkbox, .radio {
+	min-height: 22px!important;
+	margin-left: 0px!important;
+}
+
+.description {
+	color: #707070;
+    font-size: 12px;
+    line-height: 1.66666666666667;
+    margin: 5px 0 0;
+	
+}
+
+.icon {
+	background-repeat: no-repeat;
+    background-position: 0 0;
+    border: 0;
+    display: inline-block;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-indent: -999em;
+    vertical-align: text-bottom;
+    width: 16px;
+}
+
+.icon-required {
+	left: 100%;
+    position: absolute;
+    top: 5px;
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAARUlEQVR4AWOAgQsu5v8ZSAIIjaVAbA4yAEqXkmpAMxDfABkApZtJNYARiHtABkBpRlIN0AbiK0AcBMQrQHyGkQdGwSgAAPtCJnBUV/TSAAAAAElFTkSuQmCC);
+}
+
+.icon-help {
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAABG0lEQVR4AU2RNVYtQRiE+7m7IxHRlRxnHWwAty9lDbg7K4AUh7kJ7vDwEGLcvU6f6cP8NVJVXe3GFWGqWedSWBcLm2DxjmZuuSFGgxATu9X/tWt+zTAPdBNnnBNHl5whP0KDRJm1ezjimn6SpArlNhqRCLd02eA0h+SSzS47PJfuUEvEUMMN/yR/8UC5DVaKJej/T6PVGNbxjC1SeKtvBgfMawQVHhuGS9oC+8ninGW3XNq4MlwRDAyzx1enFDgxbOAFAhP0BpTHf7dIZyW64f1F1hqi3NLhW584Ej77StskKkIjD5Ra6y0bwlvLC7inyR31iCJd2MF5Zs+0U84wr58uq5U7bvBoEDxupBrVHCwi1LLJNaf8F4s4/xGiuqDPs2tUOAAAAABJRU5ErkJggg==);
+}
+
+h3 {font-size: 20px;}
+
+.btn, input[type=radio], input[type=checkbox] {
+	outline: none!important;
+}
+.btn-sm {
+	font-size: 14px;
+	padding: 4px 10px;
+}
+
+.input-group {
+	display: block;
+}
+
+.ffi:before{
+    padding: 0 10px;
+	border-left: 1px solid #ccc;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    content: attr(data-ffi-button-text);
+    cursor: pointer;
+    float: right;
+    line-height: 28px;
+    margin: 0;
+    white-space: nowrap;
+}
+.ffi {
+    margin-bottom: 5px;
+    font-weight: 700;
+        background-color: #fff;
+    border-color: #ccc;
+    border-radius: 3.01px;
+    box-shadow: none;
+    color: #333;
+    font-size: 14px;
+    max-width: 250px;
+        border: 1px solid #ccc;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    line-height: 28px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 100%;
+    font-weight: normal;
+}
+
+input[type=file]{
+	padding: 0 5px;
+	    border: 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: inherit;
+    height: 100%;
+    line-height: 28px;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    outline: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    
+}
+input[type=file]:hover {
+    cursor: pointer;
+}
