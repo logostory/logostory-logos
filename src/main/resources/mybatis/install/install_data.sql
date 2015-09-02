@@ -3,6 +3,7 @@
 insert into logos_sample(id, name) values(1, 'first logos');
 
 -- insert promotion
+delete from logos_promotion;
 insert into logos_promotion(pmType, pmTitle, pmContents, pmImageUrl, pmLinkUrl, pmIsActive) values ('Link', '2015 Summer Sale', '2015 summer sail is comming', '/resources/img/event/0001.jpg', 'http://www.naver.com', 'Y');
 insert into logos_promotion(pmType, pmTitle, pmContents, pmImageUrl, pmLinkUrl, pmIsActive) values ('Link', '2016 Summer Sale', '2015 summer sail is comming', '/resources/img/event/0001.jpg', 'http://www.daum.com', 'Y');
 insert into logos_promotion(pmType, pmTitle, pmContents, pmImageUrl, pmLinkUrl, pmIsActive) values ('Link', '2017 Summer Sale', '2015 summer sail is comming', '/resources/img/event/0001.jpg', 'http://www.naver.com', 'Y');
