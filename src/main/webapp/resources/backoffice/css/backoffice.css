@@ -47,7 +47,8 @@ body {
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     background-color: #f5f5f5;
-    border-right: 1px solid #A4A4A4;
+    border-right: 1px solid #C1C1C1;
+    width:200px;
   }
 }
 
@@ -78,8 +79,8 @@ body {
 }
 @media (min-width: 768px) {
   .main {
-    padding-right: 40px;
     padding-left: 40px;
+    margin-left: 200px;
   }
 }
 .main .page-header {
@@ -201,7 +202,7 @@ body {
     background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAABG0lEQVR4AU2RNVYtQRiE+7m7IxHRlRxnHWwAty9lDbg7K4AUh7kJ7vDwEGLcvU6f6cP8NVJVXe3GFWGqWedSWBcLm2DxjmZuuSFGgxATu9X/tWt+zTAPdBNnnBNHl5whP0KDRJm1ezjimn6SpArlNhqRCLd02eA0h+SSzS47PJfuUEvEUMMN/yR/8UC5DVaKJej/T6PVGNbxjC1SeKtvBgfMawQVHhuGS9oC+8ninGW3XNq4MlwRDAyzx1enFDgxbOAFAhP0BpTHf7dIZyW64f1F1hqi3NLhW584Ej77StskKkIjD5Ra6y0bwlvLC7inyR31iCJd2MF5Zs+0U84wr58uq5U7bvBoEDxupBrVHCwi1LLJNaf8F4s4/xGiuqDPs2tUOAAAAABJRU5ErkJggg==);
 }
 
-h3 {font-size: 20px;}
+h3 {font-size: 20px; font-weight: 400}
 
 .btn, input[type=radio], input[type=checkbox] {
 	outline: none!important;

@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ attribute name="activeMenu" required="false"%>
 
-<div class="col-sm-3 col-md-2 sidebar" data-active-menu-no="${activeMenu}">
+<div class="sidebar" data-active-menu-no="${activeMenu}">
   <ul class="nav nav-sidebar">
     <li data-menu-no="00"><a href="<c:url value="/backoffice"/>">Dashboard <span class="sr-only">(current)</span></a></li>
     <li data-menu-no="01"><a href="#">Reports</a></li>

@@ -43,12 +43,7 @@
 		  </div>
 		  <div class="form-group">
 			<label for="inputEmail3" class="control-label">Link Url</label>
-		    <div class="input-group">
-		      <input type="text" class="form-control" placeholder="Search for...">
-		      <span class="input-group-btn">
-		        <button class="btn btn-default btn-sm" type="button">Upload</button>
-		      </span>
-		    </div><!-- /input-group -->
+			<input type="text" class="form-control long-field" placeholder="link url for click">
 		  </div>
 		  
 		  <div class="form-group">
