@@ -22,7 +22,7 @@
   </ul>
   <ul class="nav nav-sidebar">
   	<li class="dropdown-header">Promotion</li>
-    <li data-menu-no="30"><a href="<c:url value="/backoffice/promotion/add"/>">Add new promotion</a></li>
+    <li data-menu-no="30"><a href="<c:url value="/backoffice/promotion/addPage"/>">Add new promotion</a></li>
     <li data-menu-no="31"><a href="<c:url value="/backoffice/promotion/list"/>">Promotion List</a></li>
     <li data-menu-no="32"><a href="<c:url value="/backoffice/promotion/preview"/>">Promotions</a></li>
   </ul>

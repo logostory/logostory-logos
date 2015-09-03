@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>  
+<?xml version="1.0" encoding="utf-8"?>  
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="logos.promotion">
 
@@ -25,16 +25,16 @@
 				and pmId = #{pmId}
 			</if>
 			<if test="pmTitle != null and pmTitle != ''">
-				and pmTitle like concat('%', #{pmTitle}, '%')
+				and pmTitle like '%${pmTitle}%'
 			</if>
 			<if test="pmContents != null and pmContents != ''">
-				and pmContents like concat('%', #{pmContents}, '%')
+				and pmContents like '%${pmContents}%'
 			</if>
 			<if test="pmImageUrl != null and pmImageUrl != ''">
-				and pmImageUrl like concat('%', #{pmImageUrl}, '%')
+				and pmImageUrl like '%${pmImageUrl}%'
 			</if>
 			<if test="pmLinkurl != null and pmLinkurl != ''">
-				and pmLinkurl like concat('%', #{pmLinkurl}, '%')
+				and pmLinkurl like '%${pmLinkurl}%'
 			</if>
 		</where>
 	</select>

@@ -33,13 +33,14 @@ public class PromotionCRUDTest {
 	Promotion promotion;
 	
 	@Before
-	public void before(){
+	public void before() throws Exception{
 		promotion = new Promotion();
-		promotion.setPmTitle("test");
+		promotion.setPmTitle("한글이 들어가나요?");
 		promotion.setPmType("sapleType");
 		promotion.setPmContents("testContents");
 		promotion.setPmImageUrl("testImgUrl");
 		promotion.setPmLinkurl("testLinkUrl");
+		promotionService.setPromotion(promotion);
 	}
 	
 	@Test
