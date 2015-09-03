@@ -28,7 +28,7 @@ create table if not exists logos_userGuest(
 	uBooking		char(2)	default 'N',
 	uApproval		char(2) default 'N',
 	primary key (uMembership),
-	foreign key (pmId)
+	foreign key (pmId) references logos_promotion (pmId)
 );
 
 -- user create table2
@@ -42,5 +42,5 @@ create table if not exists logos_userManager(
 	uAttendDate		varchar(255) comment 'user AttendDate',
 	uApproval		char(2) default 'N',
 	primary key (uCode),
-	foreign key (pmId)
+	foreign key (pmId) references logos_promotion(pmId)
 );
