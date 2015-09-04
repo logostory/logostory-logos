@@ -5,3 +5,5 @@
 .project
 /bin/
 /logs/
+/logos.pid
+/log/
