@@ -15,6 +15,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/backoffice/css/prism.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/backoffice/css/backoffice.css"/>" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

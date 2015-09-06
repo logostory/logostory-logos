@@ -174,7 +174,81 @@
 		    <button type="button" class="btn btn-link btn-sm ">Cancel</button>
 		  </div>
 		</form>
+		
+		<h3>Page header</h3>
+		
+		<header class="page-header">
+			<div class="page-header-inner">
+				<div class="page-header-image">
+					<img alt="" src="resources/backoffice/img/project-48.png">
+					<i class="fa fa-black-tie"></i>
+				</div>
+				<div class="page-header-main">
+					<ol class="nav-breadcrumbs">
+					<li>
+					<a href="#">Breadcrumbs</a>
+					</li>
+					<li class="nav-selected">Parent page</li>
+					</ol>
+					<h1>Page Title</h1>
+				</div>
+				<div class="page-header-action">
+					<div class="btn-group" role="group" aria-label="...">
+					  <button type="button" class="btn btn-sm btn-default">Left</button>
+					  <button type="button" class="btn btn-sm btn-default">Middle</button>
+					  <button type="button" class="btn btn-sm btn-default">Right</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<pre>
+    <code class="language-markup">
+        <script type="prism-html-markup">
+<header class="page-header">
+	<div class="page-header-inner">
+		<div class="page-header-image">
+			<img alt="" src="https://docs.atlassian.com/aui/latest/docs/images/project-48.png">
+		</div>
+		<div class="page-header-main">
+			<ol class="nav-breadcrumbs">
+			<li>
+			<a href="#">Breadcrumbs</a>
+			</li>
+			<li class="nav-selected">Parent page</li>
+			</ol>
+			<h1>Page Title</h1>
+		</div>
+		<div class="page-header-action">
+			<div class="btn-group" role="group" aria-label="...">
+			  <button type="button" class="btn btn-sm btn-default">Left</button>
+			  <button type="button" class="btn btn-sm btn-default">Middle</button>
+			  <button type="button" class="btn btn-sm btn-default">Right</button>
+			</div>
+		</div>
+	</div>
+</header>
+        </script>
 
+    </code>
+</pre>
+		
+		<style>
+			.page-header {width: auto;}
+			.page-header-inner {display: table; table-layout: auto;border-spacing: 0; box-sizing: border-box; width: 100%;}
+			.page-header-image, .page-header-main, .page-header-action {display: table-cell; vertical-align: middle;}
+			
+			.page-header-image {width: 1px; padding-right: 10px;}
+			.page-header-image img {height: 64px; width: 64px; border-radius: 50%;}
+			
+			
+			.nav-breadcrumbs {margin: 0; padding: 0;}
+			.nav-breadcrumbs li{float: left; list-style: none; padding-right: 10px;}
+			.nav-breadcrumbs>li+li:before {content: "/"; padding-right: 10px;}
+			.page-header-action {text-align: right;}
+		</style>
+		
+		<h3>Table</h3>
 
        <h2 class="sub-header">Section title</h2>
        <div class="table-responsive">
