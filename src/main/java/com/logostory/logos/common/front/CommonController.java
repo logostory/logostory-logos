@@ -28,25 +28,5 @@ public class CommonController {
 
 	 */
 	
-	// User - 메인 페이지
-	@RequestMapping("/backoffice/UserManager")
-	public String userManager() throws Exception {
-		
-		return "backoffice/UserManager/UM_Main";
-	}
-	
-	// User - 고객 관리 페이지
-	@RequestMapping("/backoffice/UserManager/customer")
-	public String userCustomer() throws Exception {
-		
-		return "backoffice/UserManager/UM_Customer";
-	}
-	
-	// User - 사원 관리 페이지
-	@RequestMapping("/backoffice/UserManager/member")
-	public String userMember() throws Exception {
-		
-		return "backoffice/UserManager/UM_Member";
-	}
 
 }
