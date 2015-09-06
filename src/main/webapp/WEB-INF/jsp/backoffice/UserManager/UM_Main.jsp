@@ -72,7 +72,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-          	<li class="active"><a href="/backoffice/UserManager">전체보기</a></li>
+          	<li class="active"><a href="/backoffice/UserManager/main">전체보기</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li class="active"><a href="/backoffice/UserManager/customer">고객 관리</a></li>
