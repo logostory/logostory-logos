@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 
-/*
+ /*
   Spring Boot의 가장 큰 장점은 설정 파일이 사실상 전무하게 프로젝트를 당장 구동할 수 있다는 점
   모든것을 어노테이션만으로 구성할 수 있습니다. 
   이미 Spring이 많은부분 이렇게 진화해왔지만 아예 시작부터 운영까지 단순화하는것이 목적

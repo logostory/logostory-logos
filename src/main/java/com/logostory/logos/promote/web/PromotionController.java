@@ -53,6 +53,9 @@ public class PromotionController {
 	public String preview(HttpServletRequest request, Model model) throws Exception {
 		
 		return promotionHomeUrl + "preview";
+
 	}
 
+	
 }
+
