@@ -6,6 +6,22 @@
         <version>1.2.5.RELEASE</version>
     </parent>
 	
+	<!-- 
+	
+	마누 스터디 
+	
+	pom.xml : Project Object Model(POM). 메이븐 프로젝트에 대한 모든 설정을 저장하는 파일.
+	
+	groupId : 프로젝트를 만드는 그룹, 조직, 회사 등을 나타내는 유일한 이름.
+			     보통 자바 패키지처럼 URI를 거꾸로 써서 나타낸다.
+	
+	artifacId : 아티팩트(artifact) 즉, 프로젝트를 나타내는 유일한 이름.
+				그룹 내 다른 아티팩트와 이름이 같아서는 안된다.
+				
+	<dependencies : 여기에서 프로젝트의 의존 관계를 설정할 수 있다.
+	
+	-->
+	
 	<groupId>logostory-logos</groupId>
 	<artifactId>logostory-logos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -25,6 +41,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-actuator</artifactId>
+	    </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
