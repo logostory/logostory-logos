@@ -1028,7 +1028,8 @@
 						</div>
 						<div class="col-sm-6">
 							<div class="footer-content">
-								<form role="form" id="footer-form">
+								<form role="form" id="footer-form" action="<c:url value="/backoffice/booking/Make_Booking"/>">
+			
 									<div class="form-group has-feedback">
 										<label class="sr-only" for="name2">Name</label>
 										<input type="text" class="form-control" id="name2" placeholder="Name" name="name2" required>
@@ -1039,6 +1040,18 @@
 										<input type="email" class="form-control" id="email2" placeholder="Enter email" name="email2" required>
 										<i class="fa fa-envelope form-control-feedback"></i>
 									</div>
+							<!-- 수정한곳 hj !!!! -->
+									<div class="form-group has-feedback">
+										<label class="sr-only" for="phone">Phone</label>
+										<input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone" required>
+										<i class="fa fa-envelope form-control-feedback"></i>
+									</div>
+									<div class="form-group has-feedback">
+										<label class="sr-only" for="person">person</label>
+										<input type="text" class="form-control" id="person" placeholder="Enter person" name="person" required>
+										<i class="fa fa-envelope form-control-feedback"></i>
+									</div>
+							<!-- 수정끝- hj !!!!-->
 									<div class="form-group has-feedback">
 										<label class="sr-only" for="message2">Message</label>
 										<textarea class="form-control" rows="8" id="message2" placeholder="Message" name="message2" required></textarea>
