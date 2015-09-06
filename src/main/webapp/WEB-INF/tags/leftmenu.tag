@@ -10,9 +10,9 @@
   </ul>
   <ul class="nav nav-sidebar">
   	<li class="dropdown-header">User</li>
-    <li data-menu-no="10"><a href="#">Nav item again</a></li>
-    <li data-menu-no="11"><a href="#">One more nav</a></li>
-    <li data-menu-no="12"><a href="#">Another nav item</a></li>
+    <li data-menu-no="10"><a href="<c:url value="/backoffice/UserManager/main"/>">전체관리</a></li>
+    <li data-menu-no="11"><a href="<c:url value="/backoffice/UserManager/customer"/>">고객관리</a></li>
+    <li data-menu-no="12"><a href="<c:url value="/backoffice/UserManager/member"/>">사원관리</a></li>
   </ul>
   <ul class="nav nav-sidebar">
   	<li class="dropdown-header">Product</li>
