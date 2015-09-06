@@ -27,12 +27,7 @@ create table if not exists logos_userGuest(
 	uTel			varchar(255) comment 'user telephone number',
 	uBooking		char(2)	default 'N',
 	uApproval		char(2) default 'N',
-<<<<<<< HEAD
 	primary key (uMembership)
-=======
-	primary key (uMembership),
-	foreign key (pmId) references logos_promotion (pmId)
->>>>>>> branch 'develop' of https://github.com/logostory/logostory-logos.git
 );
 
 -- user create table2
@@ -45,10 +40,5 @@ create table if not exists logos_userManager(
 	uTel			varchar(255) comment 'user telephone number',
 	uAttendDate		varchar(255) comment 'user AttendDate',
 	uApproval		char(2) default 'N',
-<<<<<<< HEAD
 	primary key (uCode)
-=======
-	primary key (uCode),
-	foreign key (pmId) references logos_promotion(pmId)
->>>>>>> branch 'develop' of https://github.com/logostory/logostory-logos.git
 );
