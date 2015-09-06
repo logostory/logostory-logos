@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BookingController {
 
 	private static final Logger logger = LoggerFactory.getLogger(BookingController.class);
-	private static final String promotionHomeUrl = "backoffice/booking/";
+	private static final String bookingHomeUrl = "backoffice/booking/";
 
 	@Autowired
 	//BookingService BookingService;
@@ -24,7 +24,7 @@ public class BookingController {
 	@RequestMapping("Make_Booking")
 	public String Make_Booking(HttpServletRequest request, Model model) throws Exception {
 
-		return promotionHomeUrl + "Make_Booking";
+		return bookingHomeUrl + "Make_Booking";
 
 	}
 
