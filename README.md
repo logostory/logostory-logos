@@ -6,8 +6,10 @@ logos coffee shop web site
 * [Spring MVC] (http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html)
 * [Eclipse Mars] (https://eclipse.org/downloads/)
 * [Maven] (https://maven.apache.org/download.cgi)
+
+
 ### Publising development site
-http://logos.devframe.org
+* http://logos.devframe.org
 
 
 #### Related Wiki
