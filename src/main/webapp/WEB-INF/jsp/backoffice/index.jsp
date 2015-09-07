@@ -35,7 +35,9 @@
            <span class="text-muted">Something else</span>
          </div>
        </div>
-
+       
+<h2>Form</h2>
+<div class="component-preview">
 <h3>Dropdowns and multi select</h3>
 		<form class="form-horizontal">
 		  <div class="form-group">
@@ -174,14 +176,301 @@
 		    <button type="button" class="btn btn-link btn-sm ">Cancel</button>
 		  </div>
 		</form>
+		</div> <!-- //.component-preview -->
+
+		<pre>
+			<code class="language-markup">
+        <script type="prism-html-markup">
+<h3>Dropdowns and multi select</h3>
+	<form class="form-horizontal">
+	  <div class="form-group">
+		<label for="inputEmail3" class="control-label">Email <span class="icon icon-required"> required</span></label>
+	    <input type="email" class="form-control" id="inputEmail3" placeholder="Email"> 
+	    <div class="description">Default width input of a required field</div>
+	  </div>
+	  <div class="form-group">
+		<label for="inputEmail3" class="control-label">Right icon</label>
+	    <input type="text" class="form-control" id="inputEmail3" placeholder="Email"> <span class="icon icon-help">help</span>
+	  </div>
+	  <div class="form-group">
+		<label for="inputEmail3" class="control-label">Long field</label>
+	    <input type="text" class="form-control long-field" id="inputEmail3" placeholder="long field">
+	  </div>
+	  <div class="form-group">
+		<label for="inputEmail3" class="control-label">Short field</label>
+	    <input type="text" class="form-control short-field" id="inputEmail3" placeholder="short field">
+	  </div>
+	  <div class="form-group">
+	    <label for="inputPassword3" class="control-label">Password</label>
+	    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+	  </div>
+	  <div class="form-group">
+	  		<label for="inputPassword3" class="control-label">Auto field</label>
+		  <select class="form-control auto-field">
+	              <option>Select</option>
+	              <option>Option 1</option>
+	              <option>Option 2</option>
+	              <optgroup label="Group 1">
+	                  <option>Option one</option>
+	                  <option>Option two</option>
+	              </optgroup>
+	              <option>Option 3</option>
+	              <option>Option 4</option>
+	          </select>
+	         </div>
+	         <div class="form-group">
+	    <label for="inputPassword3" class="control-label">Full field</label>
+	    <input type="text" class="form-control full-field" id="inputPassword3" placeholder="full field">
+	  </div>
+	  <div class="form-group">
+		<label for="inputEmail3" class="control-label">Input groups</label>
+	    <div class="input-group">
+	      <input type="text" class="form-control" placeholder="Search for...">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default btn-sm" type="button">action</button>
+	      </span>
+	    </div><!-- /input-group -->
+		  </div>
+		  <div class="form-group">
+		  	<label for="inputEmail3" class="control-label">Horizental Radios</label>
+		  	<label class="radio-inline">
+			  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Y
+			</label>
+			<label class="radio-inline">
+			  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> N
+			</label>
+		  </div>
+<h3>Checkboxes</h3>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="control-label">Checkboxes</label>
+		  	<div class="checkbox">
+	               <input class="checkbox" type="checkbox" name="cbOne" id="cbOne">
+	               <label for="cbOne">Receive email</label>
+	           </div>
+	           <div class="checkbox">
+	               <input class="checkbox" type="checkbox" name="cbTwo" id="cbTwo">
+	               <label for="cbTwo">Receive push notification</label>
+	           </div>
+	           <div class="checkbox">
+	               <input class="checkbox" type="checkbox" name="cbThree" id="cbThree">
+	               <label for="cbThree">Receive in-app notification</label>
+	           </div>
+		  </div>
+<h3>Dropdowns and multi select</h3>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="control-label">Radio buttons</label>
+		  	<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+			    Option one is this and that&mdash;be sure to include why it's great
+			  </label>
+			</div>
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+			    Option two can be something else and selecting it will deselect option one
+			  </label>
+			</div>
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+			    Option three is disabled
+			  </label>
+			</div>
+		  </div>
+		  <div class="form-group">
+		  		<label for="inputPassword3" class="control-label">Radio buttons</label>
+			  <select class="form-control">
+	               <option>Select</option>
+	               <option>Option 1</option>
+	               <option>Option 2</option>
+	               <optgroup label="Group 1">
+	                   <option>Option one</option>
+	                   <option>Option two</option>
+	               </optgroup>
+	               <option>Option 3</option>
+	               <option>Option 4</option>
+	           </select>
+	          </div>
+	          <div class="form-group">
+	          		<label for="inputPassword3" class="control-label">Radio buttons</label>
+	          		<select class="form-control" size="4" multiple="multiple">
+	                   <option>option one</option>
+	                   <option>option two</option>
+	                   <option>option three</option>
+	                   <option>option four</option>
+	                   <option>option five</option>
+	                   <option>option six</option>
+	               </select>
+	          	
+	          </div>
+	          <div class="form-group">
+	          		<label for="inputPassword3" class="control-label">Radio buttons</label>
+	          		<textarea class="form-control" placeholder="Your comment here..."></textarea>
+	          </div>
+		  <div class="form-group">
+		    <button type="button" class="btn btn-sm btn-default">Sign in</button>
+		    <button type="button" class="btn btn-sm btn-primary">Sign in</button>
+		    <button type="button" class="btn btn-sm btn-danger">Sign in</button>
+		    <button type="button" class="btn btn-default btn-lg ">Save</button>
+		    <button type="button" class="btn btn-default">Save</button>
+		    <button type="button" class="btn btn-default btn-sm ">Save</button>
+		    <button type="button" class="btn btn-default btn-xs ">Save</button>
+		    <button type="button" class="btn btn-link btn-sm ">Cancel</button>
+		  </div>
+		</form>
+	<h3>Dropdowns and multi select</h3>
+		<form class="form-horizontal">
+		  <div class="form-group">
+			<label for="inputEmail3" class="control-label">Email <span class="icon icon-required"> required</span></label>
+		    <input type="email" class="form-control" id="inputEmail3" placeholder="Email"> 
+		    <div class="description">Default width input of a required field</div>
+		  </div>
+		  <div class="form-group">
+			<label for="inputEmail3" class="control-label">Right icon</label>
+		    <input type="text" class="form-control" id="inputEmail3" placeholder="Email"> <span class="icon icon-help">help</span>
+		  </div>
+		  <div class="form-group">
+			<label for="inputEmail3" class="control-label">Long field</label>
+		    <input type="text" class="form-control long-field" id="inputEmail3" placeholder="long field">
+		  </div>
+		  <div class="form-group">
+			<label for="inputEmail3" class="control-label">Short field</label>
+		    <input type="text" class="form-control short-field" id="inputEmail3" placeholder="short field">
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="control-label">Password</label>
+		    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+		  </div>
+		  <div class="form-group">
+		  		<label for="inputPassword3" class="control-label">Auto field</label>
+			  <select class="form-control auto-field">
+	               <option>Select</option>
+	               <option>Option 1</option>
+	               <option>Option 2</option>
+	               <optgroup label="Group 1">
+	                   <option>Option one</option>
+	                   <option>Option two</option>
+	               </optgroup>
+	               <option>Option 3</option>
+	               <option>Option 4</option>
+	           </select>
+	          </div>
+	          <div class="form-group">
+		    <label for="inputPassword3" class="control-label">Full field</label>
+		    <input type="text" class="form-control full-field" id="inputPassword3" placeholder="full field">
+		  </div>
+		  <div class="form-group">
+			<label for="inputEmail3" class="control-label">Input groups</label>
+		    <div class="input-group">
+		      <input type="text" class="form-control" placeholder="Search for...">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default btn-sm" type="button">action</button>
+		      </span>
+		    </div><!-- /input-group -->
+		  </div>
+		  <div class="form-group">
+		  	<label for="inputEmail3" class="control-label">Horizental Radios</label>
+		  	<label class="radio-inline">
+			  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Y
+			</label>
+			<label class="radio-inline">
+			  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> N
+			</label>
+		  </div>
+<h3>Checkboxes</h3>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="control-label">Checkboxes</label>
+		  	<div class="checkbox">
+	               <input class="checkbox" type="checkbox" name="cbOne" id="cbOne">
+	               <label for="cbOne">Receive email</label>
+	           </div>
+	           <div class="checkbox">
+	               <input class="checkbox" type="checkbox" name="cbTwo" id="cbTwo">
+	               <label for="cbTwo">Receive push notification</label>
+	           </div>
+	           <div class="checkbox">
+	               <input class="checkbox" type="checkbox" name="cbThree" id="cbThree">
+	               <label for="cbThree">Receive in-app notification</label>
+	           </div>
+		  </div>
+	<h3>Dropdowns and multi select</h3>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="control-label">Radio buttons</label>
+		  	<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+			    Option one is this and that&mdash;be sure to include why it's great
+			  </label>
+			</div>
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+			    Option two can be something else and selecting it will deselect option one
+			  </label>
+			</div>
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+			    Option three is disabled
+			  </label>
+			</div>
+		  </div>
+		  <div class="form-group">
+		  		<label for="inputPassword3" class="control-label">Radio buttons</label>
+			  <select class="form-control">
+	               <option>Select</option>
+	               <option>Option 1</option>
+	               <option>Option 2</option>
+	               <optgroup label="Group 1">
+	                   <option>Option one</option>
+	                   <option>Option two</option>
+	               </optgroup>
+	               <option>Option 3</option>
+	               <option>Option 4</option>
+	           </select>
+	          </div>
+	          <div class="form-group">
+	          		<label for="inputPassword3" class="control-label">Radio buttons</label>
+	          		<select class="form-control" size="4" multiple="multiple">
+	                   <option>option one</option>
+	                   <option>option two</option>
+	                   <option>option three</option>
+	                   <option>option four</option>
+	                   <option>option five</option>
+	                   <option>option six</option>
+	               </select>
+	          	
+	          </div>
+	          <div class="form-group">
+	          		<label for="inputPassword3" class="control-label">Radio buttons</label>
+	          		<textarea class="form-control" placeholder="Your comment here..."></textarea>
+	          </div>
+		  <div class="form-group">
+		    <button type="button" class="btn btn-sm btn-default">Sign in</button>
+		    <button type="button" class="btn btn-sm btn-primary">Sign in</button>
+		    <button type="button" class="btn btn-sm btn-danger">Sign in</button>
+		    <button type="button" class="btn btn-default btn-lg ">Save</button>
+		    <button type="button" class="btn btn-default">Save</button>
+		    <button type="button" class="btn btn-default btn-sm ">Save</button>
+		    <button type="button" class="btn btn-default btn-xs ">Save</button>
+		    <button type="button" class="btn btn-link btn-sm ">Cancel</button>
+		  </div>
+		</form>
+			
+			
+			</script>
+			
+			</code>
+		</pre>
 		
-		<h3>Page header</h3>
-		
+<h2>Page header</h2>		
+		<h3>1. Page header template with image</h3>
+		<div class="component-preview">
 		<header class="page-header">
 			<div class="page-header-inner">
 				<div class="page-header-image">
 					<img alt="" src="resources/backoffice/img/project-48.png">
-					<i class="fa fa-black-tie"></i>
 				</div>
 				<div class="page-header-main">
 					<ol class="nav-breadcrumbs">
@@ -201,8 +490,9 @@
 				</div>
 			</div>
 		</header>
+		</div>
 		
-		<pre>
+<pre>
     <code class="language-markup">
         <script type="prism-html-markup">
 <header class="page-header">
@@ -231,23 +521,90 @@
         </script>
 
     </code>
+</pre>		
+
+<h3>2. Page header template with icon</h3>
+<div class="component-preview">
+		<header class="page-header">
+			<div class="page-header-inner">
+				<div class="page-header-image">
+					<i class="fa fa-black-tie"></i>
+				</div>
+				<div class="page-header-main">
+					<ol class="nav-breadcrumbs">
+					<li>
+					<a href="#">Breadcrumbs</a>
+					</li>
+					<li class="nav-selected">Parent page</li>
+					</ol>
+					<h1>Page Title</h1>
+				</div>
+				<div class="page-header-action">
+					<div class="btn-group" role="group" aria-label="...">
+					  <button type="button" class="btn btn-sm btn-default">Left</button>
+					  <button type="button" class="btn btn-sm btn-default">Middle</button>
+					  <button type="button" class="btn btn-sm btn-default">Right</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		</div>
+<pre>
+    <code class="language-markup">
+        <script type="prism-html-markup">
+<header class="page-header">
+	<div class="page-header-inner">
+		<div class="page-header-image">
+			<i class="fa fa-black-tie"></i>
+		</div>
+		...
+	</div>
+</header>
+        </script>
+    </code>
 </pre>
-		
-		<style>
-			.page-header {width: auto;}
-			.page-header-inner {display: table; table-layout: auto;border-spacing: 0; box-sizing: border-box; width: 100%;}
-			.page-header-image, .page-header-main, .page-header-action {display: table-cell; vertical-align: middle;}
-			
-			.page-header-image {width: 1px; padding-right: 10px;}
-			.page-header-image img {height: 64px; width: 64px; border-radius: 50%;}
-			
-			
-			.nav-breadcrumbs {margin: 0; padding: 0;}
-			.nav-breadcrumbs li{float: left; list-style: none; padding-right: 10px;}
-			.nav-breadcrumbs>li+li:before {content: "/"; padding-right: 10px;}
-			.page-header-action {text-align: right;}
-		</style>
-		
+
+<h3>3. Page header template with no icon or image</h3>
+		<div class="component-preview">		
+		<header class="page-header">
+			<div class="page-header-inner">
+				<div class="page-header-main">
+					<ol class="nav-breadcrumbs">
+					<li>
+					<a href="#">Breadcrumbs</a>
+					</li>
+					<li class="nav-selected">Parent page</li>
+					</ol>
+					<h1>Page Title</h1>
+				</div>
+				<div class="page-header-action">
+					<div class="btn-group" role="group" aria-label="...">
+					  <button type="button" class="btn btn-sm btn-default">Left</button>
+					  <button type="button" class="btn btn-sm btn-default">Middle</button>
+					  <button type="button" class="btn btn-sm btn-default">Right</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		</div>
+<pre>
+    <code class="language-markup">
+        <script type="prism-html-markup">
+<header class="page-header">
+	<div class="page-header-inner">
+		<!--
+		<div class="page-header-image">
+		...
+		</div>
+ 		-->
+		...
+	</div>
+</header>
+        </script>
+
+    </code>
+</pre>
+
 		<h3>Table</h3>
 
        <h2 class="sub-header">Section title</h2>
