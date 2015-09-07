@@ -13,21 +13,30 @@ public class UserController {
 	private static final String userHomeUrl = "backoffice/UserManager/"; 
 	
 	@RequestMapping("/main")
-	public String add(HttpServletRequest request, Model model) throws Exception {
+	public String main(HttpServletRequest request, Model model) throws Exception {
 		
 		return userHomeUrl + "UM_Main";
 	}
 	
 	@RequestMapping("/customer")
-	public String list(HttpServletRequest request, Model model) throws Exception {
+	public String customer(HttpServletRequest request, Model model) throws Exception {
 		
 		return userHomeUrl + "UM_Customer";
 	}
 	
 	@RequestMapping("/member")
-	public String preview(HttpServletRequest request, Model model) throws Exception {
+	public String member(HttpServletRequest request, Model model) throws Exception {
 		
 		return userHomeUrl + "UM_Member";
 	}
+	
+	@RequestMapping("/profile")
+	public String profile(HttpServletRequest request, Model model) throws Exception {
+		return userHomeUrl + "UM_Profile";
+	}
 
+	@RequestMapping("/join")
+	public String join(HttpServletRequest request, Model model) throws Exception {
+		return userHomeUrl + "UM_Join";
+	}
 }

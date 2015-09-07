@@ -14,22 +14,4 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class BookingController {
 
-	private static final Logger logger = LoggerFactory.getLogger(BookingController.class);
-	private static final String bookingHomeUrl = "backoffice/booking/";
-
-	@Autowired
-	//BookingService BookingService;
-
-	// booking - 인덱스의 booking항목에서 최소한의 정보입력으로 예약창으로 넘기기
-	@RequestMapping("Make_Booking")
-	public String Make_Booking(HttpServletRequest request, Model model) throws Exception {
-
-		return bookingHomeUrl + "Make_Booking";
-
-	}
-
-	
-	
-	
-	
 }
