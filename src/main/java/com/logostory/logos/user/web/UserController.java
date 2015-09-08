@@ -39,4 +39,15 @@ public class UserController {
 	public String join(HttpServletRequest request, Model model) throws Exception {
 		return userHomeUrl + "UM_Join";
 	}
+	
+	@RequestMapping("/login")
+	public String login(HttpServletRequest request, Model model) throws Exception {
+		return userHomeUrl + "UM_Login";
+	}
+	
+	@RequestMapping("/agreement")
+	public String agreement(HttpServletRequest request, Model model) throws Exception {
+		return userHomeUrl + "UM_Agreement";
+	}
+
 }

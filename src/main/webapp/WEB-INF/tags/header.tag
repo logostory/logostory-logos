@@ -15,11 +15,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+          	<li data-menu-no="777"><a href="<c:url value="/backoffice/UserManager/login"/>">Login/Join</a></li>
+          	<li data-menu-no="999"><a href="<c:url value="/backoffice/UserManager/profile"/>">Profile</a></li>
             <li><a href="#">Dashboard</a></li>
             <li><a href="#">Settings</a></li>
-            <li data-menu-no="999"><a href="<c:url value="/backoffice/UserManager/profile"/>">Profile</a></li>
             <li><a href="#">Help</a></li>
-            <li data-menu-no="888"><a href="<c:url value="/backoffice/UserManager/join"/>">join</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
