@@ -36,7 +36,7 @@ create table if not exists logos_userManager(
 	uCode			int not null auto_increment comment 'user manager code',
 	uID				varchar(255) comment 'user ID',
 	uName			varchar(255) comment 'user name',
-	uLevel			int(10) comment 'user level',
+	uLevel			char(2) comment 'user level',
 	uTel			varchar(255) comment 'user telephone number',
 	uAttendDate		varchar(255) comment 'user AttendDate',
 	uApproval		char(2) default 'N',
