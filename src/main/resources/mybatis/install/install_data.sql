@@ -15,3 +15,31 @@ insert into logos_promotion(pmType, pmTitle, pmContents, pmImageUrl, pmLinkUrl, 
 insert into logos_promotion(pmType, pmTitle, pmContents, pmImageUrl, pmLinkUrl, pmIsActive) values ('Link', '2023 Summer Sale', '2023 summer sail is comming', '/resources/img/event/0007.jpg', 'http://www.naver.com', 'Y');
 insert into logos_promotion(pmType, pmTitle, pmContents, pmImageUrl, pmLinkUrl, pmIsActive) values ('Link', '2024 Summer Sale', '2024 summer sail is comming', '/resources/img/event/0008.jpg', 'http://www.naver.com', 'Y');
 insert into logos_promotion(pmType, pmTitle, pmContents, pmImageUrl, pmLinkUrl, pmIsActive) values ('Link', '2025 Summer Sale', '2025 summer sail is comming', '/resources/img/event/0009.jpg', 'http://www.naver.com', 'Y');
+
+
+-- insert user (Guest)
+delete from logos_userGuest;
+insert into logos_userGuest(uID, uName, uLevel, uTel, uBooking, uApproval) values ('test1', '테스트1번', '1', '010-xxxx-xxx1', 'N', 'N');
+insert into logos_userGuest(uID, uName, uLevel, uTel, uBooking, uApproval) values ('test2', '테스트2번', '1', '010-xxxx-xxx2', 'N', 'N');
+insert into logos_userGuest(uID, uName, uLevel, uTel, uBooking, uApproval) values ('test3', '테스트3번', '1', '010-xxxx-xxx3', 'N', 'N');
+insert into logos_userGuest(uID, uName, uLevel, uTel, uBooking, uApproval) values ('test4', '테스트4번', '2', '010-xxxx-xxx4', 'N', 'N');
+insert into logos_userGuest(uID, uName, uLevel, uTel, uBooking, uApproval) values ('test5', '테스트5번', '2', '010-xxxx-xxx5', 'N', 'N');
+insert into logos_userGuest(uID, uName, uLevel, uTel, uBooking, uApproval) values ('test6', '테스트6번', '2', '010-xxxx-xxx6', 'N', 'N');
+insert into logos_userGuest(uID, uName, uLevel, uTel, uBooking, uApproval) values ('test7', '테스트7번', '3', '010-xxxx-xxx7', 'N', 'N');
+insert into logos_userGuest(uID, uName, uLevel, uTel, uBooking, uApproval) values ('test8', '테스트8번', '3', '010-xxxx-xxx8', 'N', 'N');
+insert into logos_userGuest(uID, uName, uLevel, uTel, uBooking, uApproval) values ('test9', '테스트9번', '3', '010-xxxx-xxx9', 'N', 'N');
+insert into logos_userGuest(uID, uName, uLevel, uTel, uBooking, uApproval) values ('test10', '테스트10번', '4', '010-xxxx-xx10', 'N', 'N');
+insert into logos_userGuest(uID, uName, uLevel, uTel, uBooking, uApproval) values ('test11', '테스트11번', '4', '010-xxxx-xx11', 'N', 'N');
+insert into logos_userGuest(uID, uName, uLevel, uTel, uBooking, uApproval) values ('test12', '테스트12번', '4', '010-xxxx-xx12', 'N', 'N');
+
+
+-- insert user (Manager)
+delete from logos_userManager;
+insert into logos_userManager(uID, uName, uLevel, uTel, uAttendDate, uApproval) values ('manager1', '매니저1번', 'a', '010-zzzz-zzz1', '2015-09-01', 'N');
+insert into logos_userManager(uID, uName, uLevel, uTel, uAttendDate, uApproval) values ('manager2', '매니저2번', 'a', '010-zzzz-zzz2', '2015-09-02', 'N');
+insert into logos_userManager(uID, uName, uLevel, uTel, uAttendDate, uApproval) values ('manager3', '매니저3번', 'a', '010-zzzz-zzz3', '2015-09-03', 'N');
+insert into logos_userManager(uID, uName, uLevel, uTel, uAttendDate, uApproval) values ('manager4', '매니저4번', 'b', '010-zzzz-zzz4', '2015-09-04', 'N');
+insert into logos_userManager(uID, uName, uLevel, uTel, uAttendDate, uApproval) values ('manager5', '매니저5번', 'b', '010-zzzz-zzz5', '2015-09-05', 'N');
+insert into logos_userManager(uID, uName, uLevel, uTel, uAttendDate, uApproval) values ('manager6', '매니저6번', 'b', '010-zzzz-zzz6', '2015-09-06', 'N');
+insert into logos_userManager(uID, uName, uLevel, uTel, uAttendDate, uApproval) values ('manager7', '매니저7번', 'c', '010-zzzz-zzz7', '2015-09-07', 'N');
+
