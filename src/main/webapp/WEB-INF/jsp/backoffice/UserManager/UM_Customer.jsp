@@ -42,6 +42,7 @@
 						<thead>
 							<tr>
 								<th>회원번호</th>
+								<th>회원아이디</th>
 								<th>성함</th>
 								<th>고객 등급</th>
 								<th>연락처</th>
@@ -50,134 +51,17 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1,001</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
+							<c:forEach items = "${uClientList}" var = "data" varStatus = "idx">
+							<tr data-user-id = "${data.clientID}">
+								<td>${data.clientMembership}</td>
+								<td>${data.clientID}</td>
+								<td>${data.clientName}</td>
+								<td>${data.clientLevel}</td>
+								<td>${data.clientTel}</td>
+								<td>${data.clientBooking}</td>
+								<td>${data.clientApproval}</td>
 							</tr>
-							<tr>
-								<td>1,002</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,003</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,003</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,004</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,005</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,006</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,007</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,008</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,009</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,010</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,011</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,012</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,013</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,014</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
-							<tr>
-								<td>1,015</td>
-								<td>유인나</td>
-								<td>Gold Star</td>
-								<td>010-xxxx-xxxx</td>
-								<td>x</td>
-								<td>o</td>
-							</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>

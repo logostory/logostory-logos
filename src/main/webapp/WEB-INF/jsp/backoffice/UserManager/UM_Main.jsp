@@ -71,6 +71,7 @@
               <thead>
                 <tr>
                   <th>회원번호</th>
+                  <th>회원아이디</th>
                   <th>성함</th>
                   <th>고객 등급</th>
                   <th>연락처</th>
@@ -79,14 +80,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>유인나</td>
-                  <td>Gold Star</td>
-                  <td>010-xxxx-xxxx</td>
-                  <td>x</td>
-                  <td>o</td>
-                </tr>
+                <c:forEach items = "${uClientList}" var = "data" varStatus = "idx">
+					<tr data-user-id = "${data.clientID}">
+						<td>${data.clientMembership}</td>
+						<td>${data.clientID}</td>
+						<td>${data.clientName}</td>
+						<td>${data.clientLevel}</td>
+						<td>${data.clientTel}</td>
+						<td>${data.clientBooking}</td>
+						<td>${data.clientApproval}</td>
+					</tr>
+				</c:forEach>
               </tbody>
             </table>
             
@@ -94,6 +98,7 @@
               <thead>
                 <tr>
                   <th>직원번호</th>
+                  <th>직원아이디</th>
                   <th>이름</th>
                   <th>직원 등급</th>
                   <th>연락처</th>
@@ -102,14 +107,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>아이유</td>
-                  <td>General Member</td>
-                  <td>010-xxxx-xxxx</td>
-                  <td>2015-08-30</td>
-                  <td>o</td>
-                </tr>
+                <c:forEach items = "${uMemberList}" var = "data" varStatus = "idx">
+	                <tr data-user-id = "${data.managerID}">
+	                  <td>${data.managerMembership}</td>
+	                  <td>${data.managerID}</td>
+	                  <td>${data.managerName}</td>
+	                  <td>${data.managerLevel}</td>
+	                  <td>${data.managerTel}</td>
+	                  <td>${data.managerAttendDate}</td>
+	                  <td>${data.managerApproval}</td>
+	                </tr>
+                </c:forEach>
                </tbody>
             </table>
           </div>

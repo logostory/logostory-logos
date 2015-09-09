@@ -1,5 +1,7 @@
 package com.logostory.logos.user.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -23,7 +25,13 @@ public class UserController {
 	UserService userService;
 	
 	@RequestMapping("/main")
-	public String main(HttpServletRequest request, Model model) throws Exception {
+	public String main(HttpServletRequest request, User user, Model model) throws Exception {
+		
+		List<User> resultClientList = userService.getUserClientList(user);
+		List<User> resultMemberList = userService.getUserManagerList(user);
+		
+		model.addAttribute("uClientList", resultClientList);
+		model.addAttribute("uMemberList", resultMemberList);
 		
 		return userHomeUrl + "UM_Main";
 	}
@@ -31,23 +39,19 @@ public class UserController {
 	@RequestMapping("/customer")
 	public String customer(HttpServletRequest request, User user, Model model) throws Exception {
 		
-		if (userService.setUserClient(user)) {
-			return "redirect:" + "/backoffice/UserManager/UM_Customer";
-		}
-		else {
-			return "error";
-		}
+		List<User> resultClientList = userService.getUserClientList(user);
+		
+		model.addAttribute("uClientList", resultClientList);
+		return userHomeUrl + "UM_Customer";
 	}
 	
 	@RequestMapping("/member")
 	public String member(HttpServletRequest request, User user, Model model) throws Exception {
 		
-		if (userService.setUserManager(user)) {
-			return "redirect:" + "/backoffice/UserManager/UM_Member";
-		}
-		else {
-			return "error";
-		}
+		List<User> resultMemberList = userService.getUserManagerList(user);
+		
+		model.addAttribute("uMemberList", resultMemberList);
+		return userHomeUrl + "UM_Member";
 	}
 	
 	@RequestMapping("/profile")
