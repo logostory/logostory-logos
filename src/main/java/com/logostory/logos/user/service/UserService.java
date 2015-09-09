@@ -1,9 +1,10 @@
-package com.logostory.logos.user.dao;
+package com.logostory.logos.user.service;
 
 import java.util.List;
+
 import com.logostory.logos.user.domain.User;
 
-public interface UserDAO {
+public interface UserService {
 	
 	// client
 	public boolean setUserClient(User user) throws Exception;
@@ -18,5 +19,5 @@ public interface UserDAO {
 	public List<User> getUserManagerList(User user) throws Exception;
 	public boolean updateUserManager(User user) throws Exception;
 	public boolean deleteUserManager(String managerID) throws Exception;
-
+	
 }
