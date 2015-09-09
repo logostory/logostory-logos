@@ -13,7 +13,8 @@ import com.logostory.logos.user.domain.User;
 
 @Repository
 public class UserDAOImpl {
-	
+/*	
 	private static final Logger logger = LoggerFactory.getLogger(UserDAOImpl.class);
 	private static final String MAPPER_NAMESPACE_USER = "logos.user.";
+*/
 }

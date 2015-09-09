@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace = "logos.user">
-
-	<!-- insert user client -->
+<!-- 
+	
 	<insert id = "setUserClient"
 			parameterType ="com.logostory.logos.user.domain.User">
 	
@@ -36,7 +36,7 @@
 	</select>
 	
 	
-	<!-- insert user manager -->
+	
 	<insert id = "setUserManager"
 			parameterType = "com.logostory.logos.user.domain.User">
 			
@@ -60,5 +60,5 @@
 		select * from logos_userManager
 			
 	</select>
-
+-->
 </mapper>

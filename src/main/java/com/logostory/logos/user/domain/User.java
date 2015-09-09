@@ -1,8 +1,6 @@
 package com.logostory.logos.user.domain;
 
-import java.io.Serializable;
-
-public class User implements Serializable{
+public class User {
 
 	// 고객용 백엔드
 	private String clientMembership	= "";
