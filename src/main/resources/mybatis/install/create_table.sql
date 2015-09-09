@@ -18,27 +18,27 @@ create table if not exists logos_promotion(
 );
 
 -- user create table1
-drop table if exists logos_userGuest;
-create table if not exists logos_userGuest(
-	uMembership		int not null auto_increment comment 'user membership',
-	uID				varchar(255) comment 'user ID',
-	uName			varchar(255) comment 'user name',
-	uLevel			int(10) comment 'user level',
-	uTel			varchar(255) comment 'user telephone number',
-	uBooking		char(2)	default 'N',
-	uApproval		char(2) default 'N',
+drop table if exists logos_userClient;
+create table if not exists logos_userClient(
+	clientMembership		int not null auto_increment comment 'client membership',
+	clientID				varchar(255) comment 'client ID',
+	clientName				varchar(255) comment 'client name',
+	clientLevel				char(2) default 'P' comment 'client level',
+	clientTel				varchar(255) comment 'client telephone number',
+	clientBooking			char(2)	default 'N',
+	clientApproval			char(2) default 'N',
 	primary key (uMembership)
 );
 
 -- user create table2
 drop table if exists logos_userManager;
 create table if not exists logos_userManager(
-	uCode			int not null auto_increment comment 'user manager code',
-	uID				varchar(255) comment 'user ID',
-	uName			varchar(255) comment 'user name',
-	uLevel			char(2) comment 'user level',
-	uTel			varchar(255) comment 'user telephone number',
-	uAttendDate		varchar(255) comment 'user AttendDate',
-	uApproval		char(2) default 'N',
+	managerMembership			int not null auto_increment comment 'manager membership',
+	managerID					varchar(255) comment 'manager ID',
+	managerName					varchar(255) comment 'manager name',
+	managerLevel				char(2)  default 'P' comment 'manager level',
+	managerTel					varchar(255) comment 'manager telephone number',
+	managerAttendDate			varchar(255) comment 'manager AttendDate',
+	managerApproval				char(2) default 'N',
 	primary key (uCode)
 );

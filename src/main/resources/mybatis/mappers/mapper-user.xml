@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "logos.user">
+
+	<!-- insert user client -->
+	<insert id = "setUserClient"
+			parameterType ="com.logostory.logos.user.domain.User">
+	
+		insert into logos_userClient (clientID, clientName, clientTel)
+		values (#{clientID}, #{clientName}, #{clientTel})
+			
+	</insert>
+	
+	<select id = "getUserClient"
+			parameterType = "string"
+			resultType = "com.logostory.logos.user.domain.User">
+	
+		select * from logos_userClient where clientID = #{string}
+				
+	</select>
+	
+	<select id = "getUserList"
+			parameterType = "com.logostory.logos.user.domain.User"
+			resultType = "com.logostory.logos.user.domain.User">
+		
+		select * from logos_userClient
+		<where>
+			<if test = "clientID != null and clientID != ''">
+				and clientID = #{clientID}
+			</if>
+			<if test = "clientName != null and clientName != ''">
+				and clientName = #{clientName}
+			</if>
+		</where>
+		
+	</select>
+	
+	
+	<!-- insert user manager -->
+	<insert id = "setUserManager"
+			parameterType = "com.logostory.logos.user.domain.User">
+			
+		insert into logos_userManager (managerID, managerName, managerTel, managerAttendDate)
+		values (#{managerID}, #{managerName}, #{managerTel}, #{managerAttendDate})		
+	
+	</insert>
+	
+	<select id = "getUserManager"
+			parameterType = "string"
+			resultType = "com.logostory.logos.user.domain.User">
+			
+		select * from logos_userManager where managerID = #{string}
+			
+	</select>
+	
+	<select id = "getUserManager"
+			parameterType = "com.logostory.logos.user.domain.User"
+			resultType = "com.logostory.logos.user.domain.User">
+			
+		select * from logos_userManager
+			
+	</select>
+
+</mapper>
