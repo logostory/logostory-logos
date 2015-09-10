@@ -27,7 +27,7 @@ public class PromotionDAOImpl implements PromotionDAO {
 		if (result > 0)
 			return true;
 		else
-			return false;
+			return false;  
 	}
 
 	@Override
