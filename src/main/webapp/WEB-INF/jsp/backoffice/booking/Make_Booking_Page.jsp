@@ -9,7 +9,7 @@
  Author 	: David Sun
 ---------------------------------------------------------------------------------------------------------------%>
 
-<tag:template activeMenu="00">
+<tag:template activeMenu="41">
 
 	<h1 class="page-header">Promotions</h1>
 

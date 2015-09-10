@@ -29,7 +29,7 @@ public class BookingController {
 	BookingService bookingService;
 
 	// 예약 등록페이지 이동- index에서 처리할 것인가?
-	@RequestMapping("Make_Booking_Page")
+	@RequestMapping("/Make_Booking_Page")
 	public String Make_Booking_Page(HttpServletRequest request, Model model) throws Exception {
 
 		return bookingHomeUrl + "Make_Booking_Page";
@@ -37,7 +37,7 @@ public class BookingController {
 	}
 
 	// 예약 등록 insert
-	@RequestMapping("Make_Booking")
+	@RequestMapping("/Make_Booking")
 	public String Make_Booking(HttpServletRequest request, Model model, Booking booking) throws Exception {
 
 		if (bookingService.insertBooking(booking)) {
@@ -52,7 +52,7 @@ public class BookingController {
 	}
 
 	// 예약수정 페이지 이동
-	@RequestMapping("Update_Booking_Page")
+	@RequestMapping("/Update_Booking_Page")
 	public String Update_Booking_Page(HttpServletRequest request, Model model) throws Exception {
 
 		return bookingHomeUrl + "Update_Booking_Page";
@@ -60,7 +60,7 @@ public class BookingController {
 	}
 
 	// 예약수정 update
-	@RequestMapping("Update_Booking")
+	@RequestMapping("/Update_Booking")
 	public String Update_Booking(HttpServletRequest request, Model model, Booking booking) throws Exception {
 
 		if (bookingService.updateBooking(booking)) {
@@ -74,7 +74,7 @@ public class BookingController {
 	}
 
 	// 예약 상세보기 select Bean
-	@RequestMapping("View_Booking")
+	@RequestMapping("/View_Booking")
 	public String View_Booking(HttpServletRequest request, Model model, Booking booking) throws Exception {
 
 		if (bookingService.selectBooking(booking) != null) {
@@ -91,7 +91,7 @@ public class BookingController {
 	}
 
 	// 예약 리스트 select List
-	@RequestMapping("Booking_List")
+	@RequestMapping("/Booking_List")
 	public String Booking_List(HttpServletRequest request, Booking booking, Model model) throws Exception {
 
 		if (bookingService.selectBookingList(booking) != null) {
@@ -108,7 +108,7 @@ public class BookingController {
 
 	}
 
-	@RequestMapping("Booking_Delete")
+	@RequestMapping("/Booking_Delete")
 	public String Booking_Delete(HttpServletRequest request, Booking booking, Model model) throws Exception {
 
 		if (bookingService.deleteBooking(booking)) {
