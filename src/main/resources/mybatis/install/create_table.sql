@@ -22,6 +22,7 @@ drop table if exists logos_userClient;
 create table if not exists logos_userClient(
 	clientMembership		int not null auto_increment comment 'client membership',
 	clientID				varchar(255) comment 'client ID',
+	clientPW				varchar(255) comment 'client PW',
 	clientName				varchar(255) comment 'client name',
 	clientLevel				char(2) default 'P' comment 'client level',
 	clientTel				varchar(255) comment 'client telephone number',
@@ -35,6 +36,7 @@ drop table if exists logos_userManager;
 create table if not exists logos_userManager(
 	managerMembership			int not null auto_increment comment 'manager membership',
 	managerID					varchar(255) comment 'manager ID',
+	managerPW					varchar(255) comment 'manager PW',
 	managerName					varchar(255) comment 'manager name',
 	managerLevel				char(4)  default 'GM' comment 'manager level',
 	managerTel					varchar(255) comment 'manager telephone number',
