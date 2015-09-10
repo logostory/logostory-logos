@@ -11,6 +11,7 @@ public class User {
 	private String clientTel = "";
 	private String clientBooking = "";
 	private String clientApproval = "";
+	private String clientAgreement= "";
 	
 	// 사원용 백엔드
 	private String managerMembership = "";
@@ -21,6 +22,7 @@ public class User {
 	private String managerTel = "";
 	private String managerAttendDate = "";
 	private String managerApproval = "";
+	private String managerAgreement = "";
 	
 	public String getClientMembership() {
 		return clientMembership;
@@ -86,6 +88,14 @@ public class User {
 		this.clientApproval = clientApproval;
 	}
 	
+	public String getClientAgreement() {
+		return clientAgreement;
+	}
+	
+	public void setClientAgreement(String clientAgreement) {
+		this.clientAgreement = clientAgreement;
+	}
+	
 	public String getManagerMembership() {
 		return managerMembership;
 	}
@@ -148,5 +158,13 @@ public class User {
 	
 	public void setManagerApproval(String managerApproval) {
 		this.managerApproval = managerApproval;
-	}	
+	}
+	
+	public String getManagerAgreement() {
+		return managerAgreement;
+	}
+	
+	public void setManagerAgreement(String managerAgreement) {
+		this.managerAgreement = managerAgreement;
+	}
 }
