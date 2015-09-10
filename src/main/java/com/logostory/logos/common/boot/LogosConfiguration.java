@@ -43,6 +43,20 @@ public class LogosConfiguration {
     public HttpMessageConverters customConverters() {
         return new HttpMessageConverters(false, Collections.<HttpMessageConverter<?> >singleton(new MappingJackson2HttpMessageConverter()));
     }
-
+    
+    
+    /*
+HJ -  유용한 설명 by david.sun
+LogosConfiguration 안에 보시면 @Comfiguration이라는 어노테이션이 있는데 
+스프링에 설정이 필요한 부분을 이 어노테이션을 사용해서 추가 합니다.
+web.xml에 많은 설정이 가능한데 일부는 spring boot기본설정에서 처리된거 같고 
+spring 설정 xml을 불러오는건 @ImportResource 를 사용 했구요
+HttpMessageConverter는 RestAPI로 데이터를 리턴할때 json형식으로 convert하기 위해서 사용 했습니다
+@ControllerAdvice 어노테이션은 크로스브라우징 이슈를 제거하고 
+다른 사이트나 파일에서 logos에서 작성될 RestAPI를 정상적으로 호출 가능하게 설정한 부분 입니다ㅋ
+     */
+    
+    
+    
 }
 

@@ -60,6 +60,9 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
   	jdk5에서부터 추가된 어노테이션.
   	상위 클래스에서 오버라이드한 메소드라는 것을 지칭한다.
  */
+
+
+
 @SpringBootApplication
 public class LogosApplicaiton extends SpringBootServletInitializer {
 
