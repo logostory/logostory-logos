@@ -3,61 +3,68 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
 
+<%--------------------------------------------------------------------------------------------------------------
+ Page Name 	: UM_Join.jsp
+ Page Desc. : Join page
+ Page No. 	: 888
+ Author 	: Manoo
+---------------------------------------------------------------------------------------------------------------%>
+
+<!-- 
+	
+	마누 스터디 : 가로형 레이아웃을 사용하는 폼을 생성하는 방법
+		
+	- 부모<form> 요소에 form-horizontal 클래스 추가
+	- 부모<form> 내의 <div>에 form-group 클래스 추가
+	- 원하는 <label>에 control-label 클래스 추가
+		
+	마누 스터디 : button class="btn btn-sm" 에서 btn-sm은 btn-small을 의미.
+			 btn-lg = btn-large
+				 
+			 참고 사이트 : http://demo.bootstrapkr.com/base/kimsq/fully/?c=4/19
+	
+-->
+	 
 <tag:template activeMenu="888">
-<body>
-	<div class="contentwrap">
-	  <article class="container">
-	    <div class="page-header">
-		  <h1>회원가입 <small>일반회원가입</small></h1>
-	    </div>
-	    <form class="form-horizontal">
-	    <div class="form-group">
-	    <label for="inputEmail" class="col-sm-2 control-label">아이디</label>
-	    <div class="col-sm-6">
-	    <input type="email" class="form-control" id="inputEmail" placeholder="이메일">
-	    </div>
-	    </div>
-	    <div class="form-group">
-	    <label for="inputPassword" class="col-sm-2 control-label">비밀번호</label>
-	    <div class="col-sm-6">
-	    <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호">
-	    <p class="help-block">*숫자, 특수문자 포함 8자 이상</p>
-	    </div>
-	    </div>
-	       <div class="form-group">
-	    <label for="inputPasswordCheck" class="col-sm-2 control-label">비밀번호 확인</label>
-	    <div class="col-sm-6">
-	    <input type="password" class="form-control" id="inputPasswordCheck" placeholder="비밀번호 확인">
-	      <p class="help-block">*비밀번호를 한번 더 입력해주세요.</p>
-	    </div>
-	    </div>
-	    <div class="form-group">
-	    <label for="inputName" class="col-sm-2 control-label">이름</label>
-	    <div class="col-sm-6">
-	    <input type="text" class="form-control" id="inputName" placeholder="이름">
-	    </div>
-	    </div>
-	    <div class="form-group">
-	    <label for="inputNumber" class="col-sm-2 control-label">휴대폰번호</label>
-	    <div class="col-sm-4">
-	    <input type="text" class="form-control" id="inputNumber" placeholder="- 없이 적어주세요.">
-	    </div>
-	      <div class="col-sm-2">
-	      <a class="btn btn-default" href="#" role="button">인증번호 전송</a>
-	      </div>
-	    </div>
-	    <div class="form-group">
-	    <label for="inputNumberCheck" class="col-sm-2 control-label">인증번호 확인</label>
-	    <div class="col-sm-6">
-	    <input type="text" class="form-control" id="inputNumberCheck" placeholder="인증번호">
-	    <p class="help-block">*전송된 인증번호를 입력해주세요.</p>
-	    </div>
-	    </div>
-	      <div class="form-group">
-	    <label for="inputAgree" class="col-sm-2 control-label">약관 동의</label>
-	      <div style="overflow:scroll; width:600px; height:300px; padding:10px; background-color:gray;">
-	      <pre>
-	      	제1조(목적)
+
+	<h1>회원가입 <small>일반회원가입</small></h1>
+	<hr>
+	<form class="form-horizontal" method="post" action="<c:url value="/backoffice/UserManager/doJoin"/>">
+		<div class="form-group">
+			<label class="control-label">아이디</label>
+			<input name="clientID" type="text" class="form-control" placeholder="아이디를 입력하세요.">
+			<button type="button" class="btn btn-sm">중복확인</button>
+		</div>
+		<div class="form-group">
+			<label class="control-label">비밀번호</label>
+			<input name="clientPW" type="text" class="form-control" placeholder="*숫자, 특수문자 포함 8자 이상">
+		</div>
+		<div class="form-group">
+			<label class="control-label">비밀번호 확인</label>
+			<input name="clientPWAgain" type="text" class="form-control" placeholder="비밀번호를 한 번 더 입력해주세요.">
+		</div>
+		<div class="form-group">
+			<label class="control-label">이름</label>
+			<input name="clientName" type="text" class="form-control" placeholder="이름을 입력하세요.">
+		</div>
+		<div class="form-group">
+			<label class="control-label">연락처</label>
+			<input name="clientTel" type="text" class="form-control" placeholder="- 빼고 입력하세요.">
+			<button type="button" class="btn btn-sm">인증번호 요청</button>
+		</div>
+		<div class="form-group">
+			<label class="control-label">인증번호</label>
+			<input name="checkTel" type="text" class="form-control" placeholder="전송된 인증번호를 입력하세요.">
+			<button type="button" class="btn btn-sm">인증번호 확인</button>
+		</div>
+		<div class="form-group">
+			<label for="agreement" class="control-label">이용약관</label>
+		</div>
+		<div>
+			<div style="width:720px; height:319px; padding:10px; background-color:gray; float:center;">
+				<div style="width:700px; height:300px; overflow:scroll; overflow-x:hidden;">
+				<pre>
+제1조(목적)
 
 이 이용약관(이하 '약관')은 주식회사 OOO(이하 회사라 합니다)와 이용 고객(이하 '회원')간에 회사가 제공하는 서비스의 가입조건 및 이용에 관한 제반 사항과 기타 필요한 사항을 구체적으로 규정함을 목적으로 합니다. 
 
@@ -231,22 +238,16 @@
 ③ 서비스 이용으로 발생한 분쟁에 대해 소송이 제기되는 경우 회사의 본사 소재지를 관할하는 법원을 관할 법원으로 합니다.
 
 이 약관은 OOOO년 OO월 OO일부터 시행합니다.
-	      </pre>
-	      </div>
-	     <div class="col-sm-6 checkbox">
-	      <label>
-	        <input id="agree" type="checkbox">이용약관에 동의합니다.
-	    </label>
-	    </div>
-	    </div>
-	    <div class="form-group">
-	    <label for="inputName" class="col-sm-2 control-label"></label>
-	    <div class="col-sm-6">
-	      <button type="submit" class="btn btn-primary">회원가입</button>
-	    </div>
-	    </div>
-	    </form>
-	  </article>
-	</div>
-</body>
+		      	</pre>
+		      	</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<input type="checkbox" id="agree">이용약관에 동의합니다.
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-sm">가입하기</button>
+			<button type="button" class="btn btn-sm">가입취소</button>
+		</div>
+	</form>
 </tag:template>

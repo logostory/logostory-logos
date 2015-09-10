@@ -5,6 +5,7 @@ public class User {
 	// 고객용 백엔드
 	private String clientMembership	= "";
 	private String clientID = "";
+	private String clientPW = "";
 	private String clientName = "";
 	private String clientLevel = "";
 	private String clientTel = "";
@@ -14,6 +15,7 @@ public class User {
 	// 사원용 백엔드
 	private String managerMembership = "";
 	private String managerID = "";
+	private String managerPW = "";
 	private String managerName = "";
 	private String managerLevel = "";
 	private String managerTel = "";
@@ -34,6 +36,14 @@ public class User {
 	
 	public void setClientID(String clientID) {
 		this.clientID = clientID;
+	}
+	
+	public String getClientPW() {
+		return clientPW;
+	}
+	
+	public void setClientPW(String clientPW) {
+		this.clientPW = clientPW;
 	}
 	
 	public String getClientName() {
@@ -90,6 +100,14 @@ public class User {
 	
 	public void setManagerID(String managerID) {
 		this.managerID = managerID;
+	}
+	
+	public String getManagerPW() {
+		return managerPW;
+	}
+	
+	public void setManagerPW(String managerPW) {
+		this.managerPW = managerPW;
 	}
 	
 	public String getManagerName() {

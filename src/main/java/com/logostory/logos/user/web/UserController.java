@@ -60,8 +60,20 @@ public class UserController {
 	}
 
 	@RequestMapping("/join")
-	public String join(HttpServletRequest request, Model model) throws Exception {
+	public String join(HttpServletRequest request, Model model) throws Exception {		
 		return userHomeUrl + "UM_Join";
+	}
+	
+	@RequestMapping("/doJoin")
+	public String doJoin(HttpServletRequest request, User user, Model model) throws Exception {
+		
+		if(userService.setUserClient(user)) {
+			// 우선 샘플페이지가 없으니까 메인으로 이동시키기.
+			return "redirect:" + "/backoffice/UserManager/main";
+		}
+		else {
+			return "error";
+		}
 	}
 	
 	@RequestMapping("/login")
