@@ -28,8 +28,7 @@
   </ul>
   <ul class="nav nav-sidebar">
   	<li class="dropdown-header">Booking</li>
-    <li data-menu-no="40"><a href="#">Nav item again</a></li>
-    <li data-menu-no="41"><a href="#">One more nav</a></li>
-    <li data-menu-no="51"><a href="#">Another nav item</a></li>
+    <li data-menu-no="40"><a href="<c:url value="/backoffice/booking/Make_Booking_Page"/>">Add new booking</a></li>
+    <li data-menu-no="41"><a href="<c:url value="/backoffice/booking/Booking_List"/>">Booking list</a></li>
   </ul>
 </div>

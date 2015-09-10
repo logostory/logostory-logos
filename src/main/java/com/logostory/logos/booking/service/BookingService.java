@@ -3,7 +3,6 @@ package com.logostory.logos.booking.service;
 import java.util.List;
 
 import com.logostory.logos.booking.domain.Booking;
-import com.logostory.logos.promote.domain.Promotion;
 
 /*
 
@@ -20,18 +19,7 @@ DAO호출, 예약 CRUD -먼저
 */
 public interface BookingService {
 
-	
-/*	public boolean setPromotion(Promotion promotion) throws Exception;
-	
-	public Promotion getPromotion(String promotionId) throws Exception;
-	
-	public List<Promotion> getPromotionList(Promotion promotion) throws Exception;
-	
-	public boolean updatePromotion(Promotion promotion) throws Exception;
-	
-	public boolean deletePromotion(String promotionId) throws Exception;
-	*/
-	
+
 	
 	public boolean insertBooking(Booking booking) throws Exception; //예약 등록 로직 호출 - insert
 	

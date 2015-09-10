@@ -22,12 +22,12 @@ public class Booking implements Serializable{
 	//구상중
 	//private String bkId 		= ""; //예약자 ID
 	
+	private int bkNum			= 0;  //예약 번호
 	private String bkName		= ""; //예약자 이름 * 'if user exist, it is id(user)'
 	private String bkEmail 		= ""; //예약자 이메일
 	private String bkPhone 		= ""; //예약자 핸드폰번호
 	private String bkPerson 	= ""; //예약자 명수
 	private String bkMessage 	= ""; //예약자 메세지
-	
 	
 	/*
 	구상중
@@ -39,6 +39,12 @@ public class Booking implements Serializable{
 	}*/
 	
 	
+	public int getBkNum() {
+		return bkNum;
+	}
+	public void setBkNum(int bkNum) {
+		this.bkNum = bkNum;
+	}
 	public String getBkName() {
 		return bkName;
 	}
