@@ -5,7 +5,7 @@
 	
 	<!-- 예약등록 insert booking -->
 	<insert id="insertBooking" 
-			parameterType="com.logostory.logos.booking.domain.Bookinng">		
+			parameterType="com.logostory.logos.booking.domain.Booking">		
 		insert into logos_booking ( bkName, bkEmail, bkPhone, bkPerson, bkMessage ) 
 		values ( #{bkName}, #{bkEmail}, #{bkPhone}, #{bkPerson}, #{bkMessage} )	
 	</insert>
