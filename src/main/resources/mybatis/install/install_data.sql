@@ -43,3 +43,26 @@ insert into logos_userManager(managerID, managerPW, managerName, managerLevel, m
 insert into logos_userManager(managerID, managerPW, managerName, managerLevel, managerTel, managerAttendDate, managerApproval) values ('manager6', '0000', '매니저6번', 'TM', '010-zzzz-zzz6', '2015-09-06', 'N');
 insert into logos_userManager(managerID, managerPW, managerName, managerLevel, managerTel, managerAttendDate, managerApproval) values ('manager7', '0000', '매니저7번', 'B', '010-zzzz-zzz7', '2015-09-07', 'N');
 
+
+-- delete seq, booking
+delete from logos_booking;
+insert into logos_booking(bkName, bkEmail, bkPhone, bkPerson, bkMessage) values
+('Iam', 'logos@mail.com', '010-1234-5678', '3', '커피는 맛있게...');
+insert into logos_booking(bkName, bkEmail, bkPhone, bkPerson, bkMessage) values
+('Iam', 'logos@mail.com', '010-1234-5678', '3', '커피는 맛있게...');
+insert into logos_booking(bkName, bkEmail, bkPhone, bkPerson, bkMessage) values
+('Iam', 'logos@mail.com', '010-1234-5678', '3', '커피는 맛있게...');
+insert into logos_booking(bkName, bkEmail, bkPhone, bkPerson, bkMessage) values
+('Iam', 'logos@mail.com', '010-1234-5678', '3', '커피는 맛있게...');
+insert into logos_booking(bkName, bkEmail, bkPhone, bkPerson, bkMessage) values
+('Iam', 'logos@mail.com', '010-1234-5678', '3', '커피는 맛있게...');
+insert into logos_booking(bkName, bkEmail, bkPhone, bkPerson, bkMessage) values
+('Iam', 'logos@mail.com', '010-1234-5678', '3', '커피는 맛있게...');
+insert into logos_booking(bkName, bkEmail, bkPhone, bkPerson, bkMessage) values
+('Iam', 'logos@mail.com', '010-1234-5678', '3', '커피는 맛있게...');
+insert into logos_booking(bkName, bkEmail, bkPhone, bkPerson, bkMessage) values
+('Iam', 'logos@mail.com', '010-1234-5678', '3', '커피는 맛있게...');
+insert into logos_booking(bkName, bkEmail, bkPhone, bkPerson, bkMessage) values
+('Iam', 'logos@mail.com', '010-1234-5678', '3', '커피는 맛있게...');
+insert into logos_booking(bkName, bkEmail, bkPhone, bkPerson, bkMessage) values
+('Iam', 'logos@mail.com', '010-1234-5678', '3', '커피는 맛있게...');
