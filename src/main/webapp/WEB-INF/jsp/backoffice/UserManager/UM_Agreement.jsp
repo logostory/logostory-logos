@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,6 +7,6 @@
 <title>Agreement</title>
 </head>
 <body>
-<p>юл╟мю╨ юл©К ╬Ю╟Э фДюлаЖ ют╢о╢ы. гогогого !</p>
+<p>Л²╢Й╡┐Л²─ Л²╢Л ╘ Л∙╫Й╢─ М▌≤Л²╢Л╖─ Л·┘К▀┬К▀╓. М∙≤М∙≤М∙≤М∙≤ !</p>
 </body>
 </html>

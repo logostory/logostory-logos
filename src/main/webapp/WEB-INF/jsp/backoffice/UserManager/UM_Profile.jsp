@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ taglib prefix="c" 	uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
 
@@ -16,11 +16,11 @@
             </div>
             <!--/col--> 
             <div class="col-xs-12 col-sm-8">
-              <h2>¿©±â´Â ÀÌ¸§ÀÌ~~</h2>
+              <h2>ì—¬ê¸°ëŠ” ì´ë¦„ì´~~</h2>
               <br><br>
               <p><strong>Level: </strong> Platinum Star </p>
-              <p><strong>¿¬¶ôÃ³: </strong> 010-xxxx-xxxx </p>
-              <p><strong>¿¹¾à ¿©ºÎ: </strong> ¿¹¾à ³»¿ë ¾øÀ½ </p>
+              <p><strong>ì—°ë½ì²˜: </strong> 010-xxxx-xxxx </p>
+              <p><strong>ì˜ˆì•½ ì—¬ë¶€: </strong> ì˜ˆì•½ ë‚´ìš© ì—†ìŒ </p>
            <!--    <p><strong>Skills: </strong>
                 <span class="label label-info tags">html5</span> 
                 <span class="label label-info tags">css3</span>
