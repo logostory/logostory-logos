@@ -50,7 +50,7 @@ public class BookingCRUDTest {
 	@Before
 	public void before() throws Exception {
 		booking = new Booking();
-		booking.setBkName("이름은?");
+		booking.setBkName("name");
 		booking.setBkEmail("bkEmail");
 		booking.setBkPhone("bkPhone");
 		booking.setBkPerson("bkPerson");
@@ -58,19 +58,6 @@ public class BookingCRUDTest {
 		bookingSercice.insertBooking(booking);
 	}
 
-	@Test
-	public void deleteBookingTest() throws Exception {
-
-		if (bookingSercice.insertBooking(booking)) {
-
-			Booking Delbook = bookingSercice.selectBookingList(booking).get(0);
-			logger.debug("bookingNumber : " + Delbook.getBkNum());
-			assertTrue(bookingSercice.deleteBooking(Delbook)); // assertTrue =
-																// true 혹은
-																// false를 돌려줌
-
-		}
-	}
 
 	@Test
 	public void insertBookingTest() throws Exception {
@@ -82,6 +69,20 @@ public class BookingCRUDTest {
 		}
 	}
 
+	@Test
+	public void deleteBookingTest() throws Exception {
+		
+		if (bookingSercice.insertBooking(booking)) {
+			
+			Booking Delbook = bookingSercice.selectBookingList(booking).get(0);
+			logger.debug("bookingNumber : " + Delbook.getBkNum());
+			assertTrue(bookingSercice.deleteBooking(Delbook)); // assertTrue =
+																// true 혹은
+																// false를 돌려줌
+			
+		}
+	}
+	
 	@Test
 	public void updateBookingTest() throws Exception {
 
