@@ -12,7 +12,7 @@
 	
 	<select id="getPromotion" parameterType="string"
 			resultType="com.logostory.logos.promote.domain.Promotion">
-		select * from logos_promotion where pmId = #{string}
+		select * from logos_promotion where id = #{string}
 	</select>
 	
 	<select id="getPromotionList" 
@@ -21,8 +21,8 @@
 			
 		select * from logos_promotion
 		<where>
-			<if test="pmId != null and pmId != ''">
-				and pmId = #{pmId}
+			<if test="id != null and id != ''">
+				and id = #{id}
 			</if>
 			<if test="pmTitle != null and pmTitle != ''">
 				and pmTitle like '%${pmTitle}%'
@@ -66,11 +66,11 @@
 				pmIsActive = #{pmIsActive}, 
 			</if>
 		</set>	
-		where pmId = #{pmId}
+		where id = #{id}
 	</update>
 	
 	<delete id="deletePromotion" parameterType="string">
-		delete from logos_promotion where pmId = #{string}
+		delete from logos_promotion where id = #{id}
 	</delete>
 
  

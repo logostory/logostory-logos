@@ -2,58 +2,94 @@ package com.logostory.logos.promote.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "LOGOS_JPA_PROMOTION")
 public class Promotion implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	private String pmId 		= "";
-	private String pmType		= "";
-	private String pmTitle 		= "";
-	private String pmContents 	= "";
-	private String pmImageUrl 	= "";
-	private String pmLinkurl 	= "";
-	private String pmIsActive		= "";
+	@Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private long id;
 	
-	public String getPmId() {
-		return pmId;
+	@Column(name = "PM_TYPE")
+	private String pmType		= "";
+	
+	@Column(name = "PM_TITLE")
+	private String pmTitle 		= "";
+	
+	@Column(name = "PM_CONTENTS")
+	private String pmContents 	= "";
+	
+	@Column(name = "PM_IMG_URL")
+	private String pmImageUrl 	= "";
+	
+	@Column(name = "PM_LINK_URL")
+	private String pmLinkurl 	= "";
+	
+	@Column(name = "PM_IS_ACTIVE")
+	boolean  pmIsActive		= false;
+
+	public long getId() {
+		return id;
 	}
-	public void setPmId(String pmId) {
-		this.pmId = pmId;
+
+	public void setId(long id) {
+		this.id = id;
 	}
+
 	public String getPmType() {
 		return pmType;
 	}
+
 	public void setPmType(String pmType) {
 		this.pmType = pmType;
 	}
+
 	public String getPmTitle() {
 		return pmTitle;
 	}
+
 	public void setPmTitle(String pmTitle) {
 		this.pmTitle = pmTitle;
 	}
+
 	public String getPmContents() {
 		return pmContents;
 	}
+
 	public void setPmContents(String pmContents) {
 		this.pmContents = pmContents;
 	}
+
 	public String getPmImageUrl() {
 		return pmImageUrl;
 	}
+
 	public void setPmImageUrl(String pmImageUrl) {
 		this.pmImageUrl = pmImageUrl;
 	}
+
 	public String getPmLinkurl() {
 		return pmLinkurl;
 	}
+
 	public void setPmLinkurl(String pmLinkurl) {
 		this.pmLinkurl = pmLinkurl;
 	}
-	public String getPmIsActive() {
+
+	public boolean isPmIsActive() {
 		return pmIsActive;
 	}
-	public void setPmIsActive(String pmIsActive) {
+
+	public void setPmIsActive(boolean pmIsActive) {
 		this.pmIsActive = pmIsActive;
 	}
 }

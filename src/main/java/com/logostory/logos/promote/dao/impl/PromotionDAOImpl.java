@@ -31,7 +31,7 @@ public class PromotionDAOImpl implements PromotionDAO {
 	}
 
 	@Override
-	public Promotion getPromotion(String promotionId) throws Exception {
+	public Promotion getPromotion(Long promotionId) throws Exception {
 
 		Promotion resultPromotion = sqlSessionTemplate.selectOne(MAPPER_NAMESPACE_PROMOTION + "getPromotion",
 				promotionId);
@@ -59,7 +59,7 @@ public class PromotionDAOImpl implements PromotionDAO {
 	}
 
 	@Override
-	public boolean deletePromotion(String promotionId) throws Exception {
+	public boolean deletePromotion(Long promotionId) throws Exception {
 
 		int result = sqlSessionTemplate.delete(MAPPER_NAMESPACE_PROMOTION + "deletePromotion", promotionId);
 		if (result > 0)
