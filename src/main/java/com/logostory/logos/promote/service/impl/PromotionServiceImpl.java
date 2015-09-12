@@ -22,7 +22,7 @@ public class PromotionServiceImpl implements PromotionService {
 	}
 
 	@Override
-	public Promotion getPromotion(String promotionId) throws Exception {
+	public Promotion getPromotion(Long promotionId) throws Exception {
 		return promotionDAO.getPromotion(promotionId);
 	}
 
@@ -37,7 +37,7 @@ public class PromotionServiceImpl implements PromotionService {
 	}
 
 	@Override
-	public boolean deletePromotion(String promotionId) throws Exception {
+	public boolean deletePromotion(Long promotionId) throws Exception {
 		return promotionDAO.deletePromotion(promotionId);
 	}
 }

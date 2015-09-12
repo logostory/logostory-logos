@@ -31,7 +31,7 @@ public class PromotionAPI {
 
 	@RequestMapping(value = "/promotions/{promotionId}", method = RequestMethod.GET)
 	public Promotion getPromotion(@PathVariable String promotionId) throws Exception {
-		return promotionService.getPromotion(promotionId);
+		return promotionService.getPromotion(Long.getLong(promotionId));
 	}
 
 	@RequestMapping(value = "/promotions", method = RequestMethod.GET)
@@ -50,7 +50,7 @@ public class PromotionAPI {
 
 	@RequestMapping(value = "/promotions/{promotionId}", method = RequestMethod.DELETE)
 	public String deletePromotion(@PathVariable String promotionId) throws Exception{
-		if(promotionService.deletePromotion(promotionId)){
+		if(promotionService.deletePromotion(Long.getLong(promotionId))){
 			return "200";
 		}else{
 			return "500";

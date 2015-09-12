@@ -29,6 +29,7 @@
 	
 	<properties>
 	    <java.version>1.8</java.version>
+	    <querydsl.version>3.6.7</querydsl.version>
 	</properties>
 		
 	<dependencies>
@@ -36,6 +37,14 @@
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-web</artifactId>
 	    </dependency>
+	    
+	    <!-- jap lib -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!-- //jap lib -->
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -55,6 +64,7 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -87,6 +97,19 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		
+		<dependency>
+		  <groupId>com.mysema.querydsl</groupId>
+		  <artifactId>querydsl-apt</artifactId>
+		  <version>${querydsl.version}</version>
+		  <scope>provided</scope>
+		</dependency>    
+		    
+		<dependency>
+		  <groupId>com.mysema.querydsl</groupId>
+		  <artifactId>querydsl-jpa</artifactId>
+		  <version>${querydsl.version}</version>
+		</dependency>
 				
 	</dependencies>
 	
@@ -97,6 +120,23 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			<plugin>
+		      <groupId>com.mysema.maven</groupId>
+		      <artifactId>apt-maven-plugin</artifactId>
+		      <version>1.0.9</version>
+		      <executions>
+		        <execution>
+		          <goals>
+		            <goal>process</goal>
+		          </goals>
+		          <configuration>
+		            <outputDirectory>target/generated-sources/java</outputDirectory>
+		            <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+		          </configuration>
+		        </execution>
+		      </executions>
+		    </plugin>
 		</plugins>
 	</build>
 </project>
