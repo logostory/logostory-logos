@@ -1,4 +1,4 @@
-package com.logostory.logs.promotion;
+/*package com.logostory.logs.promotion;
 
 import java.util.List;
 
@@ -53,3 +53,4 @@ public class PromotionRepositoryTest {
 	}
 
 }
+*/
