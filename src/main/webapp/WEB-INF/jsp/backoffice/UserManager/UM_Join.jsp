@@ -23,6 +23,12 @@
 				 
 			 참고 사이트 : http://demo.bootstrapkr.com/base/kimsq/fully/?c=4/19
 	
+	마누 스터디 : 이용약관동의 관련 참조사이트 : http://www.dotnetkorea.com/DotNetNote/BoardView?BoardName=ClientScript&Num=228
+	
+	마누 스터디 : 아이디 중복 확인 참조할 예정인 사이트 : http://chs02.tistory.com/26
+	
+	마누 스터디 : 자바스크립트 유효성 검사 참조한 사이트 : http://shonm.tistory.com/category/JAVASCRIPT/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85%20%EC%9C%A0%ED%9A%A8%EC%84%B1%20%EA%B2%80%EC%82%AC
+	
 -->
 
 <script language="javascript" type="text/javascript">
@@ -39,6 +45,45 @@
 		}
 	}
 	
+	function idCheck() {
+		var idCheck = document.getElementById("writeID");
+		
+		
+		
+		for (i=0; i<idCheck.value.length; i++) {
+			ch = idCheck.value.charAt(i)
+			
+			if (idCheck.value == "") {
+				window.alert('아이디를 입력해주세요.');
+				idCheck.focus();
+				return false;
+			}
+			
+			else if(!(ch>='0' && ch <='9') && !(ch>='a' && ch<='z')) {
+				alert('아이디는 소문자, 숫자만 입력 가능합니다.');
+				idCheck.focus();
+				return false;
+			}
+		
+			else if (idCheck.value.indexOf(" ") >= 0) {
+				alert('아이디에 공백을 사용할 수 없습니다.');
+				idCheck.focus();
+				return false;
+			}
+			
+			else if (idCheck.value.length<6 || idCheck.value.length>12) {
+				alert('아이디는 6자 이상 12자 미만으로 설정해주세요.');
+				idCheck.focus();
+				return false;
+			}
+			
+			else {
+				alert('사용 가능합니다.');
+				return true;
+			}
+		}
+	}
+	
 </script>
 	 
 <tag:template activeMenu="888">
@@ -48,8 +93,8 @@
 	<form name="joinform" class="form-horizontal" method="post" action="<c:url value="/backoffice/UserManager/doJoin"/>">
 		<div class="form-group">
 			<label class="control-label">아이디</label>
-			<input name="clientID" type="text" class="form-control" placeholder="아이디를 입력하세요.">
-			<button type="button" class="btn btn-sm">중복확인</button>
+			<input name="clientID" type="text" class="form-control" id="writeID" placeholder="아이디를 입력하세요.">
+			<button type="button" class="btn btn-sm" onclick="idCheck()">중복확인</button>
 		</div>
 		<div class="form-group">
 			<label class="control-label">비밀번호</label>
