@@ -25,9 +25,20 @@
 	
 -->
 
-<script>
-	
+<script language="javascript" type="text/javascript">
 
+	function Agreement() {
+		var agreeCheck = document.getElementById("agreement");
+		
+		if (agreeCheck.checked == true){
+			location.href = "<c:url value="/backoffice/UserManager/doJoin"/>";
+		}
+		else {
+			window.alert('약관에 동의하셔야 합니다.');
+			return false;
+		}
+	}
+	
 </script>
 	 
 <tag:template activeMenu="888">
@@ -254,7 +265,7 @@
 		</div>
 		<div style="margin-left:150px">
 			<div class="form-group">
-				<button type="submit" class="btn btn-lg">가입하기</button>
+				<button type="submit" class="btn btn-lg" onclick="Agreement()">가입하기</button>
 				<button type="button" class="btn btn-lg">가입취소</button>
 			</div>
 		</div>
