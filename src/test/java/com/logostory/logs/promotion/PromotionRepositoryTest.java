@@ -1,5 +1,5 @@
 package com.logostory.logs.promotion;
-
+/*
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -53,3 +53,4 @@ public class PromotionRepositoryTest {
 	}
 
 }
+*/
