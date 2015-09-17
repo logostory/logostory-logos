@@ -29,7 +29,9 @@
 	
 	마누 스터디 : 자바스크립트 유효성 검사 참조한 사이트 : http://shonm.tistory.com/category/JAVASCRIPT/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85%20%EC%9C%A0%ED%9A%A8%EC%84%B1%20%EA%B2%80%EC%82%AC
 	
-	마누스터디 : 약관동의에서 submit() 구분하는법 참조한 사이트 : http://okky.kr/article/163377
+	마누 스터디 : 약관동의에서 submit() 구분하는법 참조한 사이트 : http://okky.kr/article/163377
+	
+	마누 스터디 : 연락처 입력란에 숫자 이외에 입력 불가 및 최대 11자 제한설정 참조한 사이트 : http://javakorean.com/?p=2371
 	
 -->
 
@@ -129,6 +131,18 @@
 		}
 	}
 	
+	function onlyNumberInput() {
+		var code = window.event.keyCode;
+		
+		if ((code>34 && code<41) || (code>47 && code<58) || (code>95 && code<106) || code==8 || code==9 || code==13 || code==46) {
+			window.event.returnValue = true;
+			return;
+		}
+		else {
+			window.event.returnValue=false;
+		}
+	}
+	
 </script>
 	 
 <tag:template activeMenu="888">
@@ -155,7 +169,7 @@
 		</div>
 		<div class="form-group">
 			<label class="control-label">연락처</label>
-			<input name="clientTel" type="text" class="form-control" id="writePhone" placeholder="- 빼고 입력하세요.">
+			<input name="clientTel" type="text" class="form-control" id="writePhone" maxlength="11" onKeyDown="javascript:onlyNumberInput()" style='IME-MODE:disabled' placeholder="- 빼고 입력하세요.">
 			<button type="button" class="btn btn-sm">인증번호 요청</button>
 		</div>
 		<div class="form-group">
