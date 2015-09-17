@@ -18,7 +18,7 @@ public class Promotion implements Serializable{
 		return pmId;
 	}
 	public void setPmId(String pmId) {
-		this.pmId = pmId;
+		this.pmId = pmId;	
 	}
 	public String getPmType() {
 		return pmType;

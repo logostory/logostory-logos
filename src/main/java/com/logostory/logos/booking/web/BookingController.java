@@ -20,6 +20,7 @@ import com.logostory.logos.booking.service.BookingService;
 @Controller
 public class BookingController {
 
+
 	private static final Logger logger = LoggerFactory.getLogger(BookingController.class);
 	private static final String bookingHomeUrl = "backoffice/booking/";
 
@@ -123,12 +124,3 @@ public class BookingController {
 	}
 
 }
-
-/*
- * @RequestMapping("/list") public String list(HttpServletRequest request,
- * Promotion promotion, Model model) throws Exception {
- * 
- * List<Promotion> resultList = promotionService.getPromotionList(promotion);
- * 
- * model.addAttribute("pList", resultList); return promotionHomeUrl + "list"; }
- */
