@@ -6,12 +6,14 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import com.logostory.logos.promote.dao.PromotionDAO;
 import com.logostory.logos.promote.domain.Promotion;
 
-@Repository
+@Repository("promotionDAO")
 public class PromotionDAOImpl implements PromotionDAO {
 
 	private static final Logger logger = LoggerFactory.getLogger(PromotionDAOImpl.class);
@@ -66,5 +68,11 @@ public class PromotionDAOImpl implements PromotionDAO {
 			return true;
 		else
 			return false;
+	}
+
+	@Override
+	public Page<Promotion> getPromotionPage(Promotion promotion, Pageable pageable) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

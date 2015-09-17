@@ -7,6 +7,8 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import com.logostory.logos.promote.domain.Promotion;
 
 public interface PromotionRepository
-		extends QueryDslPredicateExecutor<Promotion>, JpaRepository<Promotion, Long>, PagingAndSortingRepository<Promotion, Long> {
+		extends QueryDslPredicateExecutor<Promotion>, 
+		JpaRepository<Promotion, Long>,  
+		PagingAndSortingRepository<Promotion, Long>{
 
 }
