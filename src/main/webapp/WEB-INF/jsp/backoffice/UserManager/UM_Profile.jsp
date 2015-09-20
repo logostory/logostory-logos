@@ -12,7 +12,7 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-xs-12 col-sm-4 text-center">
-              <img src="http://api.randomuser.me/portraits/women/21.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
+              <img src="http://png.clipart.me/graphics/previews/154/green-tree-round-icon-vector-illustration_154612604.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
             </div>
             <!--/col--> 
             <div class="col-xs-12 col-sm-8">

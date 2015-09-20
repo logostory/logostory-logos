@@ -19,17 +19,17 @@
 
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="General Member Image">
+              <img src="http://images.vectorhq.com/images/previews/1cb/person-icon-118181.png" width="200" height="200" class="img-responsive" alt="General Member Image">
               <h4>General Member</h4>
               <span class="text-muted">혜택 설명</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Team Manager Image">
+              <img src="http://images.vectorhq.com/images/previews/1cb/person-icon-118181.png" width="200" height="200" class="img-responsive" alt="Team Manager Image">
               <h4>Team Manager</h4>
               <span class="text-muted">혜택 나열</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Boss Image">
+              <img src="http://images.vectorhq.com/images/previews/1cb/person-icon-118181.png" width="200" height="200" class="img-responsive" alt="Boss Image">
               <h4>Boss</h4>
               <span class="text-muted">혜택 나열</span>
             </div>

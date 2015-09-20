@@ -71,7 +71,8 @@ public class UserController {
 		
 		if(userService.setUserClient(user)) {
 			// 우선 샘플페이지가 없으니까 메인으로 이동시키기.
-			return "redirect:" + "/backoffice/UserManager/main";
+//			return "redirect:" + "/backoffice/UserManager/UM_DoJoin";
+			return userHomeUrl + "UM_DoJoin";
 		}
 		else {
 			return "error";
