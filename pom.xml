@@ -126,7 +126,7 @@
 		      <artifactId>apt-maven-plugin</artifactId>
 		      <version>1.0.9</version>
 		      <executions>
-		        <!-- <execution>
+		         <execution>
 		          <goals>
 		            <goal>process</goal>
 		          </goals>
@@ -134,7 +134,7 @@
 		            <outputDirectory>target/generated-sources/java</outputDirectory>
 		            <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
 		          </configuration>
-		        </execution> -->
+		        </execution>
 		      </executions>
 		    </plugin>
 		</plugins>
