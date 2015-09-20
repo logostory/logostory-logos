@@ -2,6 +2,9 @@ package com.logostory.logos.promote.dao;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.logostory.logos.promote.domain.Promotion;
 
 public interface PromotionDAO {
@@ -15,5 +18,7 @@ public interface PromotionDAO {
 	public boolean updatePromotion(Promotion promotion) throws Exception;
 	
 	public boolean deletePromotion(Long promotionId) throws Exception;
+	
+	public Page<Promotion> getPromotionPage(Promotion promotion, Pageable pageable) throws Exception;
 
 }

@@ -9,8 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Proxy;
+
 @Entity
 @Table(name = "LOGOS_JPA_PROMOTION")
+@Proxy(lazy = false)
 public class Promotion implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -91,5 +94,11 @@ public class Promotion implements Serializable{
 
 	public void setPmIsActive(boolean pmIsActive) {
 		this.pmIsActive = pmIsActive;
+	}
+
+	@Override
+	public String toString() {
+		return "Promotion [id=" + id + ", pmType=" + pmType + ", pmTitle=" + pmTitle + ", pmContents=" + pmContents
+				+ ", pmImageUrl=" + pmImageUrl + ", pmLinkurl=" + pmLinkurl + ", pmIsActive=" + pmIsActive + "]";
 	}
 }
