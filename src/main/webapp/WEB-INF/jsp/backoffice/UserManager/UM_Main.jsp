@@ -27,17 +27,17 @@
           
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="General Member Image">
+              <img src="http://images.vectorhq.com/images/previews/1cb/person-icon-118181.png" width="200" height="200" class="img-responsive" alt="General Member Image">
               <h4>General Member</h4>
               <span class="text-muted">혜택 설명</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Team Manager Image">
+              <img src="http://images.vectorhq.com/images/previews/1cb/person-icon-118181.png" width="200" height="200" class="img-responsive" alt="Team Manager Image">
               <h4>Team Manager</h4>
               <span class="text-muted">혜택 나열</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Boss Image">
+              <img src="http://images.vectorhq.com/images/previews/1cb/person-icon-118181.png" width="200" height="200" class="img-responsive" alt="Boss Image">
               <h4>Boss</h4>
               <span class="text-muted">혜택 나열</span>
             </div>
@@ -45,22 +45,22 @@
 
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Platinum Star Image">
+              <img src="http://www.yourpokerdream.com/images/promotions/platinum.png" width="200" height="200" class="img-responsive" alt="Platinum Star Image">
               <h4>Platinum Star</h4>
               <span class="text-muted">혜택 설명</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Bronze Star Image">
+              <img src="http://abbot.us/DD629/official/star_bronze.gif" width="200" height="200" class="img-responsive" alt="Bronze Star Image">
               <h4>Bronze Star</h4>
               <span class="text-muted">혜택 나열</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Silver Star Image">
+              <img src="http://1.bp.blogspot.com/-WcF9icqE4Jo/Ts6RPzKl_3I/AAAAAAAAATM/iHytco7K1Jk/s1600/Silver_star.png" width="200" height="200" class="img-responsive" alt="Silver Star Image">
               <h4>Silver Star</h4>
               <span class="text-muted">혜택 나열</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Gold Star Image">
+              <img src="http://cliparts.co/cliparts/8TG/aok/8TGaokzTa.png" width="200" height="200" class="img-responsive" alt="Gold Star Image">
               <h4>Gold Star</h4>
               <span class="text-muted">혜택 나열</span>
             </div>

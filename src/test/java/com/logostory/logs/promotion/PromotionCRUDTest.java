@@ -47,7 +47,7 @@ public class PromotionCRUDTest {
 	public void deletePromotionTest() throws Exception {
 		
 		if(promotionService.getPromotionList(promotion).size() == 1){
-			String promotionId = promotionService.getPromotionList(promotion).get(0).getPmId();
+			Long promotionId = promotionService.getPromotionList(promotion).get(0).getId();
 			logger.debug("promotion Id: " + promotionId);
 			assertTrue(promotionService.deletePromotion(promotionId));
 		}
