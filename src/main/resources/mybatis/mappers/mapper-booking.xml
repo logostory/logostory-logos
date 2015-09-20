@@ -30,9 +30,6 @@
 			<if test="bkPerson != null and bkPerson != ''">
 				bkPerson = #{bkPerson}, 
 			</if>
-			<if test="bkMessage != null and bkMessage != ''">
-				pmLinkurl = #{pmLinkurl}, 
-			</if>
 		
 		</set>	
 		where bkNum = #{bkNum}
@@ -76,7 +73,7 @@
 	
 	<!-- 예약 삭제 delete booking -->
 	<delete id="deleteBooking" parameterType="com.logostory.logos.booking.domain.Booking">
-		delete from logos_promotion where bkNum = #{bkNum}
+		delete from logos_booking where bkNum = #{bkNum}
 	</delete>
 
  

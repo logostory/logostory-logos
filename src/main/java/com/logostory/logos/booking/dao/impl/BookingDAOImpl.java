@@ -15,7 +15,7 @@ import com.logostory.logos.booking.domain.Booking;
 public class BookingDAOImpl implements BookingDAO {
 
 	private static final Logger logger = LoggerFactory.getLogger(BookingDAOImpl.class);
-	private static final String MAPPER_NAMESPACE_BOOKING = "logos.bookong.";
+	private static final String MAPPER_NAMESPACE_BOOKING = "logos.booking.";
 
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;

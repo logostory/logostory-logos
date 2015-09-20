@@ -22,7 +22,7 @@ public class Booking implements Serializable{
 	//구상중
 	//private String bkId 		= ""; //예약자 ID
 	
-	private int bkNum			= 1;  //예약 번호
+	private int bkNum;
 	private String bkName		= ""; //예약자 이름 * 'if user exist, it is id(user)'
 	private String bkEmail 		= ""; //예약자 이메일
 	private String bkPhone 		= ""; //예약자 핸드폰번호

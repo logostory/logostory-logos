@@ -7,6 +7,7 @@ import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -59,7 +60,7 @@ public class BookingCRUDTest {
 	}
 
 
-	@Test
+	//@Test
 	public void insertBookingTest() throws Exception {
 
 		if (bookingSercice.insertBooking(booking)) {
@@ -69,12 +70,15 @@ public class BookingCRUDTest {
 		}
 	}
 
+	
 	@Test
 	public void deleteBookingTest() throws Exception {
 		
-		if (bookingSercice.insertBooking(booking)) {
+		List<Booking> resultList = bookingSercice.selectBookingList(new Booking());
+		
+		if (resultList.size() > 0) {
 			
-			Booking Delbook = bookingSercice.selectBookingList(booking).get(0);
+			Booking Delbook = resultList.get(0);
 			logger.debug("bookingNumber : " + Delbook.getBkNum());
 			assertTrue(bookingSercice.deleteBooking(Delbook)); // assertTrue =
 																// true 혹은
@@ -89,19 +93,19 @@ public class BookingCRUDTest {
 		List<Booking> list = bookingSercice.selectBookingList(booking);
 
 		// 0 번인덱스 값을 불러오기위한 전처리,
-		if (list.size() == 0) {
+		if (list.size() > 0) {
 
-			bookingSercice.insertBooking(booking); // 사이즈가 0이면 하나 넣고 test
-			booking = bookingSercice.selectBookingList(booking).get(0);
-
+			//bookingSercice.insertBooking(booking); // 사이즈가 0이면 하나 넣고 test
+			//booking = bookingSercice.selectBookingList(booking).get(0);
+			booking = list.get(0);
 		} else {
 
-			booking = list.get(0);
+			
 
 		}
 
 		// 업데이트
-		booking.setBkMessage("It's Update TEST");
+		booking.setBkMessage("Its Update TEST");
 
 		// TEST로직
 		if (bookingSercice.updateBooking(booking)) {
