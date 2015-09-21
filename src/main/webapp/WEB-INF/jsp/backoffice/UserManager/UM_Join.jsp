@@ -157,11 +157,11 @@
 		</div>
 		<div class="form-group">
 			<label class="control-label">비밀번호</label>
-			<input name="clientPW" type="text" class="form-control" id="writePW" placeholder="*숫자, 특수문자 포함 8자 이상">
+			<input name="clientPW" type="password" class="form-control" id="writePW" placeholder="*숫자, 특수문자 포함 8자 이상">
 		</div>
 		<div class="form-group">
 			<label class="control-label">비밀번호 확인</label>
-			<input type="text" class="form-control" id="checkPW" placeholder="비밀번호를 한 번 더 입력해주세요.">
+			<input type="password" class="form-control" id="checkPW" placeholder="비밀번호를 한 번 더 입력해주세요.">
 		</div>
 		<div class="form-group">
 			<label class="control-label">이름</label>
