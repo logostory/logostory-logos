@@ -23,11 +23,126 @@
 				 
 			 참고 사이트 : http://demo.bootstrapkr.com/base/kimsq/fully/?c=4/19
 	
+	마누 스터디 : 이용약관동의 관련 참조사이트 : http://www.dotnetkorea.com/DotNetNote/BoardView?BoardName=ClientScript&Num=228
+	
+	마누 스터디 : 아이디 중복 확인 참조할 예정인 사이트 : http://chs02.tistory.com/26
+	
+	마누 스터디 : 자바스크립트 유효성 검사 참조한 사이트 : http://shonm.tistory.com/category/JAVASCRIPT/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85%20%EC%9C%A0%ED%9A%A8%EC%84%B1%20%EA%B2%80%EC%82%AC
+	
+	마누 스터디 : 약관동의에서 submit() 구분하는법 참조한 사이트 : http://okky.kr/article/163377
+	
+	마누 스터디 : 연락처 입력란에 숫자 이외에 입력 불가 및 최대 11자 제한설정 참조한 사이트 : http://javakorean.com/?p=2371
+	
 -->
 
-<script>
-	
+<script language="javascript" type="text/javascript">
 
+	function Agreement() {
+		
+		var agreeCheck = document.getElementById("agreement");
+		var idCheck = document.getElementById("writeID");
+		var pwCheck1 = document.getElementById("writePW");
+		var pwCheck2 = document.getElementById("checkPW");
+		var nameCheck = document.getElementById("writeName");
+		var phoneCheck = document.getElementById("writePhone");
+		
+		if (idCheck.value == "" || idCheck.value == null) {
+			alert('아이디를 입력해주세요.');
+			return false;
+		}
+		
+		else if (pwCheck1.value == "" || pwCheck1.value == null) {
+			alert('비밀번호를 입력해주세요.');
+			return false;
+		}
+		
+		else if (pwCheck2.value == "" || pwCheck2.value == null) {
+			alert('비밀번호를 한번 더 입력해주세요.');
+			return false;
+		}
+		
+		else if (pwCheck1.value != pwCheck2.value) {
+			alert('비밀번호가 일치하지 않습니다.');
+			return false;
+		}
+		
+		else if (nameCheck.value == "" || nameCheck.value == null) {
+			alert('이름을 입력해주세요.');
+			return false;
+		}
+		
+		else if (phoneCheck.value == "" || phoneCheck.value == null) {
+			alert('연락처를 입력해주세요.');
+			return false;
+		}
+		
+		else if (phoneCheck.value.length < 10 || phoneCheck.value.length > 11) {
+			alert('연락처를 잘못 입력하셨습니다.\n다시 입력해주세요');
+			return false;
+		}
+		
+		else if (agreeCheck.checked == false) {
+			alert('약관에 동의하셔야 합니다.');
+			return false;
+		}
+		
+		else {
+			document.joinform.submit();
+		}
+		
+	}
+	
+	function idCheck() {
+		
+		var idCheck = document.getElementById("writeID");
+		
+		if (idCheck.value == "" || idCheck.value == null) {
+			alert('아이디를 입력해주세요.');
+			idCheck.focus();
+			return false;
+		}
+		
+		for (i=0; i<idCheck.value.length; i++) {
+			
+			ch = idCheck.value.charAt(i)
+			
+			if(!(ch>='0' && ch <='9') && !(ch>='a' && ch<='z')) {
+				alert('아이디는 소문자, 숫자만 입력 가능합니다.');
+				idCheck.focus();
+				return false;
+			}
+		
+			else if (idCheck.value.indexOf(" ") >= 0) {
+				alert('아이디에 공백을 사용할 수 없습니다.');
+				idCheck.focus();
+				return false;
+			}
+			
+			else if (idCheck.value.length<6 || idCheck.value.length>12) {
+				alert('아이디는 6자 이상 12자 미만으로 설정해주세요.');
+				idCheck.focus();
+				return false;
+			}
+			
+			else {
+				alert('사용 가능합니다.');
+				return true;
+			}
+		}
+	}
+	
+	function onlyNumberInput() {
+		var code = window.event.keyCode;
+		
+		if ((code>34 && code<41) || (code>47 && code<58) || (code>95 && code<106) || code==8 || code==9 || code==13 || code==46) {
+			window.event.returnValue = true;
+			return;
+		}
+		else {
+			window.event.returnValue=false;
+		}
+	}
+	
 </script>
 	 
 <tag:template activeMenu="888">
@@ -37,24 +152,24 @@
 	<form name="joinform" class="form-horizontal" method="post" action="<c:url value="/backoffice/UserManager/doJoin"/>">
 		<div class="form-group">
 			<label class="control-label">아이디</label>
-			<input name="clientID" type="text" class="form-control" placeholder="아이디를 입력하세요.">
-			<button type="button" class="btn btn-sm">중복확인</button>
+			<input name="clientID" type="text" class="form-control" id="writeID" placeholder="아이디를 입력하세요.">
+			<button type="button" class="btn btn-sm" onclick="idCheck()">중복확인</button>
 		</div>
 		<div class="form-group">
 			<label class="control-label">비밀번호</label>
-			<input name="clientPW" type="text" class="form-control" placeholder="*숫자, 특수문자 포함 8자 이상">
+			<input name="clientPW" type="password" class="form-control" id="writePW" placeholder="*숫자, 특수문자 포함 8자 이상">
 		</div>
 		<div class="form-group">
 			<label class="control-label">비밀번호 확인</label>
-			<input type="text" class="form-control" placeholder="비밀번호를 한 번 더 입력해주세요.">
+			<input type="password" class="form-control" id="checkPW" placeholder="비밀번호를 한 번 더 입력해주세요.">
 		</div>
 		<div class="form-group">
 			<label class="control-label">이름</label>
-			<input name="clientName" type="text" class="form-control" placeholder="이름을 입력하세요.">
+			<input name="clientName" type="text" id="writeName" class="form-control" placeholder="이름을 입력하세요.">
 		</div>
 		<div class="form-group">
 			<label class="control-label">연락처</label>
-			<input name="clientTel" type="text" class="form-control" placeholder="- 빼고 입력하세요.">
+			<input name="clientTel" type="text" class="form-control" id="writePhone" maxlength="11" onKeyDown="javascript:onlyNumberInput()" style='IME-MODE:disabled' placeholder="- 빼고 입력하세요.">
 			<button type="button" class="btn btn-sm">인증번호 요청</button>
 		</div>
 		<div class="form-group">
@@ -254,7 +369,7 @@
 		</div>
 		<div style="margin-left:150px">
 			<div class="form-group">
-				<button type="submit" class="btn btn-lg">가입하기</button>
+				<button type="button" class="btn btn-lg" onclick="Agreement()">가입하기</button>
 				<button type="button" class="btn btn-lg">가입취소</button>
 			</div>
 		</div>

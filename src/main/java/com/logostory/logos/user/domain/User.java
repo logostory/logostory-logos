@@ -1,5 +1,7 @@
 package com.logostory.logos.user.domain;
 
+import java.lang.StringBuffer;
+
 public class User {
 
 	// 고객용 백엔드
@@ -69,7 +71,27 @@ public class User {
 	}
 	
 	public void setClientTel(String clientTel) {
-		this.clientTel = clientTel;
+		if (clientTel.length() == 10) {
+			StringBuffer sb = new StringBuffer(clientTel);
+			sb.insert(6, "-");
+			sb.insert(3, "-");
+			
+			String newClientTel = sb.toString();
+			
+			this.clientTel = newClientTel;
+		}
+		else if (clientTel.length() == 11) {
+			StringBuffer sb2 = new StringBuffer(clientTel);
+			sb2.insert(7, "-");
+			sb2.insert(3, "-");
+			
+			String newClientTel2 = sb2.toString();
+			
+			this.clientTel = newClientTel2;
+		}
+		else {
+			this.clientTel = clientTel;
+		}
 	}
 	
 	public String getClientBooking() {
