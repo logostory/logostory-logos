@@ -2,6 +2,8 @@ package com.logostory.logos.promote.dao.impl;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import com.logostory.logos.promote.domain.Promotion;
 import com.logostory.logos.promote.domain.QPromotion;
 import com.logostory.logos.promote.repository.PromotionRepository;
 import com.mysema.query.BooleanBuilder;
+import com.mysema.query.jpa.JPQLQuery;
 
 @Repository("promotionJPA")
 public class PromotionJPA implements PromotionDAO {
@@ -24,6 +27,9 @@ public class PromotionJPA implements PromotionDAO {
 
 	@Autowired
 	PromotionRepository repository;
+	
+	@Autowired
+	EntityManager em;
 	
 	@Override
 	public boolean setPromotion(Promotion promotion) throws Exception {
