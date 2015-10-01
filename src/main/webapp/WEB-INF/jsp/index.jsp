@@ -486,7 +486,7 @@
 								</div>
 								<div class="form-group">
 									<label class="control-label">비밀번호 확인</label>
-									<input type="password" class="form-control" id=cehckPW" placeholder="비밀번호를 한 번 더 입력해주세요." style="width:400px">
+									<input type="password" class="form-control" id="checkPW" placeholder="비밀번호를 한 번 더 입력해주세요." style="width:400px">
 								</div>
 								<div class="form-group">
 									<label class="control-label">이름</label>
@@ -495,6 +495,27 @@
 								<div class="form-group">
 									<label class="control-label">연락처</label>
 									<input name="clientTel" type="text" class="form-control" id="writePhone" maxlength="11" onKeyDown="javascript:onlyNumberInput()" style="width:400px; 'IME-MODE:disabled'" placeholder="- 빼고 입력하세요.">
+								</div>
+								<div class="form-group">
+									<div>
+										<label class="control-label">이메일</label>
+									</div>
+									<div style="float:left; width:30%">
+										<input type="text" class="form-control" id="mail" placeholder="">
+									</div>
+									<div style="flot:middle; width:10%">
+										@
+									</div>
+									<div style="flot:right; width:30%">
+										<select class="form-control auto-field" name="mail">
+											<option value="naver">naver.com</option>
+											<option value="daum1">daum.net</option>
+											<option value="daum2">hanmail.com</option>
+											<option value="nate">nate.com</option>
+											<option value="gmail">gmail.com</option>
+										</select>
+									</div>
+									<br>
 									<button type="button" class="btn btn-sm">인증번호 요청</button>
 								</div>
 								<div class="form-group">
@@ -507,7 +528,7 @@
 								<div class="form-group">
 									<label class="control-label">이용약관</label>
 								</div>
-								<div stype="margin-left:70px">
+								<div style="margin-left:70px">
 									<div style="width:720px; height:619px; padding:10px; background-color:gray; float:center;">
 										<div style="width:700px; height:600px; overflow:scroll; overflow-x:hidden;">
 											<pre>
