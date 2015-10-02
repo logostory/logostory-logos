@@ -79,6 +79,17 @@ public class UserController {
 		}
 	}
 	
+	@RequestMapping("/doJoin2")
+	public String doJoin2(HttpServletRequest request, User user, Model model) throws Exception {
+		
+		if(userService.setUserClient(user)) {
+			return userHomeUrl + "index_DoJoin";
+		}
+		else {
+			return "error";
+		}
+	}
+	
 	@RequestMapping("/login")
 	public String login(HttpServletRequest request, Model model) throws Exception {
 		return userHomeUrl + "UM_Login";

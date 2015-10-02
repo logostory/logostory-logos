@@ -100,6 +100,9 @@
 				}
 				
 				else {
+					window.open("", "doJoin", "width=450, height=550, scrollbars=1, menubar=1, resizable=1");
+					document.joinform.target="doJoin";
+					document.joinform.action="/backoffice/UserManager/doJoin2";
 					document.joinform.submit();
 				}
 			}
@@ -473,7 +476,7 @@
 						<h1>&nbsp;</h1>
 						<h2>&nbsp;</h2>
 						<h2 class="text-center">회원가입</h2>
-						<form name="joinform" class="form-horizontal" method="post" action="/backoffice/UserManager/doJoin">
+						<form name="joinform" class="form-horizontal" method="post">
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label class="control-label">아이디</label>
