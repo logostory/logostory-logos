@@ -43,7 +43,7 @@
 		
 		**마누 스터디
 		
-					display:none 관련 참조 사이트 : http://l2j.co.kr/1167 
+					display:none 관련 참조 사이트 : http://l2j.co.kr/1167
 		
 		-->
 		
@@ -107,6 +107,7 @@
 						document.joinform.target="doJoin";
 						document.joinform.action="/backoffice/UserManager/doJoin2";
 						document.joinform.submit();
+						document.joinform.reset();
 					}
 					else if(idCheckCount == 999){
 						alert('중복된 아이디 입니다.');
@@ -200,9 +201,16 @@
 				}
 				else {
 					document.getElementById(id).style.display = "none";
+					document.joinform.reset();
+					document.joinform.clientID.readOnly=false;
 				}
 				
 				this.count = count;
+			}
+			
+			function allReset() {
+				document.joinform.reset();
+				document.joinform.clientID.readOnly=false;
 			}
 		
 		</script>
@@ -752,7 +760,7 @@
 								<div style="margin-left:150px">
 									<div class="form-group">
 										<button type="button" class="btn btn-lg" onclick="Agreement()">가입하기</button>
-										<button type="button" class="btn btn-lg">가입취소</button>
+										<button type="button" class="btn btn-lg" onclick="allReset()">가입취소</button>
 									</div>
 								</div>
 							</div>

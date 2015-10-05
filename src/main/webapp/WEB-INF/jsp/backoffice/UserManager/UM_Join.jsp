@@ -35,6 +35,11 @@
 	
 	마누 스터디 : ajax 참고 사이트 : http://zero-gravity.tistory.com/241
 	
+	마누 스터디 : readonly 설정 javascript와 jQuery 비교
+			
+			javascript : document.form이름.설정하려는곳의 name.readOnly=true/false;
+			jQuery 	   : $("input[name=설정하려는곳의 name]").attr("readOnly", true/false);
+	
 -->
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script language="javascript" type="text/javascript">
@@ -182,6 +187,11 @@
 		else {
 			window.event.returnValue=false;
 		}
+	}
+	
+	function allReset() {
+		document.joinform.reset();
+		document.joinform.clientID.readOnly=false;
 	}
 	
 </script>
@@ -411,7 +421,7 @@
 		<div style="margin-left:150px">
 			<div class="form-group">
 				<button type="button" class="btn btn-lg" onclick="Agreement()">가입하기</button>
-				<button type="button" class="btn btn-lg">가입취소</button>
+				<button type="button" class="btn btn-lg" onclick="allReset()">가입취소</button>
 			</div>
 		</div>
 	</form>
