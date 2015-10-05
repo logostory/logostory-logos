@@ -19,15 +19,15 @@ insert into logos_promotion(pmType, pmTitle, pmContents, pmImageUrl, pmLinkUrl, 
 
 -- insert user (Guest)
 delete from logos_userClient;
-insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test1', '0000', '테스트1번', 'P', '010-xxxx-xxx1', 'N', 'N');
-insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test2', '0000', '테스트2번', 'P', '010-xxxx-xxx2', 'N', 'N');
-insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test3', '0000', '테스트3번', 'P', '010-xxxx-xxx3', 'N', 'N');
-insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test4', '0000', '테스트4번', 'B', '010-xxxx-xxx4', 'N', 'N');
-insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test5', '0000', '테스트5번', 'B', '010-xxxx-xxx5', 'N', 'N');
-insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test6', '0000', '테스트6번', 'B', '010-xxxx-xxx6', 'N', 'N');
-insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test7', '0000', '테스트7번', 'S', '010-xxxx-xxx7', 'N', 'N');
-insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test8', '0000', '테스트8번', 'S', '010-xxxx-xxx8', 'N', 'N');
-insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test9', '0000', '테스트9번', 'S', '010-xxxx-xxx9', 'N', 'N');
+insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test01', '0000', '테스트1번', 'P', '010-xxxx-xxx1', 'N', 'N');
+insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test02', '0000', '테스트2번', 'P', '010-xxxx-xxx2', 'N', 'N');
+insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test03', '0000', '테스트3번', 'P', '010-xxxx-xxx3', 'N', 'N');
+insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test04', '0000', '테스트4번', 'B', '010-xxxx-xxx4', 'N', 'N');
+insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test05', '0000', '테스트5번', 'B', '010-xxxx-xxx5', 'N', 'N');
+insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test06', '0000', '테스트6번', 'B', '010-xxxx-xxx6', 'N', 'N');
+insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test07', '0000', '테스트7번', 'S', '010-xxxx-xxx7', 'N', 'N');
+insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test08', '0000', '테스트8번', 'S', '010-xxxx-xxx8', 'N', 'N');
+insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test09', '0000', '테스트9번', 'S', '010-xxxx-xxx9', 'N', 'N');
 insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test10', '0000', '테스트10번', 'G', '010-xxxx-xx10', 'N', 'N');
 insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test11', '0000', '테스트11번', 'G', '010-xxxx-xx11', 'N', 'N');
 insert into logos_userClient(clientID, clientPW, clientName, clientLevel, clientTel, clientBooking, clientApproval) values ('test12', '0000', '테스트12번', 'G', '010-xxxx-xx12', 'N', 'N');

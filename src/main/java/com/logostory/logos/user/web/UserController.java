@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.logostory.logos.user.domain.User;
 import com.logostory.logos.user.service.UserService;
@@ -65,7 +66,15 @@ public class UserController {
 	public String join(HttpServletRequest request, Model model) throws Exception {		
 		return userHomeUrl + "UM_Join";
 	}
-	
+
+	@RequestMapping("/idCheck")
+	@ResponseBody
+	public User idCheck(HttpServletRequest request, User user, Model model) throws Exception {
+
+		User resultUser = userService.getUserClient(user.getClientID());
+		return resultUser;
+	}
+
 	@RequestMapping("/doJoin")
 	public String doJoin(HttpServletRequest request, User user, Model model) throws Exception {
 		
@@ -92,6 +101,19 @@ public class UserController {
 	
 	@RequestMapping("/login")
 	public String login(HttpServletRequest request, Model model) throws Exception {
+		
+		//TODO 1. 사용자 아이디/패스워드 존재 유무
+//		User user = userService.getUserClient(clientID);
+		
+//		if(user != null){
+			
+//		}
+		
+		//TODO 2. 정보를 가져와서 유지()
+		
+//		request.getSession().setAttribute("userId", user.getUserId());
+		
+		
 		return userHomeUrl + "UM_Login";
 	}
 	
@@ -99,5 +121,5 @@ public class UserController {
 	public String agreement(HttpServletRequest request, Model model) throws Exception {
 		return userHomeUrl + "UM_Agreement";
 	}
-
+	
 }

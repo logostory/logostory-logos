@@ -11,9 +11,9 @@
             <div class="wrap">
                 <p class="form-title">
                     Sign In</p>
-                <form class="login">
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
+                <form class="login" action="/backoffice/UserManager/login" method="post">
+                <input name="username" type="text" placeholder="Username" />
+                <input name="password" type="password" placeholder="Password" />
                 <input type="submit" value="Sign In" class="btn btn-success btn-sm" />
                 <div class="remember-forgot">
                     <div class="row">
