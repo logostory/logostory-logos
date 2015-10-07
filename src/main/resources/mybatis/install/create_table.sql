@@ -44,3 +44,14 @@ create table if not exists logos_userManager(
 	primary key (uCode),
 	foreign key (pmId) references logos_promotion(pmId)
 );
+
+-- product create table
+drop table if exists logos_product;
+create table if not exists logos_product(
+	f_id 			int not null auto_increment ,
+	f_type			varchar(255),
+	f_name		varchar(255),
+	f_desc			varchar(255),
+	image_addr	varchar(255) ,
+	primary key (f_id)
+);

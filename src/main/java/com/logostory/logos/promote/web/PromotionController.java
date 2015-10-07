@@ -19,7 +19,7 @@ import com.logostory.logos.promote.service.PromotionService;
 public class PromotionController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(PromotionController.class);
-	private static final String promotionHomeUrl = "backoffice/promotion/";
+	private static final String productHomeUrl = "backoffice/promotion/";
 	
 	@Autowired
 	PromotionService promotionService;
@@ -27,7 +27,7 @@ public class PromotionController {
 	@RequestMapping("/addPage")
 	public String addPage(HttpServletRequest request, Model model) throws Exception {
 		
-		return promotionHomeUrl + "add";
+		return productHomeUrl + "add";
 	}
 	
 	@RequestMapping("/add")
@@ -46,13 +46,13 @@ public class PromotionController {
 		List<Promotion> resultList = promotionService.getPromotionList(promotion);
 		
 		model.addAttribute("pList", resultList);
-		return promotionHomeUrl + "list";
+		return productHomeUrl + "list";
 	}
 	
 	@RequestMapping("/preview")
 	public String preview(HttpServletRequest request, Model model) throws Exception {
 		
-		return promotionHomeUrl + "preview";
+		return productHomeUrl + "preview";
 	}
 
 }
