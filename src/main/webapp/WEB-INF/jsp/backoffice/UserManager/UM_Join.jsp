@@ -33,9 +33,18 @@
 	
 	마누 스터디 : 연락처 입력란에 숫자 이외에 입력 불가 및 최대 11자 제한설정 참조한 사이트 : http://javakorean.com/?p=2371
 	
+	마누 스터디 : ajax 참고 사이트 : http://zero-gravity.tistory.com/241
+	
+	마누 스터디 : readonly 설정 javascript와 jQuery 비교
+			
+			javascript : document.form이름.설정하려는곳의 name.readOnly=true/false;
+			jQuery 	   : $("input[name=설정하려는곳의 name]").attr("readOnly", true/false);
+	
 -->
-
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script language="javascript" type="text/javascript">
+
+	var idCheckCount = 0;
 
 	function Agreement() {
 		
@@ -87,13 +96,24 @@
 		}
 		
 		else {
-			document.joinform.submit();
+			if(idCheckCount == 1){
+				document.joinform.submit();
+			}
+			else if(idCheckCount == 999){
+				alert('중복된 아이디 입니다.');
+			}
+			else{
+				alert('아이디 중복 확인을 해주세요.');
+			}
 		}
 		
 	}
 	
 	function idCheck() {
 		
+		idCheckCount = 1;
+		
+		// javascript 타입의 변수
 		var idCheck = document.getElementById("writeID");
 		
 		if (idCheck.value == "" || idCheck.value == null) {
@@ -102,6 +122,7 @@
 			return false;
 		}
 		
+		// for 문을 제거하면 유효성 검사가 동작하지 않음.
 		for (i=0; i<idCheck.value.length; i++) {
 			
 			ch = idCheck.value.charAt(i)
@@ -112,23 +133,48 @@
 				return false;
 			}
 		
-			else if (idCheck.value.indexOf(" ") >= 0) {
+			else if(idCheck.value.indexOf(" ") >= 0) {
 				alert('아이디에 공백을 사용할 수 없습니다.');
 				idCheck.focus();
 				return false;
 			}
 			
-			else if (idCheck.value.length<6 || idCheck.value.length>12) {
+			else if(idCheck.value.length<6 || idCheck.value.length>12) {
 				alert('아이디는 6자 이상 12자 미만으로 설정해주세요.');
 				idCheck.focus();
 				return false;
 			}
-			
-			else {
-				alert('사용 가능합니다.');
-				return true;
+		}		
+		
+		// ajax는 jQuery 양식이기 때문에 jQuery 타입의 변수가 필요.
+		// ajax 안의 data에 javascript 변수를 갖다 써넣어봐야 null 값만 전달된다.
+		// ajax는 스스로 dataType을 알맞게 매핑해주지만, 확실하게 짚고 넘어가야 할 경우 - Json을 사용한다던지 - 명시해주면 좋다.
+		var idCheck2 = $("#writeID").val();
+		
+		$.ajax({
+			type:"POST",
+			url:"/backoffice/UserManager/idCheck",
+			data:'clientID='+idCheck2,
+			dataType:"text",
+			success:function(data){
+				if(data == null || data == "null"){
+					this.idCheckCount = idCheckCount;
+					// disabled로 설정 시 DB에 공백으로 저장이 됨.
+					// 그렇기 때문에 disabled 대신 readonly로 설정해줌.
+					// 여기서 readonly를 설정해줘야 했던 이유는, 중복검사 후 아이디를 동일 아이디로 작성할 경우를 방지하기 위함이다.
+					$("input[name=clientID]").attr("readonly", true);
+					alert('사용 가능합니다.');
+				}
+				else{
+					idCheckCount = 999;
+					this.idCheckCount = idCheckCount;
+					alert('중복된 아이디 입니다.');
+				}
+			},
+			error:function(request, status, error){
+				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 			}
-		}
+		});
 	}
 	
 	function onlyNumberInput() {
@@ -141,6 +187,11 @@
 		else {
 			window.event.returnValue=false;
 		}
+	}
+	
+	function allReset() {
+		document.joinform.reset();
+		document.joinform.clientID.readOnly=false;
 	}
 	
 </script>
@@ -370,7 +421,7 @@
 		<div style="margin-left:150px">
 			<div class="form-group">
 				<button type="button" class="btn btn-lg" onclick="Agreement()">가입하기</button>
-				<button type="button" class="btn btn-lg">가입취소</button>
+				<button type="button" class="btn btn-lg" onclick="allReset()">가입취소</button>
 			</div>
 		</div>
 	</form>

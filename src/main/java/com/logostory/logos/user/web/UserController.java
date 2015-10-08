@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.logostory.logos.user.domain.User;
 import com.logostory.logos.user.service.UserService;
@@ -65,7 +66,15 @@ public class UserController {
 	public String join(HttpServletRequest request, Model model) throws Exception {		
 		return userHomeUrl + "UM_Join";
 	}
-	
+
+	@RequestMapping("/idCheck")
+	@ResponseBody
+	public User idCheck(HttpServletRequest request, User user, Model model) throws Exception {
+
+		User resultUser = userService.getUserClient(user.getClientID());
+		return resultUser;
+	}
+
 	@RequestMapping("/doJoin")
 	public String doJoin(HttpServletRequest request, User user, Model model) throws Exception {
 		
@@ -95,9 +104,68 @@ public class UserController {
 		return userHomeUrl + "UM_Login";
 	}
 	
+	@RequestMapping("/doLogin")
+	@ResponseBody
+	public String doLogin(HttpServletRequest request, User user, Model model) throws Exception {
+		
+		User dbUser = userService.getUserClient(user.getClientID());
+		
+		String writeID = (String)request.getParameter("clientID");
+		String writePW = (String)request.getParameter("clientPW");
+		
+		String resultYN = "Y";
+		
+		System.out.println("************************");
+		
+		if(dbUser == null) {
+			System.out.println("등록되지 않은 아이디야!");
+			resultYN = "X";
+			return resultYN;
+		}
+		else {
+			
+			String dbID = dbUser.getClientID();
+			String dbPW = dbUser.getClientPW();
+			
+			System.out.println("db에서 가져온 내용 : " + dbID);
+			System.out.println("db에서 가져온 내용2 : " + dbPW);
+			System.out.println("입력받은 내용 : " + writeID);
+			System.out.println("입력받은 내용2 : " + writePW);
+			
+			if(!(writeID.equals(dbID))) {
+				System.out.println("아이디가 일치하지 않아!");
+				resultYN = "I";
+				return resultYN;
+			}
+			else if(writeID.equals(dbID)) {
+				System.out.println("아이디는 일치하는군.....");
+				if(!(writePW.equals(dbPW))) {
+					System.out.println("하지만 비밀번호는 일치하지 않아!");
+					resultYN = "P";
+					return resultYN;
+				}
+			}
+		}		
+		
+		System.out.println("모두 일치했으니 메인으로 가야지 :)");
+		return resultYN;
+		
+		//TODO 1. 사용자 아이디/패스워드 존재 유무
+//		User user = userService.getUserClient(clientID);
+		
+//		if(user != null){
+			
+//		}
+		
+		//TODO 2. 정보를 가져와서 유지()
+		
+//		request.getSession().setAttribute("userId", user.getUserId());
+
+	}
+	
 	@RequestMapping("/agreement")
 	public String agreement(HttpServletRequest request, Model model) throws Exception {
 		return userHomeUrl + "UM_Agreement";
 	}
-
+	
 }

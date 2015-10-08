@@ -43,12 +43,14 @@
 		
 		**마누 스터디
 		
-					display:none 관련 참조 사이트 : http://l2j.co.kr/1167 
+					display:none 관련 참조 사이트 : http://l2j.co.kr/1167
 		
 		-->
 		
 		<!-- 스크립트 추가 : 마누 -->
 		<script language="javascript" type="text/javascript">
+			
+			var idCheckCount = 0;
 			
 			function Agreement() {
 				
@@ -100,14 +102,25 @@
 				}
 				
 				else {
-					window.open("", "doJoin", "width=450, height=550, scrollbars=1, menubar=1, resizable=1");
-					document.joinform.target="doJoin";
-					document.joinform.action="/backoffice/UserManager/doJoin2";
-					document.joinform.submit();
+					if(idCheckCount == 1){
+						window.open("", "doJoin", "width=450, height=550, scrollbars=1, menubar=1, resizable=1");
+						document.joinform.target="doJoin";
+						document.joinform.action="/backoffice/UserManager/doJoin2";
+						document.joinform.submit();
+						document.joinform.reset();
+					}
+					else if(idCheckCount == 999){
+						alert('중복된 아이디 입니다.');
+					}
+					else{
+						alert('아이디 중복 확인을 해주세요.');
+					}
 				}
 			}
 			
 			function idCheck() {
+				
+				idCheckCount = 1;
 				
 				var idCheck = document.getElementById("writeID");
 				
@@ -138,12 +151,31 @@
 						idCheck.focus();
 						return false;
 					}
-					
-					else {
-						alert('사용 가능합니다.');
-						return true;
-					}
 				}
+				
+				var idCheck2 = $("#writeID").val();
+				
+				$.ajax({
+					type:"POST",
+					url:"/backoffice/UserManager/idCheck",
+					data:'clientID='+idCheck2,
+					dataType:"text",
+					success:function(data){
+						if(data == null || data == "null"){
+							this.idCheckCount = idCheckCount;
+							$("input[name=clientID]").attr("readonly", true);
+							alert('사용 가능합니다.');
+						}
+						else{
+							idCheckCount = 999;
+							this.idCheckCount = idCheckCount;
+							alert('중복된 아이디 입니다.');
+						}
+					},
+					error:function(request, status, error){
+						alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					}
+				});
 			}
 			
 			function onlyNumberInput() {
@@ -169,9 +201,16 @@
 				}
 				else {
 					document.getElementById(id).style.display = "none";
+					document.joinform.reset();
+					document.joinform.clientID.readOnly=false;
 				}
 				
 				this.count = count;
+			}
+			
+			function allReset() {
+				document.joinform.reset();
+				document.joinform.clientID.readOnly=false;
 			}
 		
 		</script>
@@ -721,7 +760,7 @@
 								<div style="margin-left:150px">
 									<div class="form-group">
 										<button type="button" class="btn btn-lg" onclick="Agreement()">가입하기</button>
-										<button type="button" class="btn btn-lg">가입취소</button>
+										<button type="button" class="btn btn-lg" onclick="allReset()">가입취소</button>
 									</div>
 								</div>
 							</div>
