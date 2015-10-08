@@ -41,7 +41,7 @@
 						alert('비밀번호를 다시 확인해주세요.');
 					}
 					else {
-						alert('로그인 되셨습니다.');
+						alert('로그인 되었습니다.');
 					}
 				},
 				error:function(request, status, error) {

@@ -25,6 +25,10 @@ public class UserServiceImpl implements UserService {
 		return userDAO.getUserClient(clientID);
 	}
 	
+	public List<User> getUserClientInfo(String clientID) throws Exception {
+		return userDAO.getUserClientInfo(clientID);
+	}
+	
 	public List<User> getUserClientList(User user) throws Exception {
 		return userDAO.getUserClientList(user);
 	}

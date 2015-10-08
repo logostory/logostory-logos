@@ -9,6 +9,7 @@ public interface UserService {
 	// client
 	public boolean setUserClient(User user) throws Exception;
 	public User getUserClient(String clientID) throws Exception;
+	public List<User> getUserClientInfo(String clientID) throws Exception;
 	public List<User> getUserClientList(User user) throws Exception;
 	public boolean updateUserClient(User user) throws Exception;
 	public boolean deleteUserClient(String clientID) throws Exception;

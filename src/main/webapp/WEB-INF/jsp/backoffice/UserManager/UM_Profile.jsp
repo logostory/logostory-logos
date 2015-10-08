@@ -4,6 +4,7 @@
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
 
 <tag:template activeMenu="999">
+
 <body>
 <div class="container">
   <div class="row">
@@ -16,17 +17,20 @@
             </div>
             <!--/col--> 
             <div class="col-xs-12 col-sm-8">
-              <h2>여기는 이름이~~</h2>
+            <c:forEach items = "${uClientInfoList}" var = "data" varStatus = "current">
+              <h2>${data.clientName}</h2>
               <br><br>
-              <p><strong>Level: </strong> Platinum Star </p>
-              <p><strong>연락처: </strong> 010-xxxx-xxxx </p>
-              <p><strong>예약 여부: </strong> 예약 내용 없음 </p>
+              <p><strong>이름: </strong> ${data.clientID} </p>
+              <p><strong>Level: </strong> ${data.clientLevel} </p>
+              <p><strong>연락처: </strong> ${data.clientTel} </p>
+              <p><strong>예약 여부: </strong> ${data.clientBooking} </p>
            <!--    <p><strong>Skills: </strong>
                 <span class="label label-info tags">html5</span> 
                 <span class="label label-info tags">css3</span>
                 <span class="label label-info tags">jquery</span>
                 <span class="label label-info tags">bootstrap3</span>
               </p> -->
+              </c:forEach>
             </div>
           </div>
           <!--/row-->

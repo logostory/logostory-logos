@@ -19,6 +19,14 @@
 				
 	</select>
 	
+	<select id = "getUserClientInfo"
+			parameterType = "com.logostory.logos.user.domain.User"
+			resultType = "com.logostory.logos.user.domain.User">
+			
+		select * from logos_userClient where clientID = #{string}
+			
+	</select>
+	
 	<select id = "getUserClientList"
 			parameterType = "com.logostory.logos.user.domain.User"
 			resultType = "com.logostory.logos.user.domain.User">

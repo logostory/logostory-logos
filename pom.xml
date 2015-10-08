@@ -45,6 +45,14 @@
 		</dependency>
 		<!-- //jap lib -->
 		
+		<!-- Java Mail API : Manoo 추가 -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.3</version>
+		</dependency>
+		<!-- Java Mail API : Manoo 추가 끝 -->
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

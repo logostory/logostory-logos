@@ -3,6 +3,7 @@ package com.logostory.logos.user.web;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.logostory.logos.user.domain.User;
@@ -59,6 +59,14 @@ public class UserController {
 	
 	@RequestMapping("/profile")
 	public String profile(HttpServletRequest request, Model model) throws Exception {
+		
+		HttpSession session = request.getSession();
+		
+		String clientID = (String)session.getAttribute("clientID");
+		
+		List<User> resultUserInfo = userService.getUserClientInfo(clientID);
+		
+		model.addAttribute("uClientInfoList", resultUserInfo);
 		return userHomeUrl + "UM_Profile";
 	}
 
@@ -126,6 +134,10 @@ public class UserController {
 			
 			String dbID = dbUser.getClientID();
 			String dbPW = dbUser.getClientPW();
+			String dbName = dbUser.getClientName();
+			String dbLevel = dbUser.getClientLevel();
+			String dbTel = dbUser.getClientTel();
+			String dbBooking = dbUser.getClientBooking();
 			
 			System.out.println("db에서 가져온 내용 : " + dbID);
 			System.out.println("db에서 가져온 내용2 : " + dbPW);
@@ -144,28 +156,30 @@ public class UserController {
 					resultYN = "P";
 					return resultYN;
 				}
+				else {
+					System.out.println("모두 일치하니까 정상 로그인 합시다.");
+					HttpSession session = request.getSession();
+					session.setAttribute("loginYN", "Y");
+					session.setAttribute("clientID", dbID);
+					session.setAttribute("clientPW", dbPW);
+					session.setAttribute("clientName", dbName);
+					session.setAttribute("clientLevel", dbLevel);
+					session.setAttribute("clientTel", dbTel);
+					session.setAttribute("clientBooking", dbBooking);
+					
+					List<User> resultUserInfo = userService.getUserClientInfo(dbID);
+					
+					model.addAttribute("uClientInfoList", resultUserInfo);
+				}
 			}
-		}		
+		}
 		
 		System.out.println("모두 일치했으니 메인으로 가야지 :)");
 		return resultYN;
-		
-		//TODO 1. 사용자 아이디/패스워드 존재 유무
-//		User user = userService.getUserClient(clientID);
-		
-//		if(user != null){
-			
-//		}
-		
-		//TODO 2. 정보를 가져와서 유지()
-		
-//		request.getSession().setAttribute("userId", user.getUserId());
-
 	}
 	
 	@RequestMapping("/agreement")
 	public String agreement(HttpServletRequest request, Model model) throws Exception {
 		return userHomeUrl + "UM_Agreement";
 	}
-	
 }

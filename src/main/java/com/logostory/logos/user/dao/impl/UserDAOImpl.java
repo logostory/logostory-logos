@@ -42,6 +42,14 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	@Override
+	public List<User> getUserClientInfo(String clientID) throws Exception {
+		
+		List<User> resultUserClientInfo = sqlSessionTemplate.selectList(MAPPER_NAMESPACE_USER + "getUserClientInfo", clientID);
+		
+		return resultUserClientInfo;
+	}
+	
+	@Override
 	public List<User> getUserClientList(User user) throws Exception {
 		
 		List<User> resultUserClientList = sqlSessionTemplate.selectList(MAPPER_NAMESPACE_USER + "getUserClientList", user );

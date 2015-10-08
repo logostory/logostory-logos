@@ -194,6 +194,10 @@
 		document.joinform.clientID.readOnly=false;
 	}
 	
+	function mailCheck() {
+		
+	}
+	
 </script>
 	 
 <tag:template activeMenu="888">
@@ -221,7 +225,23 @@
 		<div class="form-group">
 			<label class="control-label">연락처</label>
 			<input name="clientTel" type="text" class="form-control" id="writePhone" maxlength="11" onKeyDown="javascript:onlyNumberInput()" style='IME-MODE:disabled' placeholder="- 빼고 입력하세요.">
-			<button type="button" class="btn btn-sm">인증번호 요청</button>
+		</div>
+		<div class="form-group">
+			<div>
+				<label class="control-label">이메일</label>
+			</div>
+			<div>
+				<input type="text" class="form-control" id="mail1" placeholder="">
+				@
+				<select class="form-control auto-field" name="mail2">
+					<option value="naver">naver.com</option>
+					<option value="daum1">daum.net</option>
+					<option value="daum2">hanmail.net</option>
+					<option value="nate">nate.com</option>
+					<option value="gmail">gmail.com</option>
+				</select>
+				<button type="button" onclick="mailCheck()" class="btn btn-sm">인증번호 요청</button>
+			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label">인증번호</label>
