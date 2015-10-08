@@ -24,12 +24,12 @@ public class ProductService {
 	public Promotion getPromotion(String promotionId) throws Exception {
 		return promotionDAO.getPromotion(promotionId);
 	}
-
-	@Override
-	public List<Promotion> getPromotionList(Promotion promotion) throws Exception {
-		return promotionDAO.getPromotionList(promotion);
+*/
+	
+	public List<Product> getProductList(Product product) throws Exception {
+		return productDao.getProductList(product);
 	}
-
+/*
 	@Override
 	public boolean updatePromotion(Promotion promotion) throws Exception {
 		return promotionDAO.updatePromotion(promotion);

@@ -6,11 +6,18 @@ public class Product implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	private String f_id 		= "";
 	private String f_type 		= "";
 	private String f_name		= "";
 	private String f_desc 		= "";
 	private String image_addr 	= "";
 	
+	public String getF_id() {
+		return f_id;
+	}
+	public void setF_id(String f_id) {
+		this.f_id = f_id;
+	}	
 	public String getF_type() {
 		return f_type;
 	}
