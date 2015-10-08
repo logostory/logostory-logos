@@ -35,17 +35,17 @@ public class ProductDao {
 				promotionId);
 		return resultPromotion;
 	}
+*/
 
-	@Override
-	public List<Promotion> getPromotionList(Promotion promotion) throws Exception {
+	public List<Product> getProductList(Product product) throws Exception {
 
-		List<Promotion> resultPromotionList = sqlSessionTemplate
-				.selectList(MAPPER_NAMESPACE_PROMOTION + "getPromotionList", promotion);
-		logger.debug("promotion result: " + resultPromotionList.size());
+		List<Product> resultProductList = sqlSessionTemplate
+				.selectList(MAPPER_NAMESPACE_PRODUCT + "getProductList", product);
+		logger.debug("promotion result: " + resultProductList.size());
 
-		return resultPromotionList;
+		return resultProductList;
 	}
-
+	/*
 	@Override
 	public boolean updatePromotion(Promotion promotion) throws Exception {
 
