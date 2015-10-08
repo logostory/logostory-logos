@@ -32,9 +32,8 @@
                <td>${data.f_name}</td>
                <td>${data.f_desc}</td>
                <td>${data.image_addr}</td>
-													<td>
-														<img src="resources/images/portfolio-1.jpg" alt="">
-													</td>
+				<td>
+				<img src="/resources/images/product/product01.jpg" alt=""></td>
              </tr>
              </c:forEach>
            </tbody>
