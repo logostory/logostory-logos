@@ -16,8 +16,8 @@
   </ul>
   <ul class="nav nav-sidebar">
   	<li class="dropdown-header">Product</li>
-    <li data-menu-no="21"><a href="#">Nav item again</a></li>
-    <li data-menu-no="22"><a href="#">One more nav</a></li>
+    <li data-menu-no="21"><a href="<c:url value="/backoffice/product/addPage"/>">메뉴추가</a></li>
+    <li data-menu-no="22"><a href="#">메뉴리스트</a></li>
     <li data-menu-no="23"><a href="#">Another nav item</a></li>
   </ul>
   <ul class="nav nav-sidebar">

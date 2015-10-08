@@ -240,7 +240,7 @@
 												<li class="active"><a href="#banner">Home</a></li>
 												<li><a href="#about">About</a></li>
 												<li><a href="#services">Activity</a></li>
-												<li><a href="#portfolio">Drinking</a></li>
+												<li><a href="#portfolio">메뉴</a></li>
 												<li><a href="#clients">Branchs</a></li>
 												<li><a href="#login">Login/Join</a></li>
 												<li><a href="#contact">Booking</a></li>
