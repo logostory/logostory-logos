@@ -41,7 +41,7 @@ public class BookingController {
 	public String Make_Booking(HttpServletRequest request, Model model, Booking booking) throws Exception {
 
 		if (bookingService.insertBooking(booking)) {
-			
+			System.out.println("booking action 도착");
 			return "redirect:" + "/backoffice/Booking/Booking_List";
 			
 		} else {
