@@ -1031,30 +1031,30 @@
 								<form role="form" id="footer-form" action="<c:url value="/backoffice/booking/Make_Booking"/>">
 			
 									<div class="form-group has-feedback">
-										<label class="sr-only" for="name2">Name</label>
-										<input type="text" class="form-control" id="name2" placeholder="Name" name="name2" required>
+										<label class="sr-only" for="bkName">Name</label>
+										<input type="text" class="form-control" id="bkName" placeholder="Name" name="bkName" required>
 										<i class="fa fa-user form-control-feedback"></i>
 									</div>
 									<div class="form-group has-feedback">
-										<label class="sr-only" for="email2">Email address</label>
-										<input type="email" class="form-control" id="email2" placeholder="Enter email" name="email2" required>
+										<label class="sr-only" for="bkEmail">Email address</label>
+										<input type="email" class="form-control" id="bkEmail" placeholder="Enter email" name="bkEmail" required>
 										<i class="fa fa-envelope form-control-feedback"></i>
 									</div>
 							<!-- 수정한곳 hj !!!! -->
 									<div class="form-group has-feedback">
-										<label class="sr-only" for="phone">Phone</label>
-										<input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone" required>
+										<label class="sr-only" for="bkPhone">Phone</label>
+										<input type="text" class="form-control" id="bkPhone" placeholder="Enter phone" name="bkPhone" required>
 										<i class="fa fa-envelope form-control-feedback"></i>
 									</div>
 									<div class="form-group has-feedback">
 										<label class="sr-only" for="person">person</label>
-										<input type="text" class="form-control" id="person" placeholder="Enter person" name="person" required>
+										<input type="text" class="form-control" id="bkPerson" placeholder="Enter person" name="bkPerson" required>
 										<i class="fa fa-envelope form-control-feedback"></i>
 									</div>
 							<!-- 수정끝- hj !!!!-->
 									<div class="form-group has-feedback">
-										<label class="sr-only" for="message2">Message</label>
-										<textarea class="form-control" rows="8" id="message2" placeholder="Message" name="message2" required></textarea>
+										<label class="sr-only" for="bkMessage">Message</label>
+										<textarea class="form-control" rows="8" id="bkMessage" placeholder="Message" name="bkMessage" required></textarea>
 										<i class="fa fa-pencil form-control-feedback"></i>
 									</div>
 									<input type="submit" value="Send" class="btn btn-default">
