@@ -41,7 +41,7 @@ public class ProductDao {
 
 		List<Product> resultProductList = sqlSessionTemplate
 				.selectList(MAPPER_NAMESPACE_PRODUCT + "getProductList", product);
-		logger.debug("promotion result: " + resultProductList.size());
+		logger.debug("product result: " + resultProductList.size());
 
 		return resultProductList;
 	}
