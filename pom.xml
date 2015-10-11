@@ -1,5 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
+  	<repositories>
+		<repository>
+			<id>central</id>
+			<name>libs-release</name>
+			<url>http://repo.devframe.org/libs-release</url>
+		</repository>
+		<repository>
+			<id>snapshots</id>
+			<name>libs-snapshot</name>
+			<url>http://repo.devframe.org/libs-snapshot/</url>
+		</repository>
+	</repositories>
+	
   	<parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -44,6 +58,14 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<!-- //jap lib -->
+		
+		<!-- Java Mail API : Manoo 추가 -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.3</version>
+		</dependency>
+		<!-- Java Mail API : Manoo 추가 끝 -->
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -99,6 +121,12 @@
 		</dependency>
 		
 		<dependency>
+			<groupId>org.devframe</groupId>
+			<artifactId>devframe-theme</artifactId>
+  			<version>0.0.1-RELEASE</version>
+  		</dependency>
+  		
+  		<dependency>
 		  <groupId>com.mysema.querydsl</groupId>
 		  <artifactId>querydsl-apt</artifactId>
 		  <version>${querydsl.version}</version>

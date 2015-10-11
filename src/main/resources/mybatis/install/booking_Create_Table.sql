@@ -1,4 +1,3 @@
-
 -- drop table
 drop table if exists logos_booking;
 
@@ -13,4 +12,3 @@ create table if not exists logos_booking(
 	bkMessage	varchar(255)comment 'booking of message',
 	
 );
-

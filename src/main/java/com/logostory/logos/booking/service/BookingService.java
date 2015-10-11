@@ -30,6 +30,4 @@ public interface BookingService {
 	public List<Booking> selectBookingList(Booking booking) throws Exception; //예약 리스트 - select List
 	
 	public boolean deleteBooking(Booking booking) throws Exception; //예약 삭제 - delete
-	
-		
 }
