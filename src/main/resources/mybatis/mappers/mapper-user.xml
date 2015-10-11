@@ -6,8 +6,8 @@
 	<insert id = "setUserClient"
 			parameterType ="com.logostory.logos.user.domain.User">
 	
-		insert into logos_userClient (clientID, clientName, clientTel)
-		values (#{clientID}, #{clientName}, #{clientTel})
+		insert into logos_userClient (clientID, clientPW, clientName, clientTel)
+		values (#{clientID}, #{clientPW}, #{clientName}, #{clientTel})
 			
 	</insert>
 	
@@ -17,6 +17,14 @@
 	
 		select * from logos_userClient where clientID = #{string}
 				
+	</select>
+	
+	<select id = "getUserClientInfo"
+			parameterType = "com.logostory.logos.user.domain.User"
+			resultType = "com.logostory.logos.user.domain.User">
+			
+		select * from logos_userClient where clientID = #{string}
+			
 	</select>
 	
 	<select id = "getUserClientList"
@@ -127,5 +135,4 @@
 	<delete id = "deleteUserManager" parameterType = "string">
 		delete from logos_userManager where managerID = #{string}
 	</delete>
-
 </mapper>

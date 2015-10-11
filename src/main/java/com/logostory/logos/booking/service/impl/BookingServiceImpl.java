@@ -1,4 +1,3 @@
-
 package com.logostory.logos.booking.service.impl;
 
 import java.util.List;
@@ -55,7 +54,4 @@ public class BookingServiceImpl implements BookingService {
 	public boolean deleteBooking(Booking booking) throws Exception{
 		return bookingDAO.deleteBooking(booking);
 	}
-	
-	
-	
 }

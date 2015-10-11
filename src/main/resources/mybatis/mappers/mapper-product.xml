@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="logos.product">
+
+	<!-- insert product -->
+	<insert id="setProduct" 
+			parameterType="com.logostory.logos.product.domain.Product">
+			
+		insert into logos_product (f_type, f_name, f_desc, image_addr) 
+		values (#{f_type}, #{f_name}, #{f_desc}, #{image_addr})	
+	</insert>
+<!--  
+	<select id="getPromotion" parameterType="string"
+			resultType="com.logostory.logos.promote.domain.Promotion">
+		select * from logos_promotion where pmId = #{string}
+	</select>
+-->
+	<select id="getProductList" 
+			parameterType="com.logostory.logos.product.domain.Product"
+			resultType="com.logostory.logos.product.domain.Product">
+			
+		select * from logos_product
+		<where>
+			<if test="f_id != null and f_id != ''">
+				and f_id = #{f_id}
+			</if>
+			<if test="f_name != null and f_name != ''">
+				and f_name like '%${f_name}%'
+			</if>
+			<if test="f_desc != null and f_desc != ''">
+				and f_desc like '%${f_desc}%'
+			</if>
+			<if test="image_addr != null and image_addr != ''">
+				and image_addr like '%${image_addr}%'
+			</if>
+		</where>
+	</select>	
+	
+<!--  
+	<update id="updatePromotion" 
+			parameterType="com.logostory.logos.promote.domain.Promotion">
+	
+		update logos_promotion
+		<set>
+			<if test="pmTitle != null and pmTitle != ''">
+				pmTitle = #{pmTitle}, 
+			</if>
+			<if test="pmContents != null and pmContents !=  ''">
+				pmContents = #{pmContents}, 
+			</if>
+			<if test="pmTitle != null and pmTitle != ''">
+				pmTitle = #{pmTitle}, 
+			</if>
+			<if test="pmImageUrl != null and pmImageUrl != ''">
+				pmImageUrl = #{pmImageUrl}, 
+			</if>
+			<if test="pmLinkurl != null and pmLinkurl != ''">
+				pmLinkurl = #{pmLinkurl}, 
+			</if>
+			<if test="pmLinkurl != null and pmLinkurl != ''">
+				pmLinkurl = #{pmLinkurl}, 
+			</if>
+			<if test="pmIsActive != null and pmIsActive != ''">
+				pmIsActive = #{pmIsActive}, 
+			</if>
+		</set>	
+		where pmId = #{pmId}
+	</update>
+	
+	<delete id="deletePromotion" parameterType="string">
+		delete from logos_promotion where pmId = #{string}
+	</delete>
+-->
+ 
+</mapper>

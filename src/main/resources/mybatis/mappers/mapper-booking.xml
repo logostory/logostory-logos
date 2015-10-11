@@ -75,9 +75,4 @@
 	<delete id="deleteBooking" parameterType="com.logostory.logos.booking.domain.Booking">
 		delete from logos_booking where bkNum = #{bkNum}
 	</delete>
-
- 
-
-
-
 </mapper>
