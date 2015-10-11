@@ -35,6 +35,7 @@ public class ProductController {
 	public String add(HttpServletRequest request, Product product, Model model) throws Exception {
 		
 		System.out.println("add page call");
+		System.out.println(product.getImage_addr());
 		
 		if(productService.setProduct(product)){
 			return "redirect:" + "/backoffice/product/list";
