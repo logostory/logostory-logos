@@ -135,5 +135,4 @@
 	<delete id = "deleteUserManager" parameterType = "string">
 		delete from logos_userManager where managerID = #{string}
 	</delete>
-
 </mapper>

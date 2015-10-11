@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.logostory.logos.user.domain.User;
 import com.logostory.logos.user.service.UserService;
 
-
 @RequestMapping ("/backoffice/UserManager")
 @Controller
 public class UserController {
