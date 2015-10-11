@@ -159,6 +159,7 @@ public class UserController {
 					System.out.println("모두 일치하니까 정상 로그인 합시다.");
 					HttpSession session = request.getSession();
 					session.setAttribute("loginYN", "Y");
+					session.setAttribute("modify", "N");
 					session.setAttribute("clientID", dbID);
 					session.setAttribute("clientPW", dbPW);
 					session.setAttribute("clientName", dbName);

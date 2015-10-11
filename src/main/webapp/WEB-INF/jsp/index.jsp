@@ -49,6 +49,7 @@
 		-->
 <%@ page session = "true" %>
 <%
+		String modify = (String)session.getAttribute("modify");
 		String loginYN = (String)session.getAttribute("loginYN");
 		String loginYN1 = (String)loginYN;
 		
@@ -64,6 +65,8 @@
 		String clientTel1 = (String)clientTel;
 		
 		String clientBooking = (String)session.getAttribute("clientBooking");
+		
+		System.out.println("modify에 대한 결과물은~~ = " + modify);
 %>
 		
 		<!-- 스크립트 추가 : 마누 -->
@@ -127,6 +130,7 @@
 						document.joinform.action="/backoffice/UserManager/doJoin2";
 						document.joinform.submit();
 						document.joinform.reset();
+						location.reload();
 					}
 					else if(idCheckCount == 999){
 						alert('중복된 아이디 입니다.');
@@ -217,6 +221,7 @@
 				
 				if (count%2 == 1) {
 					document.getElementById(id).style.display = "";
+					document.loginform.reset();
 				}
 				else {
 					document.getElementById(id).style.display = "none";
@@ -277,13 +282,16 @@
 			}
 			
 			function logout() {
-//				location.href="/logout";
-				location.replace('/logout');
-				alert('로그아웃 되셨습니다.');
+				window.location.replace('/logout');
+				alert('로그아웃 되었습니다.');
 			}
 			
 			function profile() {
 				location.href="/backoffice/UserManager/profile";
+			}
+			
+			function goUpdateInfo() {
+				location.href="/modify";
 			}
 		
 		</script>
@@ -589,7 +597,7 @@
 						<h1 id="login" class="text-center">Let's Work Together!</h1>
 						<br>
 <%
-						if(loginYN != "Y") {
+						if(loginYN != "Y" && modify != "Y") {
 %>
 						<div class="col-md-8 col-md-offset-2">
 							<form name="loginform" class="login" action="/backoffice/UserManager/doLogin" method="post">
@@ -857,13 +865,14 @@
 						</form>
 <%
 						}
-						else {
+						else if(loginYN == "Y" && modify != "Y"){
 %>
 							<div class="container">
 							  <div class="row">
 							  <div class="col-md-8 col-xs-10">
 							  	<div class="col-sm-4 col-xs-12 text-center">
 							        <img src="http://png.clipart.me/graphics/previews/154/green-tree-round-icon-vector-illustration_154612604.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
+							        <input type="button" id="Info" name="Info" onclick="goUpdateInfo();" value="내 정보 수정" style="color:black; background-color:lightblue;">
 							    </div>
 					            <div class="col-xs-12 col-sm-8" >
 					            	<h2><% out.print(clientID1); %></h2>
@@ -890,6 +899,60 @@
 					            	%>
 					            	</strong> </p>
 					            	<p><strong>연락처 : <% out.print(clientTel1); %></strong> </p>
+					            	<p><strong>예약 여부 : 
+					            	<%
+					            		if(clientBooking.equals("N")) {
+					            			String clientBooking1 = "예약 내용이 없습니다.";
+					            			out.print(clientBooking1);
+					            		}
+					            		else {
+					            			String clientBooking1 = "예약 되어 있습니다.";
+					            			out.print(clientBooking1);
+					            		}
+					            	%>
+					            	</strong> </p>
+					            </div>
+						       </div> 
+							   </div>
+							  <!--/row--> 
+							</div>
+<%
+						}
+
+						else if (loginYN == "Y" && modify == "Y") {
+%>
+							<div class="container">
+							  <div class="row">
+							  <div class="col-md-8 col-xs-10">
+							  	<div class="col-sm-4 col-xs-12 text-center">
+							        <img src="http://png.clipart.me/graphics/previews/154/green-tree-round-icon-vector-illustration_154612604.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
+							        <input type="button" id="Info" name="Info" onclick="updateInfo();" value="내 정보 수정" style="color:black; background-color:lightblue;">
+							    </div>
+					            <div class="col-xs-12 col-sm-8" >
+					            	<h2><% out.print(clientID1); %></h2>
+					            	<br>
+					            	<p><strong>이름 : <input type="text" placeholder="<% out.print(clientName1); %>" class="form-control"></strong> </p>
+					            	<p><strong>Level : 
+					            	<% 
+					            		if(clientLevel.equals("P")) {
+					            			String clientLevel1 = "Platinum Star";
+					            			out.print(clientLevel1);
+					            		}
+					            		else if(clientLevel.equals("B")) {
+					            			String clientLevel1 = "Bronze Star";
+					            			out.print(clientLevel1);
+					            		}
+					            		else if(clientLevel.equals("S")) {
+					            			String clientLevel1 = "Silver Star";
+					            			out.print(clientLevel1);
+					            		}
+					            		else {
+					            			String clientLevel1 = "Gold Star";
+					            			out.print(clientLevel1);
+					            		}
+					            	%>
+					            	</strong> </p>
+					            	<p><strong>연락처 : <input type="text" placeholder="<% out.print(clientTel1); %>" class="form-control"></strong> </p>
 					            	<p><strong>예약 여부 : 
 					            	<%
 					            		if(clientBooking.equals("N")) {

@@ -6,8 +6,8 @@
 	<insert id = "setUserClient"
 			parameterType ="com.logostory.logos.user.domain.User">
 	
-		insert into logos_userClient (clientID, clientName, clientTel)
-		values (#{clientID}, #{clientName}, #{clientTel})
+		insert into logos_userClient (clientID, clientPW, clientName, clientTel)
+		values (#{clientID}, #{clientPW}, #{clientName}, #{clientTel})
 			
 	</insert>
 	
