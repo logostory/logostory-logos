@@ -45,7 +45,7 @@
 
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="http://www.yourpokerdream.com/images/promotions/platinum.png" width="200" height="200" class="img-responsive" alt="Platinum Star Image">
+              <img src="http://1.bp.blogspot.com/-WcF9icqE4Jo/Ts6RPzKl_3I/AAAAAAAAATM/iHytco7K1Jk/s1600/Silver_star.png" width="200" height="200" class="img-responsive" alt="Platinum Star Image">
               <h4>Platinum Star</h4>
               <span class="text-muted">혜택 설명</span>
             </div>
