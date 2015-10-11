@@ -2,6 +2,7 @@ package com.logostory.logos.promote.web;
 
 import java.util.List;
 
+import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -22,6 +23,7 @@ public class PromotionController {
 	private static final String promotionHomeUrl = "backoffice/promotion/";
 	
 	@Autowired
+	@Named("promotionService")
 	PromotionService promotionService;
 	
 	@RequestMapping("/addPage")

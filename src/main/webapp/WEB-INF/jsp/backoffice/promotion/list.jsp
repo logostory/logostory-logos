@@ -27,8 +27,8 @@
            </thead>
            <tbody>
            	<c:forEach items="${pList}" var="data" varStatus="idx">
-             <tr data-pm-id="${data.pmId}">
-               <td>${data.pmId}</td>
+             <tr data-pm-id="${data.id}">
+               <td>${data.id}</td>
                <td>${data.pmType}</td>
                <td>${data.pmTitle}</td>
                <td>${data.pmContents}</td>

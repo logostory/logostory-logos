@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="logos.bookong">
+	
+	
+	<!-- 예약등록 insert booking -->
+	<insert id="insertBooking" 
+			parameterType="com.logostory.logos.booking.domain.Booking">		
+		insert into logos_booking ( bkName, bkEmail, bkPhone, bkPerson, bkMessage ) 
+		values ( #{bkName}, #{bkEmail}, #{bkPhone}, #{bkPerson}, #{bkMessage} )	
+	</insert>
+	
+	
+	<!-- 예약수정 update booking -->
+	<update id="updateBooking" 
+			parameterType="com.logostory.logos.booking.domain.Booking">
+	
+		update logos_booking
+		<set>
+			<!-- <if test="bkName != null and bkName != ''">
+				bkName = #{bkName}, 
+			</if> -->
+		
+			<if test="bkEmail != null and bkEmail !=  ''">
+				bkEmail = #{bkEmail}, 
+			</if>
+			<if test="bkPhone != null and bkPhone != ''">
+				bkPhone = #{bkPhone}, 
+			</if>
+			<if test="bkPerson != null and bkPerson != ''">
+				bkPerson = #{bkPerson}, 
+			</if>
+			<if test="bkMessage != null and bkMessage != ''">
+				pmLinkurl = #{pmLinkurl}, 
+			</if>
+		
+		</set>	
+		where bkNum = #{bkNum}
+	</update>
+	
+	
+
+	<!-- 예약 상세내용 select Booking Bean -->
+	<select id="selectBookingBean" parameterType="com.logostory.logos.booking.domain.Booking"
+			resultType="com.logostory.logos.booking.domain.Booking">
+		select * from logos_booking where bkNum = #{bkNum}
+	</select>
+	
+	<!-- 예약 리스트 select booking list -->
+	<select id="selectBooking" 
+			parameterType="com.logostory.logos.booking.domain.Booking"
+			resultType="com.logostory.logos.booking.domain.Booking">
+			
+		select * from logos_booking
+		<where>
+			<if test="bkNum != null and bkNum != ''">
+				and bkNum = #{bkNum}
+			</if>
+			<if test="bkName != null and bkName != ''">
+				and bkName like '%${bkName}%'
+			</if>
+			<if test="bkEmail != null and bkEmail != ''">
+				and bkEmail like '%${bkEmail}%'
+			</if>
+			<if test="bkPhone != null and bkPhone != ''">
+				and bkPhone like '%${bkPhone}%'
+			</if>
+			<if test="bkPerson != null and bkPerson != ''">
+				and bkPerson like '%${bkPerson}%'
+			</if>
+				<if test="bkMessage != null and bkMessage != ''">
+				and bkMessage like '%${bkMessage}%'
+			</if>
+		</where>
+	</select>
+	
+	<!-- 예약 삭제 delete booking -->
+	<delete id="deleteBooking" parameterType="com.logostory.logos.booking.domain.Booking">
+		delete from logos_promotion where bkNum = #{bkNum}
+	</delete>
+
+ 
+
+
+
+</mapper>

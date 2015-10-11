@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="logos.user">
+
+	<!-- insert userClient -->
+	<insert id = "setUserClient"
+			parameterType ="com.logostory.logos.user.domain.User">
+	
+		insert into logos_userClient (clientID, clientName, clientTel)
+		values (#{clientID}, #{clientName}, #{clientTel})
+			
+	</insert>
+	
+	<select id = "getUserClient"
+			parameterType = "string"
+			resultType = "com.logostory.logos.user.domain.User">
+	
+		select * from logos_userClient where clientID = #{string}
+				
+	</select>
+	
+	<select id = "getUserClientList"
+			parameterType = "com.logostory.logos.user.domain.User"
+			resultType = "com.logostory.logos.user.domain.User">
+		
+		select * from logos_userClient
+		<where>
+			<if test = "clientID != null and clientID != ''">
+				and clientID = #{clientID}
+			</if>
+			
+			<if test = "clientName != null and clientName != ''">
+				and clientName = #{clientName}
+			</if>
+			
+			<if test = "clientTel != null and clientTel != ''">
+				and clientTel = #{clientTel}
+			</if>
+		</where>
+		
+	</select>
+	
+	<update id = "updateUserClient"
+			parameterType = "com.logostory.logos.user.domain.User">
+			
+		update logos_userClient
+		<set>			
+			<if test = "clientName != null and clientName != ''">
+				clientName = #{clientName},
+			</if>
+			
+			<if test = "clientTel != null and clientTel != ''">
+				clientTel = #{clientTel},
+			</if>
+		</set>
+		
+		where clientID = #{clientID}
+	</update>
+	
+	<delete id = "deleteUserClient" parameterType = "string">
+		delete from logos_userClient where clientID = #{string}
+	</delete>
+	
+	
+	<!-- insert userManager -->
+	<insert id = "setUserManager"
+			parameterType = "com.logostory.logos.user.domain.User">
+			
+		insert into logos_userManager (managerID, managerName, managerTel, managerAttendDate)
+		values (#{managerID}, #{managerName}, #{managerTel}, #{managerAttendDate})		
+	
+	</insert>
+	
+	<select id = "getUserManager"
+			parameterType = "string"
+			resultType = "com.logostory.logos.user.domain.User">
+			
+		select * from logos_userManager where managerID = #{string}
+			
+	</select>
+	
+	<select id = "getUserManagerList"
+			parameterType = "com.logostory.logos.user.domain.User"
+			resultType = "com.logostory.logos.user.domain.User">
+			
+		select * from logos_userManager
+		<where>
+			<if test = "managerID != null and managerID != ''">
+				and managerID = #{managerID}
+			</if>
+			
+			<if test = "managerName != null and managerName != ''">
+				and managerName = #{managerName}
+			</if>
+			
+			<if test = "managerTel != null and managerTel != ''">
+				and managerTel = #{managerTel}
+			</if>
+			
+			<if test = "managerAttendDate != null and managerAttendDate != ''">
+				and managerAttendDate = #{managerAttendDate}
+			</if>
+		</where>
+	</select>
+	
+	<update id = "updateUserManager"
+			parameterType = "com.logostory.logos.user.domain.User">
+	
+		update logos_userManager
+		<set>
+			<if test = "managerName != null and managerName != ''">
+				managerName = #{managerName},
+			</if>
+			
+			<if test = "managerTel != null and managerTel != ''">
+				managerTel = #{managerTel},
+			</if>
+			
+			<if test = "managerAttendDate != null and managerAttendDate != ''">
+				managerAttendDate = #{managerAttendDate},
+			</if>
+		</set>	
+		
+		where managerID = #{managerID}	
+	</update>
+	
+	<delete id = "deleteUserManager" parameterType = "string">
+		delete from logos_userManager where managerID = #{string}
+	</delete>
+
+</mapper>
