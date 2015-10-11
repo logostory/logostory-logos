@@ -14,6 +14,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.AbstractJsonpResponseBodyAdvice;
 
+
 // HJ 
 //
 // @ComponentScan =  Controller로 사용하고자 하는 클래스에 @Controller 지정해 주면 component-scan으로 자동 등록된다.
@@ -60,7 +61,6 @@ HttpMessageConverter는 RestAPI로 데이터를 리턴할때 json형식으로 co
 다른 사이트나 파일에서 logos에서 작성될 RestAPI를 정상적으로 호출 가능하게 설정한 부분 입니다ㅋ
      */
     
-    
-    
+
 }
 

@@ -43,12 +43,33 @@
 		
 		**마누 스터디
 		
-					display:none 관련 참조 사이트 : http://l2j.co.kr/1167 
+					display:none 관련 참조 사이트 : http://l2j.co.kr/1167
+					session으로 가져온 값을 그대로 출력하기 : http://wickedmagic.tistory.com/129
 		
 		-->
+<%@ page session = "true" %>
+<%
+		String loginYN = (String)session.getAttribute("loginYN");
+		String loginYN1 = (String)loginYN;
+		
+		String clientID = (String)session.getAttribute("clientID");
+		String clientID1 = (String)clientID;
+		
+		String clientName = (String)session.getAttribute("clientName");
+		String clientName1 = (String)clientName;
+		
+		String clientLevel = (String)session.getAttribute("clientLevel");
+		
+		String clientTel = (String)session.getAttribute("clientTel");
+		String clientTel1 = (String)clientTel;
+		
+		String clientBooking = (String)session.getAttribute("clientBooking");
+%>
 		
 		<!-- 스크립트 추가 : 마누 -->
 		<script language="javascript" type="text/javascript">
+			
+			var idCheckCount = 0;
 			
 			function Agreement() {
 				
@@ -100,11 +121,25 @@
 				}
 				
 				else {
-					document.joinform.submit();
+					if(idCheckCount == 1){
+						window.open("", "doJoin", "width=450, height=550, scrollbars=1, menubar=1, resizable=1");
+						document.joinform.target="doJoin";
+						document.joinform.action="/backoffice/UserManager/doJoin2";
+						document.joinform.submit();
+						document.joinform.reset();
+					}
+					else if(idCheckCount == 999){
+						alert('중복된 아이디 입니다.');
+					}
+					else{
+						alert('아이디 중복 확인을 해주세요.');
+					}
 				}
 			}
 			
 			function idCheck() {
+				
+				idCheckCount = 1;
 				
 				var idCheck = document.getElementById("writeID");
 				
@@ -135,12 +170,31 @@
 						idCheck.focus();
 						return false;
 					}
-					
-					else {
-						alert('사용 가능합니다.');
-						return true;
-					}
 				}
+				
+				var idCheck2 = $("#writeID").val();
+				
+				$.ajax({
+					type:"POST",
+					url:"/backoffice/UserManager/idCheck",
+					data:'clientID='+idCheck2,
+					dataType:"text",
+					success:function(data){
+						if(data == null || data == "null"){
+							this.idCheckCount = idCheckCount;
+							$("input[name=clientID]").attr("readonly", true);
+							alert('사용 가능합니다.');
+						}
+						else{
+							idCheckCount = 999;
+							this.idCheckCount = idCheckCount;
+							alert('중복된 아이디 입니다.');
+						}
+					},
+					error:function(request, status, error){
+						alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					}
+				});
 			}
 			
 			function onlyNumberInput() {
@@ -166,9 +220,70 @@
 				}
 				else {
 					document.getElementById(id).style.display = "none";
+					document.joinform.reset();
+					document.joinform.clientID.readOnly=false;
 				}
 				
 				this.count = count;
+			}
+			
+			function allReset() {
+				document.joinform.reset();
+				document.joinform.clientID.readOnly=false;
+			}
+			
+			function login() {
+				
+				var idCheck = document.getElementById("loginID");
+				var pwCheck = document.getElementById("loginPW");
+				
+				var idCheck2 = $("#loginID").val();
+				var pwCheck2 = $("#loginPW").val();
+				
+				if(idCheck.value == "" || idCheck.value == null) {
+					alert('아이디를 입력해주세요.');
+					return false;
+				}
+				else if(pwCheck.value == "" || pwCheck.value == null) {
+					alert('비밀번호를 입력해주세요.');
+					return false;
+				}
+				else {
+					$.ajax({
+						type:"POST",
+						url:"/backoffice/UserManager/doLogin",
+						data:'clientID='+idCheck2+'&clientPW='+pwCheck2,
+						dataType:"text",
+						success:function(data) {
+							if(data == '"X"') {
+								alert('등록되지 않은 아이디입니다.');
+							}
+							else if(data == '"I"') {
+								alert('아이디를 다시 확인해주세요.');
+							}
+							else if(data == '"P"') {
+								alert('비밀번호를 다시 확인해주세요.');
+							}
+							else {
+								location.reload();
+								alert('로그인 되었습니다.');
+							}
+						},
+						error:function(request, status, error) {
+							alert("코드 : " + request.status + "\n" + "메세지 : " + request.responseText + "\n" + "에러 : " + error);
+						}
+					});
+				}
+			}
+			
+			function logout() {
+//				location.href="/logout";
+				location.replace('/logout');
+				alert('로그아웃 되셨습니다.');
+			}
+			
+			function profile() {
+				location.href="/backoffice/UserManager/profile";
 			}
 		
 		</script>
@@ -239,7 +354,19 @@
 												<li><a href="#services">Activity</a></li>
 												<li><a href="#portfolio">Drinking</a></li>
 												<li><a href="#clients">Branchs</a></li>
+<%
+												if(loginYN == "Y") {
+%>
+													<li><a href="javascript:logout();">Logout</a></li>
+													<li><a href="#login">Profile</a></li>
+<%
+												}
+												else {
+%>
 												<li><a href="#login">Login/Join</a></li>
+<%
+												}
+%>
 												<li><a href="#contact">Booking</a></li>
 											</ul>
 										</div>
@@ -461,10 +588,15 @@
 					<div class="col-md-8 col-md-offset-2">
 						<h1 id="login" class="text-center">Let's Work Together!</h1>
 						<br>
+<%
+						if(loginYN != "Y") {
+%>
 						<div class="col-md-8 col-md-offset-2">
-							<input type="text" placeholder="UserName" style="vertical-align:middle;"/>
-							<input type="password" placeholder="Password" style="vertical-align:middle;" />
-							<input type="submit" value="Sign In" class="btn btn-success btn-sm" style="vertical-align:middle;" />
+							<form name="loginform" class="login" action="/backoffice/UserManager/doLogin" method="post">
+								<input type="text"  class="form-control" name="clientID" id="loginID" placeholder="아이디를 입력하세요." style="vertical-align:middle;"/>
+								<input type="password" class="form-control" name="clientPW" id="loginPW" placeholder="비밀번호를 입력하세요." style="vertical-align:middle;" />
+								<input type="button" value="Sign In" onclick="login()" class="btn btn-success btn-sm" style="vertical-align:middle;" />
+							</form>
 							<p><a href="#" onclick="selectJoin('joinForm'); return false;">아직 회원이 아니신가요?</a></p>
 						</div>
 					</div>
@@ -473,7 +605,7 @@
 						<h1>&nbsp;</h1>
 						<h2>&nbsp;</h2>
 						<h2 class="text-center">회원가입</h2>
-						<form name="joinform" class="form-horizontal" method="post" action="/backoffice/UserManager/doJoin">
+						<form name="joinform" class="form-horizontal" method="post">
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label class="control-label">아이디</label>
@@ -486,7 +618,7 @@
 								</div>
 								<div class="form-group">
 									<label class="control-label">비밀번호 확인</label>
-									<input type="password" class="form-control" id=cehckPW" placeholder="비밀번호를 한 번 더 입력해주세요." style="width:400px">
+									<input type="password" class="form-control" id="checkPW" placeholder="비밀번호를 한 번 더 입력해주세요." style="width:400px">
 								</div>
 								<div class="form-group">
 									<label class="control-label">이름</label>
@@ -495,6 +627,27 @@
 								<div class="form-group">
 									<label class="control-label">연락처</label>
 									<input name="clientTel" type="text" class="form-control" id="writePhone" maxlength="11" onKeyDown="javascript:onlyNumberInput()" style="width:400px; 'IME-MODE:disabled'" placeholder="- 빼고 입력하세요.">
+								</div>
+								<div class="form-group">
+									<div>
+										<label class="control-label">이메일</label>
+									</div>
+									<div style="float:left; width:30%">
+										<input type="text" class="form-control" id="mail1" placeholder="">
+									</div>
+									<div style="float:middle; width:10%">
+										@
+									</div>
+									<div style="float:right; width:30%">
+										<select class="form-control auto-field" name="mail2">
+											<option value="naver">naver.com</option>
+											<option value="daum1">daum.net</option>
+											<option value="daum2">hanmail.com</option>
+											<option value="nate">nate.com</option>
+											<option value="gmail">gmail.com</option>
+										</select>
+									</div>
+									<br>
 									<button type="button" class="btn btn-sm">인증번호 요청</button>
 								</div>
 								<div class="form-group">
@@ -507,7 +660,7 @@
 								<div class="form-group">
 									<label class="control-label">이용약관</label>
 								</div>
-								<div stype="margin-left:70px">
+								<div style="margin-left:70px">
 									<div style="width:720px; height:619px; padding:10px; background-color:gray; float:center;">
 										<div style="width:700px; height:600px; overflow:scroll; overflow-x:hidden;">
 											<pre>
@@ -697,11 +850,66 @@
 								<div style="margin-left:150px">
 									<div class="form-group">
 										<button type="button" class="btn btn-lg" onclick="Agreement()">가입하기</button>
-										<button type="button" class="btn btn-lg">가입취소</button>
+										<button type="button" class="btn btn-lg" onclick="allReset()">가입취소</button>
 									</div>
 								</div>
 							</div>
 						</form>
+<%
+						}
+						else {
+%>
+							<div class="container">
+							  <div class="row">
+							  <div class="col-md-8 col-xs-10">
+							  	<div class="col-sm-4 col-xs-12 text-center">
+							        <img src="http://png.clipart.me/graphics/previews/154/green-tree-round-icon-vector-illustration_154612604.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
+							    </div>
+					            <div class="col-xs-12 col-sm-8" >
+					            	<h2><% out.print(clientID1); %></h2>
+					            	<br>
+					            	<p><strong>이름 : <% out.print(clientName1); %></strong> </p>
+					            	<p><strong>Level : 
+					            	<% 
+					            		if(clientLevel.equals("P")) {
+					            			String clientLevel1 = "Platinum Star";
+					            			out.print(clientLevel1);
+					            		}
+					            		else if(clientLevel.equals("B")) {
+					            			String clientLevel1 = "Bronze Star";
+					            			out.print(clientLevel1);
+					            		}
+					            		else if(clientLevel.equals("S")) {
+					            			String clientLevel1 = "Silver Star";
+					            			out.print(clientLevel1);
+					            		}
+					            		else {
+					            			String clientLevel1 = "Gold Star";
+					            			out.print(clientLevel1);
+					            		}
+					            	%>
+					            	</strong> </p>
+					            	<p><strong>연락처 : <% out.print(clientTel1); %></strong> </p>
+					            	<p><strong>예약 여부 : 
+					            	<%
+					            		if(clientBooking.equals("N")) {
+					            			String clientBooking1 = "예약 내용이 없습니다.";
+					            			out.print(clientBooking1);
+					            		}
+					            		else {
+					            			String clientBooking1 = "예약 되어 있습니다.";
+					            			out.print(clientBooking1);
+					            		}
+					            	%>
+					            	</strong> </p>
+					            </div>
+						       </div> 
+							   </div>
+							  <!--/row--> 
+							</div>
+<%
+						}
+%>
 					</div>
 				</div>
 			</div>

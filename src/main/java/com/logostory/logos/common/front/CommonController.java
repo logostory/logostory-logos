@@ -3,6 +3,10 @@ package com.logostory.logos.common.front;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import org.springframework.ui.Model;
+
 @Controller
 public class CommonController {
 	
@@ -17,6 +21,17 @@ public class CommonController {
 		
 		return "backoffice/index";
 	} 
+	
+	@RequestMapping("/logout")
+	public String logout(HttpServletRequest request, Model model) throws Exception {
+		
+		System.out.println("로그아웃 하러 들어왔어요.");
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		System.out.println("로그아웃을 처리하였어요!");
+		return "index";
+	}
 
 	/*
 
