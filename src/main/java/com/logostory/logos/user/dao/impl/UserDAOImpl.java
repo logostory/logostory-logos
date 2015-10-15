@@ -42,14 +42,6 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	@Override
-	public List<User> getUserClientInfo(String clientID) throws Exception {
-		
-		List<User> resultUserClientInfo = sqlSessionTemplate.selectList(MAPPER_NAMESPACE_USER + "getUserClientInfo", clientID);
-		
-		return resultUserClientInfo;
-	}
-	
-	@Override
 	public List<User> getUserClientList(User user) throws Exception {
 		
 		List<User> resultUserClientList = sqlSessionTemplate.selectList(MAPPER_NAMESPACE_USER + "getUserClientList", user );
@@ -96,9 +88,9 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	@Override
-	public User getUserManager(String managerID) throws Exception {
+	public User getUserManager(String clientID) throws Exception {
 		
-		User resultUserManager = sqlSessionTemplate.selectOne(MAPPER_NAMESPACE_USER + "getUserManager", managerID);
+		User resultUserManager = sqlSessionTemplate.selectOne(MAPPER_NAMESPACE_USER + "getUserManager", clientID);
 		
 		return resultUserManager;
 	}
@@ -125,9 +117,9 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	@Override
-	public boolean deleteUserManager(String managerID) throws Exception {
+	public boolean deleteUserManager(String clientID) throws Exception {
 		
-		int result = sqlSessionTemplate.delete(MAPPER_NAMESPACE_USER + "deleteUserManager", managerID);
+		int result = sqlSessionTemplate.delete(MAPPER_NAMESPACE_USER + "deleteUserManager", clientID);
 		
 		if (result > 0)
 			return true;

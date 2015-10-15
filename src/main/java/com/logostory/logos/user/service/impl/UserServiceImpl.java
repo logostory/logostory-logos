@@ -25,10 +25,6 @@ public class UserServiceImpl implements UserService {
 		return userDAO.getUserClient(clientID);
 	}
 	
-	public List<User> getUserClientInfo(String clientID) throws Exception {
-		return userDAO.getUserClientInfo(clientID);
-	}
-	
 	public List<User> getUserClientList(User user) throws Exception {
 		return userDAO.getUserClientList(user);
 	}
@@ -46,8 +42,8 @@ public class UserServiceImpl implements UserService {
 		return userDAO.setUserManager(user);
 	}
 	
-	public User getUserManager(String managerID) throws Exception {
-		return userDAO.getUserManager(managerID);
+	public User getUserManager(String clientID) throws Exception {
+		return userDAO.getUserManager(clientID);
 	}
 	
 	public List<User> getUserManagerList(User user) throws Exception {
@@ -58,7 +54,7 @@ public class UserServiceImpl implements UserService {
 		return userDAO.updateUserManager(user);
 	}
 	
-	public boolean deleteUserManager(String managerID) throws Exception {
-		return userDAO.deleteUserManager(managerID);
+	public boolean deleteUserManager(String clientID) throws Exception {
+		return userDAO.deleteUserManager(clientID);
 	}
 }

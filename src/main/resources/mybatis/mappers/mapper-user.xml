@@ -19,14 +19,6 @@
 				
 	</select>
 	
-	<select id = "getUserClientInfo"
-			parameterType = "com.logostory.logos.user.domain.User"
-			resultType = "com.logostory.logos.user.domain.User">
-			
-		select * from logos_userClient where clientID = #{string}
-			
-	</select>
-	
 	<select id = "getUserClientList"
 			parameterType = "com.logostory.logos.user.domain.User"
 			resultType = "com.logostory.logos.user.domain.User">
@@ -53,8 +45,8 @@
 			
 		update logos_userClient
 		<set>			
-			<if test = "clientName != null and clientName != ''">
-				clientName = #{clientName},
+			<if test = "clientPW != null and clientPW != ''">
+				clientPW = #{clientPW},
 			</if>
 			
 			<if test = "clientTel != null and clientTel != ''">
@@ -74,8 +66,8 @@
 	<insert id = "setUserManager"
 			parameterType = "com.logostory.logos.user.domain.User">
 			
-		insert into logos_userManager (managerID, managerName, managerTel, managerAttendDate)
-		values (#{managerID}, #{managerName}, #{managerTel}, #{managerAttendDate})		
+		insert into logos_userManager (clientID, managerName, managerTel, managerAttendDate)
+		values (#{clientID}, #{managerName}, #{managerTel}, #{managerAttendDate})		
 	
 	</insert>
 	
@@ -83,7 +75,7 @@
 			parameterType = "string"
 			resultType = "com.logostory.logos.user.domain.User">
 			
-		select * from logos_userManager where managerID = #{string}
+		select * from logos_userManager where clientID = #{string}
 			
 	</select>
 	
@@ -94,7 +86,7 @@
 		select * from logos_userManager
 		<where>
 			<if test = "managerID != null and managerID != ''">
-				and managerID = #{managerID}
+				and clientID = #{clientID}
 			</if>
 			
 			<if test = "managerName != null and managerName != ''">
@@ -116,23 +108,19 @@
 	
 		update logos_userManager
 		<set>
-			<if test = "managerName != null and managerName != ''">
-				managerName = #{managerName},
+			<if test = "clientPW != null and clientPW != ''">
+				clientPW = #{clientPW},
 			</if>
 			
 			<if test = "managerTel != null and managerTel != ''">
 				managerTel = #{managerTel},
 			</if>
-			
-			<if test = "managerAttendDate != null and managerAttendDate != ''">
-				managerAttendDate = #{managerAttendDate},
-			</if>
 		</set>	
 		
-		where managerID = #{managerID}	
+		where clientID = #{clientID}
 	</update>
 	
 	<delete id = "deleteUserManager" parameterType = "string">
-		delete from logos_userManager where managerID = #{string}
+		delete from logos_userManager where clientID = #{string}
 	</delete>
 </mapper>

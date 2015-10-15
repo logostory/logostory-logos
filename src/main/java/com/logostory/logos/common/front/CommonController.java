@@ -9,6 +9,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
 
+import com.logostory.logos.user.domain.User;
+
 @Controller
 public class CommonController {
 	
@@ -32,7 +34,7 @@ public class CommonController {
 		HttpSession session = request.getSession();
 		session.setAttribute("modify", "Y");
 		
-		return "redirect:/";
+		return "redirect:/#login";
 	}
 	
 	@RequestMapping("/logout")
@@ -57,6 +59,5 @@ public class CommonController {
 		return redirect로 컨트롤러로 넘기는 방법 : http://hellogk.tistory.com/86
 
 	 */
-	
 
 }
