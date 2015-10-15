@@ -51,24 +51,15 @@
 		-->
 <%@ page session = "true" %>
 <%
+		// 여기는 공통
 		String modify = (String)session.getAttribute("modify");
+		System.out.println("modify 여부 = " + modify);
+		
 		String loginYN = (String)session.getAttribute("loginYN");
-		String loginYN1 = (String)loginYN;
+		System.out.println("login 여부 = " + loginYN);
 		
-		String clientID = (String)session.getAttribute("clientID");
-		String clientID1 = (String)clientID;
-		
-		String clientName = (String)session.getAttribute("clientName");
-		String clientName1 = (String)clientName;
-		
-		String clientLevel = (String)session.getAttribute("clientLevel");
-		
-		String clientTel = (String)session.getAttribute("clientTel");
-		String clientTel1 = (String)clientTel;
-		
-		String clientBooking = (String)session.getAttribute("clientBooking");
-		
-		System.out.println("modify에 대한 결과물은~~ = " + modify);
+		String gubun = (String)session.getAttribute("gubun");
+		System.out.println("gubun 값은 = " + gubun);
 %>
 		
 		<!-- 스크립트 추가 : 마누 -->
@@ -292,8 +283,26 @@
 				location.href="/backoffice/UserManager/profile";
 			}
 			
-			function goUpdateInfo() {
+			function UpdateInfo() {
 				location.href="/modify";
+			}
+			
+			function ModifyC() {
+				alert('여기 들어왔어요. modifyC');
+				window.open("", "doModifyC", "width=350, height=450, scrollbars=1, menubar=1, resizable=1");
+				document.modifyC.target="doModifyC";
+				document.modifyC.action="/backoffice/UserManager/doModifyC";
+				document.modifyC.submit();
+				location.href="/backoffice/UserManager/modifyFinish";
+			}
+			
+			function ModifyM() {
+				alert('여기 들어왔구나~~ modifyM');
+				window.open("", "doModifyM", "width=350, height=450, scrollbars=1, menubar=1, resizable=1");
+				document.modifyM.target="doModifyM";
+				document.modifyM.action="/backoffice/UserManager/doModifyM";
+				document.modifyM.submit();
+				location.reload();
 			}
 		
 		</script>
@@ -607,10 +616,10 @@
 								<input type="password" class="form-control" name="clientPW" id="loginPW" placeholder="비밀번호를 입력하세요." style="vertical-align:middle;" />
 								<input type="button" value="Sign In" onclick="login()" class="btn btn-success btn-sm" style="vertical-align:middle;" />
 							</form>
-							<p><a href="#" onclick="selectJoin('joinForm'); return false;">아직 회원이 아니신가요?</a></p>
+							<p><a href="#" onclick="selectJoin('openJoin'); return false;">아직 회원이 아니신가요?</a></p>
 						</div>
 					</div>
-					<div id="joinForm" style="display:none">
+					<div id="openJoin" style="display:none">
 						<h1>&nbsp;</h1><h1>&nbsp;</h1>
 						<h1>&nbsp;</h1>
 						<h2>&nbsp;</h2>
@@ -867,52 +876,22 @@
 						</form>
 <%
 						}
-						else if(loginYN == "Y" && modify != "Y"){
+						else if(loginYN == "Y" && modify != "Y" && gubun == "C") {
 %>
 							<div class="container">
 							  <div class="row">
 							  <div class="col-md-8 col-xs-10">
 							  	<div class="col-sm-4 col-xs-12 text-center">
 							        <img src="http://png.clipart.me/graphics/previews/154/green-tree-round-icon-vector-illustration_154612604.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
-							        <input type="button" id="Info" name="Info" onclick="goUpdateInfo();" value="내 정보 수정" style="color:black; background-color:lightblue;">
+							        <input type="button" id="Info" name="Info" onclick="UpdateInfo()" value="내 정보 수정" style="color:black; background-color:lightblue;">
 							    </div>
 					            <div class="col-xs-12 col-sm-8" >
-					            	<h2><% out.print(clientID1); %></h2>
+					            	<h2>${userC.clientID}</h2>
 					            	<br>
-					            	<p><strong>이름 : <% out.print(clientName1); %></strong> </p>
-					            	<p><strong>Level : 
-					            	<% 
-					            		if(clientLevel.equals("P")) {
-					            			String clientLevel1 = "Platinum Star";
-					            			out.print(clientLevel1);
-					            		}
-					            		else if(clientLevel.equals("B")) {
-					            			String clientLevel1 = "Bronze Star";
-					            			out.print(clientLevel1);
-					            		}
-					            		else if(clientLevel.equals("S")) {
-					            			String clientLevel1 = "Silver Star";
-					            			out.print(clientLevel1);
-					            		}
-					            		else {
-					            			String clientLevel1 = "Gold Star";
-					            			out.print(clientLevel1);
-					            		}
-					            	%>
-					            	</strong> </p>
-					            	<p><strong>연락처 : <% out.print(clientTel1); %></strong> </p>
-					            	<p><strong>예약 여부 : 
-					            	<%
-					            		if(clientBooking.equals("N")) {
-					            			String clientBooking1 = "예약 내용이 없습니다.";
-					            			out.print(clientBooking1);
-					            		}
-					            		else {
-					            			String clientBooking1 = "예약 되어 있습니다.";
-					            			out.print(clientBooking1);
-					            		}
-					            	%>
-					            	</strong> </p>
+					            	<p><strong>이름 : ${userC.clientName}</strong> </p>
+					            	<p><strong>Level : ${userC.clientLevel}</strong></p>
+					            	<p><strong>연락처 : ${userC.clientTel}</strong> </p>
+					            	<p><strong>예약 여부 : ${userC.clientBooking}</strong> </p>
 					            </div>
 						       </div> 
 							   </div>
@@ -920,58 +899,109 @@
 							</div>
 <%
 						}
-
-						else if (loginYN == "Y" && modify == "Y") {
+						else if (loginYN == "Y" && modify != "Y" && gubun == "M") {
 %>
+							<div class="container">
+								<div class="row">
+									<div class="col-md-8 col-xs-10">
+										<div class="col-sm-4 col-xs-12 text-center">
+											<img src="http://png.clipart.me/graphics/previews/154/green-tree-round-icon-vector-illustration_154612604.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
+											<input type="button" id="Info" name="Info" onclick="UpdateInfo();" value="내 정보 수정" style="color:black; background-color:lightblue;">
+										</div>
+										<div class="col-xs-12 col-sm-8">
+											<h2>${userM.clientID}</h2>
+											<br>
+											<p><strong>이름 : ${userM.managerName}</strong></p>
+											<p><strong>Level : ${userM.managerLevel}</strong></p>
+											<p><strong>연락처 : ${userM.managerTel}</strong></p>
+										</div>
+									</div>
+								</div>
+							</div>
+<%
+						}
+
+						else if (loginYN == "Y" && modify == "Y" && gubun == "C") {
+							System.out.println("고객인데 수정 좀 할게");
+%>
+							<form name="modifyC" class="form-horizontal" method="post">
 							<div class="container">
 							  <div class="row">
 							  <div class="col-md-8 col-xs-10">
 							  	<div class="col-sm-4 col-xs-12 text-center">
 							        <img src="http://png.clipart.me/graphics/previews/154/green-tree-round-icon-vector-illustration_154612604.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
-							        <input type="button" id="Info" name="Info" onclick="updateInfo();" value="내 정보 수정" style="color:black; background-color:lightblue;">
+							        <input type="button" id="modify" name="modify" onclick="ModifyC()" value="수정 완료" style="color:black; background-color:lightblue;">
 							    </div>
 					            <div class="col-xs-12 col-sm-8" >
-					            	<h2><% out.print(clientID1); %></h2>
+					            	<h2><input type="text" name="clientID" placeholder="${userC.clientID}" class="default-bg space blue" value="${userC.clientID}" style="border:none" readonly></h2>
 					            	<br>
-					            	<p><strong>이름 : <input type="text" placeholder="<% out.print(clientName1); %>" class="form-control"></strong> </p>
-					            	<p><strong>Level : 
-					            	<% 
-					            		if(clientLevel.equals("P")) {
-					            			String clientLevel1 = "Platinum Star";
-					            			out.print(clientLevel1);
-					            		}
-					            		else if(clientLevel.equals("B")) {
-					            			String clientLevel1 = "Bronze Star";
-					            			out.print(clientLevel1);
-					            		}
-					            		else if(clientLevel.equals("S")) {
-					            			String clientLevel1 = "Silver Star";
-					            			out.print(clientLevel1);
-					            		}
-					            		else {
-					            			String clientLevel1 = "Gold Star";
-					            			out.print(clientLevel1);
-					            		}
-					            	%>
-					            	</strong> </p>
-					            	<p><strong>연락처 : <input type="text" placeholder="<% out.print(clientTel1); %>" class="form-control"></strong> </p>
-					            	<p><strong>예약 여부 : 
-					            	<%
-					            		if(clientBooking.equals("N")) {
-					            			String clientBooking1 = "예약 내용이 없습니다.";
-					            			out.print(clientBooking1);
-					            		}
-					            		else {
-					            			String clientBooking1 = "예약 되어 있습니다.";
-					            			out.print(clientBooking1);
-					            		}
-					            	%>
-					            	</strong> </p>
+					            	<table>
+					            		<tr>
+					            			<td>이름 : </td>
+					            			<td>${userC.clientName}</td>
+					            		</tr>
+					            		<tr>
+					            			<td>비밀번호 : </td>
+					            			<td><input type="text" name="clientPW" placeholder="${userC.clientPW}" class="form-control" value="${userC.clientPW}"></td>
+					            		</tr>
+					            		<tr>
+					            			<td>Level : </td>
+					            			<td>${userC.clientLevel}</td>
+					            		</tr>
+					            		<tr>
+					            			<td>연락처 : </td>
+					            			<td><input type="text" name="clientTel" placeholder="${userC.clientTel}" class="form-control" value="${userC.clientTel}" maxlength="11" onKeyDown="javascript:onlyNumberInput()"></td>
+					            		</tr>
+					            		<tr>
+					            			<td>예약 여부 : </td>
+					            			<td>${userC.clientBooking}</td>
+					            		</tr>
+					            	</table>
 					            </div>
 						       </div> 
 							   </div>
 							  <!--/row--> 
 							</div>
+							</form>
+<%
+						}
+						else if (loginYN == "Y" && modify == "Y" && gubun == "M") {
+							System.out.println("직원인데 수정 좀 할게");
+%>
+							<form name="modifyM" class="form-horizontal" method="post">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-8 col-xs-10">
+										<div class="col-sm-4 col-xs-12 text-center">
+											<img src="http://png.clipart.me/graphics/previews/154/green-tree-round-icon-vector-illustration_154612604.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
+											<input type="button" id="modify" name="modify" onclick="ModifyM()" value="수정완료" style="color:black; background-color:lightblue;">
+										</div>
+										<div class="col-xs-12 col-sm-8">
+											<h2><input type="text" name="clientID" placeholder="${userM.clientID}" class="default-bg space blue" value="${userM.clientID}" style="border:none; background-color:skyblue;"></h2>
+											<br>
+											<table>
+												<tr>
+													<td>이름 : </td>
+													<td>${userM.managerName}</td>
+												</tr>
+												<tr>
+													<td>비밀번호 : </td>
+													<td><input type="text" name="clientPW" placeholder="${userM.clientPW}" class="form-control" value="${userM.clientPW}"></td>
+												</tr>
+												<tr>
+													<td>Level : </td>
+													<td>${userM.managerLevel}</td>
+												</tr>
+												<tr>
+													<td>연락처 : </td>
+													<td><input type="text" name="managerTel" placeholder="${userM.managerTel}" class="form-control" value="${userM.managerTel}" maxlength="11" onKeyDown="javascript:onlyNumberInput()"></td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							</form>
 <%
 						}
 %>

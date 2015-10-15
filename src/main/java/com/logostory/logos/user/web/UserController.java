@@ -63,9 +63,21 @@ public class UserController {
 		
 		String clientID = (String)session.getAttribute("clientID");
 		
-		List<User> resultUserInfo = userService.getUserClientInfo(clientID);
+		User resultUserInfo = userService.getUserClient(clientID);
 		
-		model.addAttribute("uClientInfoList", resultUserInfo);
+		if (resultUserInfo != null) {
+			
+			model.addAttribute("uClientInfoList", resultUserInfo);
+		
+		}
+		else if (resultUserInfo == null) {
+			
+			User resultUserInfoM = userService.getUserClient("clientID");
+			
+			model.addAttribute("mClientInfoList", resultUserInfoM);
+		
+		}
+		
 		return userHomeUrl + "UM_Profile";
 	}
 
@@ -116,6 +128,7 @@ public class UserController {
 	public String doLogin(HttpServletRequest request, User user, Model model) throws Exception {
 		
 		User dbUser = userService.getUserClient(user.getClientID());
+		User dbUserM = userService.getUserManager(user.getClientID());
 		
 		String writeID = (String)request.getParameter("clientID");
 		String writePW = (String)request.getParameter("clientPW");
@@ -125,12 +138,53 @@ public class UserController {
 		System.out.println("************************");
 		
 		if(dbUser == null) {
-			System.out.println("등록되지 않은 아이디야!");
-			resultYN = "X";
-			return resultYN;
+			
+			System.out.println("dbUserM이 있나요???"+dbUserM);
+			
+			if(dbUserM != null) {
+				String dbIDM = dbUserM.getClientID();
+				String dbPWM = dbUserM.getClientPW();
+				String dbNameM = dbUserM.getManagerName();
+				String dbLevelM = dbUserM.getManagerLevel();
+				String dbTelM = dbUserM.getManagerTel();
+				
+				System.out.println("dbM에서 가져온 내용 : " + dbIDM);
+				System.out.println("dbM에서 가져온 내용2 : " + dbPWM);
+				System.out.println("M입력받은 내용 : " + writeID);
+				System.out.println("M입력받은 내용2 : " + writePW);
+				
+				if(!(writeID.equals(dbIDM))) {
+					System.out.println("아이디가 일치하지 않아! 직원이 아닌가봐!");
+					resultYN = "I";
+					return resultYN;
+				}
+				else if(writeID.equals(dbIDM)) {
+					System.out.println("아이디는 일치하는군... 직원이 맞긴 한듯!");
+					if(!(writePW.equals(dbPWM))) {
+						System.out.println("멍청한놈! 비밀번호가 다르잖아!");
+						resultYN = "P";
+						return resultYN;
+					}
+					else {
+						System.out.println("모두 일치하는군. 좋은아침입니다!");
+						HttpSession session = request.getSession();
+						session.setAttribute("loginYN", "Y");
+						session.setAttribute("modify", "N");
+						session.setAttribute("gubun", "M");
+						session.setAttribute("userM", dbUserM);
+
+						model.addAttribute("userM", dbUserM);
+					}
+				}
+			}
+			else {
+			
+				System.out.println("등록되지 않은 아이디야!");
+				resultYN = "X";
+				return resultYN;
+			}
 		}
 		else {
-			
 			String dbID = dbUser.getClientID();
 			String dbPW = dbUser.getClientPW();
 			String dbName = dbUser.getClientName();
@@ -160,22 +214,69 @@ public class UserController {
 					HttpSession session = request.getSession();
 					session.setAttribute("loginYN", "Y");
 					session.setAttribute("modify", "N");
-					session.setAttribute("clientID", dbID);
-					session.setAttribute("clientPW", dbPW);
-					session.setAttribute("clientName", dbName);
-					session.setAttribute("clientLevel", dbLevel);
-					session.setAttribute("clientTel", dbTel);
-					session.setAttribute("clientBooking", dbBooking);
+					session.setAttribute("gubun", "C");
+					session.setAttribute("userC", dbUser);
 					
-					List<User> resultUserInfo = userService.getUserClientInfo(dbID);
-					
-					model.addAttribute("uClientInfoList", resultUserInfo);
+					model.addAttribute("userC", dbUser);
 				}
 			}
 		}
 		
 		System.out.println("모두 일치했으니 메인으로 가야지 :)");
 		return resultYN;
+	}
+	
+	@RequestMapping("/doModifyC")
+	public String doModifyC(HttpServletRequest request, User user, Model model) throws Exception {
+		
+		System.out.println("******************doModifyC******************");
+		if(userService.updateUserClient(user)) {
+			HttpSession session = request.getSession();
+			session.setAttribute("modify", "N");
+			return userHomeUrl + "index_DoModify";
+		}
+		else {
+			return "error";
+		}
+	}
+	
+	@RequestMapping("/doModifyM")
+	public String doModifyM(HttpServletRequest request, User user, Model model) throws Exception {
+		
+		System.out.println("******************doModifyM******************");
+		if(userService.updateUserManager(user)) {
+			return userHomeUrl + "index_DoModify";
+		}
+		else {
+			return "error";
+		}
+	}
+	
+	@RequestMapping("/modifyFinish")
+	public String modifyFinish(HttpServletRequest request, User user, Model model) throws Exception {
+		
+		System.out.println("수정완료~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		
+		User dbUserC = userService.getUserClient(user.getClientID());
+		User dbUserM = userService.getUserManager(user.getClientID());
+		
+		if(dbUserC == null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("modify", "N");
+			session.setAttribute("userM", dbUserM);
+			
+			model.addAttribute("userM", dbUserM);
+		}
+		else {
+			HttpSession session = request.getSession();
+			session.setAttribute("modify", "N");
+			session.setAttribute("userC", dbUserC);
+			
+			model.addAttribute("userC", dbUserC);
+		}
+		
+		return "redirect:/#login";
+		
 	}
 	
 	@RequestMapping("/agreement")
