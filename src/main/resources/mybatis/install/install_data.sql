@@ -41,7 +41,7 @@ insert into logos_userManager(clientID, clientPW, managerName, managerLevel, man
 insert into logos_userManager(clientID, clientPW, managerName, managerLevel, managerTel, managerAttendDate, managerApproval) values ('manager4', '0000', '매니저4번', 'TM', '010-zzzz-zzz4', '2015-09-04', 'N');
 insert into logos_userManager(clientID, clientPW, managerName, managerLevel, managerTel, managerAttendDate, managerApproval) values ('manager5', '0000', '매니저5번', 'TM', '010-zzzz-zzz5', '2015-09-05', 'N');
 insert into logos_userManager(clientID, clientPW, managerName, managerLevel, managerTel, managerAttendDate, managerApproval) values ('manager6', '0000', '매니저6번', 'TM', '010-zzzz-zzz6', '2015-09-06', 'N');
-insert into logos_userManager(clientID, clientPW, managerName, managerLevel, managerTel, managerAttendDate, managerApproval) values ('manager7', '0000', '매니저7번', 'B', '010-zzzz-zzz7', '2015-09-07', 'N');
+insert into logos_userManager(clientID, clientPW, managerName, managerLevel, managerTel, managerAttendDate, managerApproval) values ('imboss1', '0000', '내가바로사장', 'B', '010-zzzz-zzz7', '2015-09-07', 'N');
 
 
 -- delete seq, booking
