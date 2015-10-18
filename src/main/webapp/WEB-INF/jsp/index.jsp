@@ -293,21 +293,15 @@
 			}
 			
 			function ModifyC() {
-				alert('여기 들어왔어요. modifyC');
-				window.open("", "doModifyC", "width=350, height=450, scrollbars=1, menubar=1, resizable=1");
-				document.modifyC.target="doModifyC";
+				alert('수정이 완료되었습니다.');
 				document.modifyC.action="/backoffice/UserManager/doModifyC";
 				document.modifyC.submit();
-				location.href="/backoffice/UserManager/modifyFinish";
 			}
 			
 			function ModifyM() {
-				alert('여기 들어왔구나~~ modifyM');
-				window.open("", "doModifyM", "width=350, height=450, scrollbars=1, menubar=1, resizable=1");
-				document.modifyM.target="doModifyM";
+				alert('수정이 완료되었습니다.');
 				document.modifyM.action="/backoffice/UserManager/doModifyM";
 				document.modifyM.submit();
-				location.reload();
 			}
 		
 		</script>
@@ -875,7 +869,7 @@
 					            		</tr>
 					            		<tr>
 					            			<td>비밀번호 : </td>
-					            			<td><input type="text" name="clientPW" placeholder="${userC.clientPW}" class="form-control" value="${userC.clientPW}"></td>
+					            			<td><input type="text" name="clientPW" placeholder="${userC.clientPW}" class="form-control"></td>
 					            		</tr>
 					            		<tr>
 					            			<td>Level : </td>
@@ -883,7 +877,7 @@
 					            		</tr>
 					            		<tr>
 					            			<td>연락처 : </td>
-					            			<td><input type="text" name="clientTel" placeholder="${userC.clientTel}" class="form-control" value="${userC.clientTel}" maxlength="11" onKeyDown="javascript:onlyNumberInput()"></td>
+					            			<td><input type="text" name="clientTel" placeholder="${userC.clientTel}" class="form-control" maxlength="11" onKeyDown="javascript:onlyNumberInput()"></td>
 					            		</tr>
 					            		<tr>
 					            			<td>예약 여부 : </td>
@@ -910,7 +904,7 @@
 											<input type="button" id="modify" name="modify" onclick="ModifyM()" value="수정완료" style="color:black; background-color:lightblue;">
 										</div>
 										<div class="col-xs-12 col-sm-8">
-											<h2><input type="text" name="clientID" placeholder="${userM.clientID}" class="default-bg space blue" value="${userM.clientID}" style="border:none; background-color:skyblue;"></h2>
+											<h2><input type="text" name="clientID" placeholder="${userM.clientID}" class="default-bg space blue" style="border:none; background-color:skyblue;"></h2>
 											<br>
 											<table>
 												<tr>
@@ -919,7 +913,7 @@
 												</tr>
 												<tr>
 													<td>비밀번호 : </td>
-													<td><input type="text" name="clientPW" placeholder="${userM.clientPW}" class="form-control" value="${userM.clientPW}"></td>
+													<td><input type="text" name="clientPW" placeholder="${userM.clientPW}" class="form-control"></td>
 												</tr>
 												<tr>
 													<td>Level : </td>
@@ -927,7 +921,7 @@
 												</tr>
 												<tr>
 													<td>연락처 : </td>
-													<td><input type="text" name="managerTel" placeholder="${userM.managerTel}" class="form-control" value="${userM.managerTel}" maxlength="11" onKeyDown="javascript:onlyNumberInput()"></td>
+													<td><input type="text" name="managerTel" placeholder="${userM.managerTel}" class="form-control" maxlength="11" onKeyDown="javascript:onlyNumberInput()"></td>
 												</tr>
 											</table>
 										</div>

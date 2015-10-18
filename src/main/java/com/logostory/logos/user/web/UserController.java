@@ -141,7 +141,7 @@ public class UserController {
 			
 			System.out.println("dbUserM이 있나요???"+dbUserM);
 			
-			if(dbUserM != null) {
+			if(dbUserM != null && !(dbUserM.getManagerLevel().equals("B"))) {
 				String dbIDM = dbUserM.getClientID();
 				String dbPWM = dbUserM.getClientPW();
 				String dbNameM = dbUserM.getManagerName();
@@ -174,6 +174,44 @@ public class UserController {
 						session.setAttribute("userM", dbUserM);
 
 						model.addAttribute("userM", dbUserM);
+					}
+				}
+			}
+			else if(dbUserM != null && (dbUserM.getManagerLevel().equals("B"))) {
+				System.out.println("사장님 오셨다~~~");
+				
+				String dbIDB = dbUserM.getClientID();
+				String dbPWB = dbUserM.getClientPW();
+				String dbNameB = dbUserM.getManagerName();
+				String dbLevelB = dbUserM.getManagerLevel();
+				String dbTelB = dbUserM.getManagerTel();
+				
+				System.out.println("사장님의 아이디는 : " + dbIDB);
+				System.out.println("사장님의 비밀번호는 : " + dbPWB);
+				System.out.println("입력받은 아이디 : " + writeID);
+				System.out.println("입력받은 비밀번호 : " + writePW);
+				
+				if(!(writeID.equals(dbIDB))) {
+					System.out.println("비상!! 아이디가 달라!!!!!");
+					resultYN = "I";
+					return resultYN;
+				}
+				else {
+					System.out.println("사장님 아이디는 일치합니다!");
+					if(!writePW.equals(dbPWB)) {
+						System.out.println("사장님... 비밀번호 불일치에요....");
+						resultYN = "P";
+						return resultYN;
+					}
+					else {
+						System.out.println("모두 일치하였습니다. 어서오세요 사장님!");
+						HttpSession session = request.getSession();
+						session.setAttribute("loginYN", "Y");
+						session.setAttribute("boss", dbUserM);
+						
+						model.addAttribute("boss", dbUserM);
+						
+						return "redirect:/backoffice/UserManager/main";
 					}
 				}
 			}
@@ -230,10 +268,28 @@ public class UserController {
 	public String doModifyC(HttpServletRequest request, User user, Model model) throws Exception {
 		
 		System.out.println("******************doModifyC******************");
+		
+		String modifyPW = user.getClientPW();
+		String modifyTel = user.getClientTel();
+		System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&"+modifyPW);
+		System.out.println("****************************"+modifyTel);
+			
+		if((modifyPW.equals(null)) || (modifyPW.equals("")) && (modifyTel.equals(null)) || (modifyTel.equals(""))) {
+			
+			System.out.println("여기 타야지.....");
+			user = userService.getUserClient(user.getClientID());
+		}
 		if(userService.updateUserClient(user)) {
+				
+			User dbUserC = userService.getUserClient(user.getClientID());
+			
 			HttpSession session = request.getSession();
 			session.setAttribute("modify", "N");
-			return userHomeUrl + "index_DoModify";
+			session.setAttribute("userC", dbUserC);
+			
+			model.addAttribute("userC", dbUserC);
+			
+			return "redirect:/#login";
 		}
 		else {
 			return "error";
@@ -245,13 +301,22 @@ public class UserController {
 		
 		System.out.println("******************doModifyM******************");
 		if(userService.updateUserManager(user)) {
-			return userHomeUrl + "index_DoModify";
+			
+			User dbUserM = userService.getUserManager(user.getClientID());
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("modify", "N");
+			session.setAttribute("userM", dbUserM);
+			
+			model.addAttribute("userM", dbUserM);
+			
+			return "redirect:/#login";
 		}
 		else {
 			return "error";
 		}
 	}
-	
+/*	
 	@RequestMapping("/modifyFinish")
 	public String modifyFinish(HttpServletRequest request, User user, Model model) throws Exception {
 		
@@ -278,7 +343,7 @@ public class UserController {
 		return "redirect:/#login";
 		
 	}
-	
+*/	
 	@RequestMapping("/agreement")
 	public String agreement(HttpServletRequest request, Model model) throws Exception {
 		return userHomeUrl + "UM_Agreement";
