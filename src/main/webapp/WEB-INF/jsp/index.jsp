@@ -30,6 +30,9 @@
 
 		<!-- Plugins -->
 		<link href="resources/css/animations.css" rel="stylesheet">
+		
+		<!-- swipper -->
+		<link href="resources/plugins/swiper/css/swiper.min.css" rel="stylesheet">
 
 		<!-- Worthy core CSS file -->
 		<link href="resources/css/style.css" rel="stylesheet">
@@ -40,6 +43,8 @@
 		<!-- Custom css --> 
 		<link href="resources/css/logos.css" rel="stylesheet">
 		
+		<!-- Swiper -->
+		<script type="text/javascript" src="resources/plugins/swiper/js/swiper.min.js"></script>
 		
 		<!-- 
 		
@@ -1694,10 +1699,11 @@
 
 		<!-- JavaScript files placed at the end of the document so the pages load faster
 		================================================== -->
+		
 		<!-- Jquery and Bootstap core js files -->
 		<script type="text/javascript" src="resources/plugins/jquery.min.js"></script>
 		<script type="text/javascript" src="resources/bootstrap/js/bootstrap.min.js"></script>
-
+		
 		<!-- Modernizr javascript -->
 		<script type="text/javascript" src="resources/plugins/modernizr.js"></script>
 
@@ -1709,6 +1715,9 @@
 
 		<!-- Appear javascript -->
 		<script type="text/javascript" src="resources/plugins/jquery.appear.js"></script>
+		
+		<!-- Notice js -->
+		<script type="text/javascript" src="resources/js/notice.js"></script>
 
 		<!-- Initialization of Plugins -->
 		<script type="text/javascript" src="resources/js/template.js"></script>
