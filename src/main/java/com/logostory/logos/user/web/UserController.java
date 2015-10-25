@@ -210,8 +210,9 @@ public class UserController {
 						session.setAttribute("boss", dbUserM);
 						
 						model.addAttribute("boss", dbUserM);
+						resultYN = "B";
 						
-						return "redirect:/backoffice/UserManager/main";
+						return resultYN;
 					}
 				}
 			}

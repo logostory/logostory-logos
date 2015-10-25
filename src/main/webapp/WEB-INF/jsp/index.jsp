@@ -267,6 +267,10 @@
 							else if(data == '"P"') {
 								alert('비밀번호를 다시 확인해주세요.');
 							}
+							else if(data == '"B"') {
+								alert('사장님 어서오세요!');
+								location.href="/backoffice/UserManager/main";
+							}
 							else {
 								location.reload();
 								alert('로그인 되었습니다.');

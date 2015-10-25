@@ -51,9 +51,9 @@
               </thead>
               <tbody>
               	<c:forEach items = "${uMemberList}" var = "data" varStatus = "idx">
-                <tr data-user-id = "${data.managerID}">
+                <tr data-user-id = "${data.clientID}">
                   <td>${data.managerMembership}</td>
-                  <td>${data.managerID}</td>
+                  <td>${data.clientID}</td>
                   <td>${data.managerName}</td>
                   <td>${data.managerLevel}</td>
                   <td>${data.managerTel}</td>
