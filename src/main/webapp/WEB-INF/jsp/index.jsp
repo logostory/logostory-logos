@@ -43,6 +43,9 @@
 		<!-- Custom css --> 
 		<link href="resources/css/logos.css" rel="stylesheet">
 		
+		<!-- Jquery and Bootstap core js files -->
+		<script type="text/javascript" src="resources/plugins/jquery.min.js"></script>
+		
 		<!-- Swiper -->
 		<script type="text/javascript" src="resources/plugins/swiper/js/swiper.min.js"></script>
 		
@@ -372,7 +375,7 @@
 										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
 											<ul class="nav navbar-nav navbar-right">
 												<li class="active"><a href="#banner">Home</a></li>
-												<li><a href="#about">공지사항</a></li>
+												<li><a href="#about">Notice</a></li>
 												<li><a href="#services">Activity</a></li>
 												<li><a href="#portfolio">메뉴</a></li>
 												<li><a href="#clients">Branchs</a></li>
@@ -428,17 +431,7 @@
 
 		<!-- section start -->
 		<!-- ================ -->
-		<div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-					
-					<jsp:include page="about.jsp"></jsp:include>
-						
-					</div>
-				</div>
-			</div>
-		</div>
+		<jsp:include page="about.jsp"></jsp:include>
 		<!-- section end -->
 
 		<!-- section start -->
@@ -1698,8 +1691,6 @@
 		<!-- JavaScript files placed at the end of the document so the pages load faster
 		================================================== -->
 		
-		<!-- Jquery and Bootstap core js files -->
-		<script type="text/javascript" src="resources/plugins/jquery.min.js"></script>
 		<script type="text/javascript" src="resources/bootstrap/js/bootstrap.min.js"></script>
 		
 		<!-- Modernizr javascript -->
@@ -1713,6 +1704,9 @@
 
 		<!-- Appear javascript -->
 		<script type="text/javascript" src="resources/plugins/jquery.appear.js"></script>
+		
+		<!-- Initialization of Plugins -->
+		<script type="text/javascript" src="resources/plugins/angularjs/angular.min.js"></script>
 		
 		<!-- Notice js -->
 		<script type="text/javascript" src="resources/js/notice.js"></script>
