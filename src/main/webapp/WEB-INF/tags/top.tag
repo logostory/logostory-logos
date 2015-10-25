@@ -16,6 +16,7 @@
     <!-- Bootstrap core CSS -->
     <link href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/backoffice/font-awesome/css/font-awesome.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/plugins/summernote/summernote.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/backoffice/css/prism.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/backoffice/css/backoffice.css"/>" rel="stylesheet">
 

@@ -18,7 +18,6 @@ import com.logostory.logos.promote.domain.Promotion;
 import com.logostory.logos.promote.domain.QPromotion;
 import com.logostory.logos.promote.repository.PromotionRepository;
 import com.mysema.query.BooleanBuilder;
-import com.mysema.query.jpa.JPQLQuery;
 
 @Repository("promotionJPA")
 public class PromotionJPA implements PromotionDAO {
@@ -37,7 +36,10 @@ public class PromotionJPA implements PromotionDAO {
 		Promotion resultPromotion = repository.save(promotion);
 		logger.debug(resultPromotion.toString());
 		
-		return false;
+		if(resultPromotion != null)
+			return true;
+		else
+			return false;
 	}
 
 	@Override

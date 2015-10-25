@@ -39,6 +39,7 @@
 	  <ul class="nav nav-tabs" role="tablist">
 	    <li role="presentation" class="active"><a href="#add" aria-controls="home" role="tab" data-toggle="tab">Overview</a></li>
 	    <li role="presentation"><a href="#list" aria-controls="profile" role="tab" data-toggle="tab">List <span class="badge">4</span></a></li>
+	    <li role="presentation"><a href="#newpromotion" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-plus-circle"></i> New Promotion</a></li>
 	  </ul>
 	
 	  <!-- Tab panes -->
@@ -76,6 +77,40 @@
 	         </table>
 	       </div>
 	    </div>
+	    <div role="tabpanel" class="tab-pane" id="newpromotion">
+	    	<form class="form-horizontal" method="post" action="<c:url value="/backoffice/promotion/add"/>">
+				<div class="form-group">
+			  		<label for="inputPassword3" class="control-label">Type</label>
+				  <select class="form-control auto-field" name="pmType">
+		               <option>Select</option>
+		               <option value="popup">Pop-Up</option>
+		               <option value="game">Game</option>
+		               <option value="link">Link</option>
+		           </select>
+	           </div>
+				<div class="form-group">
+				<label for="inputEmail3" class="control-label">Title <span class="icon icon-required"> required</span></label>
+			    <input name="pmTitle" type="text" class="form-control long-field" id="inputEmail3" placeholder="promotion title"> 
+			  </div>
+			  <div class="form-group">
+	           		<label for="inputPassword3" class="control-label">Decription</label>
+	           		<textarea name="pmDesc" class="form-control long-field" placeholder="promotion description"></textarea>
+	           </div>
+	           <div class="form-group">
+	           		<label for="inputPassword3" class="control-label">Contents</label>
+	           		<textarea rows="" cols="" class="summernote" name="pmContents"></textarea>
+	           </div>
+	           
+			  <div class="form-group">
+			    <button type="submit" class="btn btn-default btn-sm ">Save</button>
+			    <button type="button" class="btn btn-link btn-sm ">Cancel</button>
+			  </div>
+			</form> 
+			
+			
+
+	    </div>
+	    
 	  </div>
 	</div>
 	

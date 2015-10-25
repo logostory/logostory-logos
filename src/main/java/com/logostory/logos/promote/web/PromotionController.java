@@ -23,7 +23,7 @@ public class PromotionController {
 	private static final String promotionHomeUrl = "backoffice/promotion/";
 	
 	@Autowired
-	@Named("promotionService")
+	@Named("promtoionJAPService")
 	PromotionService promotionService;
 	
 	@RequestMapping("/addPage")
