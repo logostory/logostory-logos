@@ -16,3 +16,4 @@ noticeApp.controller('NoticeCtrl', ['$scope', '$http', function (scope, http){
       console.log("data: " + data)
     });
 }]);
+

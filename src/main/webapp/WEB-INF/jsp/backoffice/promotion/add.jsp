@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" 	uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
 
+
 <%--------------------------------------------------------------------------------------------------------------
  Page Name 	: Add promotion
  Page Desc. : Add promotion page
