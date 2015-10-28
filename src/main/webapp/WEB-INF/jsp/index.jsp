@@ -310,7 +310,19 @@
 				document.modifyM.action="/backoffice/UserManager/doModifyM";
 				document.modifyM.submit();
 			}
-		
+			
+			function resign() {
+				
+				if(confirm("정말 탈퇴하실건가요?")) {
+					document.resignC.action="/backoffice/UserManager/goResign";
+					document.resignC.submit();
+				}
+				else {
+					alert('탈퇴가 취소되었습니다.');
+					return;
+				}
+			}
+			
 		</script>
 	
 	</head>
@@ -571,33 +583,6 @@
 									<label class="control-label">연락처</label>
 									<input name="clientTel" type="text" class="form-control" id="writePhone" maxlength="11" onKeyDown="javascript:onlyNumberInput()" style="width:400px; 'IME-MODE:disabled'" placeholder="- 빼고 입력하세요.">
 								</div>
-								<div class="form-group">
-									<div>
-										<label class="control-label">이메일</label>
-									</div>
-									<div style="float:left; width:30%">
-										<input type="text" class="form-control" id="mail1" placeholder="">
-									</div>
-									<div style="float:middle; width:10%">
-										@
-									</div>
-									<div style="float:right; width:30%">
-										<select class="form-control auto-field" name="mail2">
-											<option value="naver">naver.com</option>
-											<option value="daum1">daum.net</option>
-											<option value="daum2">hanmail.com</option>
-											<option value="nate">nate.com</option>
-											<option value="gmail">gmail.com</option>
-										</select>
-									</div>
-									<br>
-									<button type="button" class="btn btn-sm">인증번호 요청</button>
-								</div>
-								<div class="form-group">
-									<label class="control-label">인증번호</label>
-									<input type="text" class="form-control" placeholder="전송된 인증번호를 입력하세요." style="width:400px">
-									<button type="button" class="btn btn-sm">인증번호 확인</button>
-								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
@@ -802,15 +787,17 @@
 						}
 						else if(loginYN == "Y" && modify != "Y" && gubun == "C") {
 %>
+						<form name="resignC" class="form-horizontal" method="post">
 							<div class="container">
 							  <div class="row">
 							  <div class="col-md-8 col-xs-10">
 							  	<div class="col-sm-4 col-xs-12 text-center">
 							        <img src="http://png.clipart.me/graphics/previews/154/green-tree-round-icon-vector-illustration_154612604.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
 							        <input type="button" id="Info" name="Info" onclick="UpdateInfo()" value="내 정보 수정" style="color:black; background-color:lightblue;">
+							        <input type="button" id="deleteInfo" name="deleteInfo" onclick="resign()" value="회원 탈퇴" style="color:black; background-color:lightblue;">
 							    </div>
 					            <div class="col-xs-12 col-sm-8" >
-					            	<h2>${userC.clientID}</h2>
+					            	<h2><input type="text" name="clientID" id="clientID" value="${userC.clientID}" placeholder="${userC.clientID}" class="form-control"></h2>
 					            	<br>
 					            	<p><strong>이름 : ${userC.clientName}</strong> </p>
 					            	<p><strong>Level : ${userC.clientLevel}</strong></p>
@@ -821,6 +808,7 @@
 							   </div>
 							  <!--/row--> 
 							</div>
+						</form>
 <%
 						}
 						else if (loginYN == "Y" && modify != "Y" && gubun == "M") {

@@ -10,8 +10,8 @@
  content 	: 관리자 입장에서 보는 사원관리 페이지
 ---------------------------------------------------------------------------------------------------------------%>
 
-
 <tag:template activeMenu="12">
+
    <div class="container-fluid">
       <div class="row">
         <div>
@@ -36,37 +36,54 @@
           </div>
 			
           <h2 class="sub-header">직원 명단</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>직원번호</th>
-                  <th>직원아이디</th>
-                  <th>이름</th>
-                  <th>직원 등급</th>
-                  <th>연락처</th>
-                  <th>입사일</th>
-                  <th>승인여부</th>
-                </tr>
-              </thead>
-              <tbody>
-              	<c:forEach items = "${uMemberList}" var = "data" varStatus = "idx">
-                <tr data-user-id = "${data.clientID}">
-                  <td>${data.managerMembership}</td>
-                  <td>${data.clientID}</td>
-                  <td>${data.managerName}</td>
-                  <td>${data.managerLevel}</td>
-                  <td>${data.managerTel}</td>
-                  <td>${data.managerAttendDate}</td>
-                  <td>${data.managerApproval}</td>
-                </tr>
-                </c:forEach>
-              </tbody>
-            </table>
-          </div>
+	        <form name="resignSelect" class="resignYN" method="post">  
+	          <div class="table-responsive">
+	            <table class="table table-striped">
+	              <thead>
+	                <tr>
+	                  <th>직원번호</th>
+	                  <th>직원아이디</th>
+	                  <th>이름</th>
+	                  <th>직원 등급</th>
+	                  <th>연락처</th>
+	                  <th>입사일</th>
+	                  <th>승인여부</th>
+	                  <th>비고</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	              	<c:forEach items = "${uMemberList}" var = "data" varStatus = "idx">
+	                <tr data-user-id = "${data.clientID}">
+	                  <td>${data.managerMembership}</td>
+	                  <td><input type="text" name="clientID" id="clientID" value="${data.clientID}" placeholder="${data.clientID}" class="form-control"></td>
+	                  <td>${data.managerName}</td>
+	                  <td>${data.managerLevel}</td>
+	                  <td>${data.managerTel}</td>
+	                  <td>${data.managerAttendDate}</td>
+	                  <td>${data.managerApproval}</td>
+	                  <td><button type="button" class="btn btn-sm" id="resignBtn" value="${data.clientID}" onclick="resign()">퇴사</button></td>
+	                </tr>
+	                </c:forEach>
+	              </tbody>
+	            </table>
+	          </div>
+	       </form>
         </div>
       </div>
     </div>
-
-
+    
+    <script type="text/javascript">
+	
+		function resign() {
+			
+			if(confirm("정말 퇴사처리 하실건가요??")) {
+				document.resignSelect.action="/backoffice/UserManager/goResignM";
+				document.resignSelect.submit();
+			else {
+				alert('퇴사 처리가 취소되었습니다.');
+				return;
+			}
+		}
+	</script>
+	
 </tag:template>
