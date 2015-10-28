@@ -27,7 +27,7 @@ create table if not exists logos_userClient(
 	clientLevel				char(2) default 'P' comment 'client level',
 	clientTel				varchar(255) comment 'client telephone number',
 	clientBooking			char(2)	default 'N',
-	clientApproval			char(2) default 'N',
+	clientApproval			char(2) default 'Y',
 	primary key (clientMembership)
 );
 
@@ -41,7 +41,7 @@ create table if not exists logos_userManager(
 	managerLevel				char(4)  default 'GM' comment 'manager level',
 	managerTel					varchar(255) comment 'manager telephone number',
 	managerAttendDate			varchar(255) comment 'manager AttendDate',
-	managerApproval				char(2) default 'N',
+	managerApproval				char(2) default 'Y',
 	primary key (managerMembership)
 );
 

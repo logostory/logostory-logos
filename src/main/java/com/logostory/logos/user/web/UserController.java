@@ -349,4 +349,43 @@ public class UserController {
 	public String agreement(HttpServletRequest request, Model model) throws Exception {
 		return userHomeUrl + "UM_Agreement";
 	}
+	
+	@RequestMapping("/goResign")
+	public String goResign(HttpServletRequest request, User user, Model model) throws Exception {
+		
+		User userDE = userService.getUserClient(user.getClientID());
+		String resignID = userDE.getClientID();
+		
+		Boolean resignUser = userService.deleteUserClient(resignID);
+		
+		if(resignUser == true) {
+			HttpSession session = request.getSession();
+			session.invalidate();
+			
+		}
+		else if(resignUser == false) {			
+			return "redirect:/#login";
+		}
+		
+		return "redirect:/";
+	}
+	
+	@RequestMapping("/goResignM")
+	public String goResignM(HttpServletRequest request, User user, Model model) throws Exception {
+		
+		User userDE = userService.getUserManager(user.getClientID());
+		String resignID = userDE.getClientID();
+		
+		Boolean resignUser = userService.deleteUserManager(resignID);
+		
+		if(resignUser == true) {
+			HttpSession session = request.getSession();
+			session.invalidate();
+		}
+		else if(resignUser == false) {
+			return "redirect:/backoffice/UserManager/";
+		}
+		
+		return "redirect:/backoffice/UserManager/";
+	}
 }
