@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -28,7 +29,8 @@ public class Promotion implements Serializable{
 	@Column(name = "PM_DESC")
 	private String pmDesc		=  "";
 	
-	@Column(name = "PM_CONTENTS")
+	@Lob
+	@Column(name = "PM_CONTENTS", length = 100000)
 	private String pmContents 	= "";
 	
 	@Column(name = "PM_IMG_URL")

@@ -8,9 +8,14 @@ $(function(){
 	$("[data-menu-no='"+activeMenuNumber+"']").addClass("active");
 });
 
-$(function(){
-	$('.summernote').summernote();
-});
+
+
+$(document).ready(function() {
+    $('.summernote').summernote({
+      height: 200,
+      tabsize: 2
+    });
+  });
 
 //save notice
 

@@ -10,6 +10,7 @@ var swiper = new Swiper('.swiper-container', {
 });
 
 var noticeApp = angular.module('noticeApp', []);
+
 noticeApp.controller('NoticeCtrl', ['$scope', '$http', function (scope, http){
     http.get('/promotion/v1/promotions').success(function(data) {
       scope.notices = data;

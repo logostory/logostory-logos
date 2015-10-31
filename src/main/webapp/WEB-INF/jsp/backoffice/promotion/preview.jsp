@@ -106,9 +106,6 @@
 			    <button type="button" class="btn btn-link btn-sm ">Cancel</button>
 			  </div>
 			</form> 
-			
-			
-
 	    </div>
 	    
 	  </div>

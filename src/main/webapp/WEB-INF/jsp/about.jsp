@@ -13,7 +13,8 @@
 			            <div class="swiper-slide" data-ng-repeat="notice in notices">
 			            
 			            <h1>{{notice.pmTitle}}</h1>
-			            <label>{{notice.pmContents}}</label>
+			            
+			            <div data-ng-bind-html-unsafe="notice.pmContents"></div>
 			            
 			            </div>
 			        </div>
