@@ -14,7 +14,7 @@
 	<h2 class="sub-header">상품추가</h2>
 
      <h3>Dropdowns and multi select</h3>
-		<form class="form-horizontal" method="post" action="<c:url value="/backoffice/product/add"/>">
+		<form class="form-horizontal" method="post" action="<c:url value="/backoffice/product/add"/>" enctype="multipart/form-data">
 			<div class="form-group">
 		  		<label for="inputPassword3" class="control-label">Type</label>
 			  <select class="form-control auto-field" name="f_type">
@@ -36,7 +36,7 @@
 		  <div class="form-group">
 		  	<label for="inputEmail3" class="control-label">Upload Image</label>
 		  	<label class="ffi" data-ffi-button-text="Browse" data-ffi-value="login.jpg">
-                 <input type="file" id="ffi1" name="ffi1" aria-label="Fancy File Input">
+                 <input type="file" id="ffi1" name="ffi1" aria-label="Fancy File Input" placeholder="주소">
              </label>
 		  </div>
 
