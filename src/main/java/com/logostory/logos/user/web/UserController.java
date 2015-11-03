@@ -130,8 +130,8 @@ public class UserController {
 		User dbUser = userService.getUserClient(user.getClientID());
 		User dbUserM = userService.getUserManager(user.getClientID());
 		
-		String writeID = (String)request.getParameter("clientID");
-		String writePW = (String)request.getParameter("clientPW");
+		String writeID = request.getParameter("clientID");
+		String writePW = request.getParameter("clientPW");
 		
 		String resultYN = "Y";
 		

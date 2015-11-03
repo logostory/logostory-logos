@@ -31,26 +31,31 @@ public class BookingServiceImpl implements BookingService {
 	
 	
 	//예약 등록 로직 호출 - insert
+	@Override
 	public boolean insertBooking(Booking booking) throws Exception{
 		return bookingDAO.insertBooking(booking);
 	} 
 	
 	//예약 수정 - update
+	@Override
 	public boolean updateBooking(Booking booking) throws Exception{
 		return bookingDAO.updateBooking(booking);
 	}
 	
 	//예약 내용 - select Bean	
+	@Override
 	public Booking selectBooking(Booking booking) throws Exception{
 		return bookingDAO.selectBooking(booking);
 	}
 	
 	//예약 리스트 - select List
+	@Override
 	public List<Booking> selectBookingList(Booking booking) throws Exception{
 		return bookingDAO.selectBookingList(booking);
 	}
 	
 	//예약 삭제 - delete	
+	@Override
 	public boolean deleteBooking(Booking booking) throws Exception{
 		return bookingDAO.deleteBooking(booking);
 	}

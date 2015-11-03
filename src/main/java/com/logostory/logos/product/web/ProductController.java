@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.logostory.logos.product.domain.Product;
 import com.logostory.logos.product.service.ProductService;
-import com.logostory.logos.promote.domain.Promotion;
 
 @RequestMapping ("/backoffice/product")
 @Controller
